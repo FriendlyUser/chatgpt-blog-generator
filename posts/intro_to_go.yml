@@ -1,0 +1,19 @@
+
+outputFormat: "astro-tech-blog"
+imageArgs:
+  prompt: "Go to the moon on a rocketship"
+outputArgs:
+frontMatter:
+  tags: ["go"]
+  title: "Introduction to Golang"
+  description: "Golang is an programming language from google that is quite powerful."
+  pubDate: Mon, 20 September 2023
+outputFile: "intro_to_go.md"
+programmingLanguage: "go"
+sections:
+  - "What is golang?"
+  - "Core Concepts of golang"
+  - "How to use golang to build cli tools"
+  - "Structs in golang"
+  - "how golang resolves packages and why it is good"
+  - "Advanced golang concepts"

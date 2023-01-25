@@ -1,0 +1,18 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+outputArgs:
+frontMatter:
+  tags: ["linq", "C#"]
+  title: "Introduction to LINQ"
+  description: "LINQ is a powerful tool for querying data. In this post, we'll look at how to use LINQ to query data in C#."
+  pubDate: Mon, 13 September 2023
+outputFile: "intro_to_linq.md"
+programmingLanguage: "csharp"
+sections:
+  - "What is LINQ?"
+  - "Core Concepts of LINQ Queries including From, Where, Select, and OrderBy"
+  - "How to use LINQ to query data from a List"
+  - "How to use LINQ to query data from a Dictionary"
+  - "How to use LINQ to query data from a SQL Database"
+  - "Advanced LINQ Queries including GroupBy, Join, and Aggregate"
