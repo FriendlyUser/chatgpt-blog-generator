@@ -1,0 +1,21 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Paper surrounding an internet icon"
+frontMatter:
+  tags: ["python", "chatgpt"]
+  title: "Using chatgpt to generate blog posts"
+  description: "AI powered tools can whittle down writing time and making writing blog posts simplier."
+  pubDate: Mon, 20 September 2023
+outputFile: "chatgpt_blog_generation.md"
+programmingLanguage: "python"
+sections:
+  - "What is ChatGPT?"
+  - 
+    type: "file"
+    src: "make_post.py"
+  - "How to monetize your blog"
+  - "Why use AI to generate images"
+  - "Why use official api instead of unofficial api"
+  - "How will AI change blog writing in the future"

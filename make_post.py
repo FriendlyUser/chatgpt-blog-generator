@@ -95,16 +95,36 @@ def generate_body(cfg: dict)-> None:
     sections = cfg['sections']
     with open(output_file, 'a') as f:
         for section in sections:
-            resp = api.send_message(section)
-            clean_message = use_programming_language(cfg, resp['message'])
+            # check if str or dict
+            if isinstance(section, str):
+                resp = api.send_message(section)
+                clean_message = use_programming_language(cfg, resp['message'])
+            else:
+                # assume dict
+                # type and src from dict
+                input_type = section['type']
+                src = section['src']
+                if input_type == 'file':
+                    # read src from file
+                    with open(src, 'r') as src_file:
+                        src_text = src_file.read()
+                    resp = api.send_message(src_text)
+                    clean_message = resp['message']
+                    print(clean_message)
+                    # write original text
+                    programming_language = cfg['programmingLanguage']
+                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
+                    f.write('\n')
             f.write(clean_message)
             f.write('\n')
 
 if __name__ == "__main__":
-    # argparse for post file
-
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--file', type=str, default='posts/chatgpt_blog_generation.yml')
+    args = parser.parse_args()
+    # valid files exist
     # argparse for file eventually
-    with open('posts/intro_to_go.yml', 'r') as f:
+    with open(args.file, 'r') as f:
         cfg = load(f, Loader=Loader)
     # if file exists skip
     # if not run these functions
