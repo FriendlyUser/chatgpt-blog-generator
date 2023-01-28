@@ -1,6 +1,8 @@
 import os
 import re
 import argparse
+import time
+import requests
 from pyChatGPT import ChatGPT
 # import yaml
 from yaml import load, dump, Loader
@@ -76,11 +78,12 @@ def use_programming_language(cfg: dict, section_text: str)-> None:
             # remove ` at the beginning of the line and the end of the line
             if type_start_line is not None:
                 # check for ` character at the beginning of the line
-                if line[0] == '`':
-                    line = line[1:]
-                # check for ` character at the end of the line
-                if line[-1] == '`':
-                    line = line[:-1]
+                if line.strip() != '':
+                    if line[0] == '`':
+                        line = line[1:]
+                    # check for ` character at the end of the line
+                    if line[-1] == '`':
+                        line = line[:-1]
             modified_lines.append(line)
 
     return "\n".join(modified_lines)
@@ -110,17 +113,26 @@ def generate_body(cfg: dict)-> None:
                         src_text = src_file.read()
                     resp = api.send_message(src_text)
                     clean_message = resp['message']
-                    print(clean_message)
+                    # write original text
+                    programming_language = cfg['programmingLanguage']
+                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
+                    f.write('\n')
+                if input_type == 'url':
+                    # load from url
+                    src_text = requests.get(src).text
+                    resp = api.send_message(src_text)
+                    clean_message = resp['message']
                     # write original text
                     programming_language = cfg['programmingLanguage']
                     f.write(f"```{programming_language} \n {src_text} \n ```\n")
                     f.write('\n')
             f.write(clean_message)
             f.write('\n')
+            time.sleep(10)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/chatgpt_blog_generation.yml')
+    parser.add_argument('--file', type=str, default='posts/investing_homepage_waves.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

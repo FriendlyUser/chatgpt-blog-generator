@@ -1,0 +1,22 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Natural Gas oil well"
+frontMatter:
+  tags: ["python", "pandas", "ta"]
+  title: "Natural Gas Price Analysis withPython"
+  description: "Using Pandas and python we can analyze natural gas prices."
+  pubDate: Mon, 27 September 2023
+outputFile: "natural_gas_plotting.md"
+programmingLanguage: "python"
+sections:
+  - "Why do gas prices fluctuate?"
+  - "cyclical stocks"
+  - "3 month moving average"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/dli-invest.github.io/master/scripts/calc_average_natural_gas.py"
+
+  - "Financial plots with python"
+  - "Gas consumption during climate change"
