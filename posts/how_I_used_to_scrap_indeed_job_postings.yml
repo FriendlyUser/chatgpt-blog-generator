@@ -1,0 +1,24 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "reading a blank book"
+frontMatter:
+  tags: ["python", "indeed"]
+  title: "Reading indeed posts to scrap job listings (does not work anymore)"
+  description: "Scrapping indeed (2021) to get job listings."
+  pubDate: Mon, 25 October 2023
+outputFile: "chatgpt_blog_generation.md"
+programmingLanguage: "python"
+sections:
+  - "Why is it important to verify humans are visiting your site"
+  - "What is Cloudflare Protection?"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/indeed-scrapper/master/scrapper/indeed.py"
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/indeed-scrapper/master/scrapper/analyze.py"
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/indeed-scrapper/master/scrapper/email.py"
+
+  - "How to scrap a site using selenium and python."
