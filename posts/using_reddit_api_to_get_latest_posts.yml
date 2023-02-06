@@ -31,6 +31,6 @@ sections:
     src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/.github/workflows/check_manga.yml"
 
   - type: "raw"
-    src: "###References \n *https://github.com/dli-invest/finreddit \n *https://pkg.go.dev/github.com/dli-invest/finreddit"  
+    src: "### References \n *https://github.com/dli-invest/finreddit \n *https://pkg.go.dev/github.com/dli-invest/finreddit"  
 
   

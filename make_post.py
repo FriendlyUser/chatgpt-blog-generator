@@ -134,7 +134,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/using_reddit_api_to_get_latest_posts.yml')
+    parser.add_argument('--file', type=str, default='posts/introduction_to_js.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

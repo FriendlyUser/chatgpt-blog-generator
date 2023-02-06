@@ -1,0 +1,34 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "free online box set"
+frontMatter:
+  tags: ["js", "introToJs"]
+  title: "Introduction to javascript free ebook"
+  description: "A free ebook on javascript, node.js and asynchronous programming."
+  pubDate: Mon, 15 November 2023
+outputFile: "intro_to_js.md"
+programmingLanguage: "js"
+sections:
+  - "What is kdp publishing?"
+  - "Book publishing with latex"
+
+  - type: "raw"
+    src: "This book serves as a introduction to Javascript, asynchronous programming and node.js
+JavaScript is a popular, high-level programming language used for creating interactive user experiences on the web. It is often used for front-end development, but it can also be used for back-end development using runtime environments like Node.js.
+
+Node.js is a runtime environment for JavaScript that allows you to run JavaScript code on the server-side. It is built on Chrome's V8 JavaScript engine and is commonly used for building scalable and high-performance web applications.
+
+Promises are a pattern in JavaScript that can be used to handle asynchronous operations. They provide a way to write cleaner and more organized asynchronous code, and they are often used in conjunction with Node.js and other technologies that make use of asynchronous programming."
+  - "If you enjoy the book, please purchase it on amazon"
+  - type: "raw"
+    src: "
+    For a free copy, please view https://friendlyuser.github.io/assets/pdfs/introToJs.pdf
+  "
+  - type: "raw"
+    src: "### References 
+* https://www.amazon.com/dp/B0BSL14M71 
+* https://github.com/FriendlyUser/introToJsBook
+"
+
+  
