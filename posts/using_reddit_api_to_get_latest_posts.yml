@@ -1,0 +1,36 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Community hub for the internet"
+frontMatter:
+  tags: ["reddit", "golang"]
+  title: "Using golang to filter through reddit posts"
+  description: "Leverage the reddit api to get the latest posts multiple subreddits."
+  pubDate: Mon, 27 September 2023
+outputFile: "scrapping_comments_from_reddit.md"
+programmingLanguage: "go"
+sections:
+  - "What is reddit?"
+  - "Web scrapping with golang why is it useful"
+  - "Parsing subreddits with the reddit api."
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/pkg/login/login.go"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/pkg/reddit/get_posts.go"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/pkg/csvs/csvs.go"
+  - "What is a discord webhook?"
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/pkg/discord/webhook.go"
+  - "Using github actions to automate scheduled tasks"
+  -
+    type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/finreddit/main/.github/workflows/check_manga.yml"
+
+  - type: "raw"
+    src: "###References \n *https://github.com/dli-invest/finreddit \n *https://pkg.go.dev/github.com/dli-invest/finreddit"  
+
+  

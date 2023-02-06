@@ -126,13 +126,15 @@ def generate_body(cfg: dict)-> None:
                     programming_language = cfg['programmingLanguage']
                     f.write(f"```{programming_language} \n {src_text} \n ```\n")
                     f.write('\n')
+                if input_type == 'raw':
+                    clean_message = src
             f.write(clean_message)
             f.write('\n')
             time.sleep(10)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/how_I_used_to_scrap_indeed_job_postings.yml')
+    parser.add_argument('--file', type=str, default='posts/using_reddit_api_to_get_latest_posts.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
