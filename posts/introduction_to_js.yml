@@ -7,6 +7,7 @@ frontMatter:
   title: "Introduction to javascript free ebook"
   description: "A free ebook on javascript, node.js and asynchronous programming."
   pubDate: Mon, 15 November 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "intro_to_js.md"
 programmingLanguage: "js"
 sections:

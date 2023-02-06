@@ -8,6 +8,7 @@ frontMatter:
   title: "Using golang to filter through reddit posts"
   description: "Leverage the reddit api to get the latest posts multiple subreddits."
   pubDate: Mon, 27 September 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "scrapping_comments_from_reddit.md"
 programmingLanguage: "go"
 sections:
