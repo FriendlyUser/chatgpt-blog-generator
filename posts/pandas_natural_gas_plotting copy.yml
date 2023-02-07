@@ -8,6 +8,7 @@ frontMatter:
   title: "Natural Gas Price Analysis withPython"
   description: "Using Pandas and python we can analyze natural gas prices."
   pubDate: Mon, 27 September 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "natural_gas_plotting.md"
 programmingLanguage: "python"
 sections:

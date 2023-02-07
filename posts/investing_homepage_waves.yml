@@ -8,6 +8,7 @@ frontMatter:
   title: "Investing homepage with waves animation"
   description: "Using JS and vuesax to show waves."
   pubDate: Mon, 5 October 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "investing_homepage.md"
 programmingLanguage: "vue"
 sections:

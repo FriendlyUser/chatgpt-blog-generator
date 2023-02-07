@@ -8,6 +8,7 @@ frontMatter:
   title: "Introduction to Golang"
   description: "Golang is an programming language from google that is quite powerful."
   pubDate: Mon, 20 September 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "intro_to_go.md"
 programmingLanguage: "go"
 sections:

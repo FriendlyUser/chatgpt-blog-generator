@@ -8,6 +8,7 @@ frontMatter:
   title: "Liability Driven Investing flow chart"
   description: "Although I correctly predicted the collapse of ldi, I did not profit from it."
   pubDate: Mon, 13 October 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "flow_chart_for_ldi.md"
 programmingLanguage: "tex"
 sections:

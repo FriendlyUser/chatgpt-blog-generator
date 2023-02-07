@@ -8,6 +8,7 @@ frontMatter:
   title: "Reading indeed posts to scrap job listings (does not work anymore)"
   description: "Scrapping indeed (2021) to get job listings."
   pubDate: Mon, 25 October 2023
+  layout: '@/templates/BasePost.astro'
 outputFile: "chatgpt_blog_generation.md"
 programmingLanguage: "python"
 sections:
