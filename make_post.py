@@ -134,7 +134,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/introduction_to_js.yml')
+    parser.add_argument('--file', type=str, default='posts/dart_server_alfred_hugging_space.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

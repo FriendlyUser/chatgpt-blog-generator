@@ -1,0 +1,29 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "ship over the blue ocean in space"
+frontMatter:
+  tags: ["dart", "docker"]
+  title: "How I deployed a dart alfred server to hugging space"
+  description: "This blog post covers how to deploy a dart space to hugging space using docker spaces."
+  pubDate: Mon, 13 November 2023
+  layout: '@/templates/BasePost.astro'
+outputFile: "how_to_deploy_dart_to_hs.md"
+programmingLanguage: "dart"
+sections:
+  - "Why is docker useful for deployments?"
+  - "Compiling to a single binary with dart"
+  - 
+    type: "url"
+    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/bin/cli.dart"
+
+  - "Optimization of the docker image using multi stage builds"
+  - type: "url"
+    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/Dockerfile"
+
+  - 
+    type: "raw"
+    src: "Ideally I would be able to use scratch of equivalent, but that didnt seem to work for hugging space, possibly for security reasons or image verification. Luckily ubuntu is about 30 MB so it is not too bad."
+
+  - "What are the advantages of back-end development with dart?"
