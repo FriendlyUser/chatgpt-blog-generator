@@ -1,0 +1,66 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Bridge built with bricks in the rainforest across the river"
+frontMatter:
+  tags: ["alfred", "dart", "backend"]
+  title: "Alfred backend with openfoodfacts"
+  description: "Using alfred backend as a wrapper around the openfoodfacts api."
+  pubDate: Mon, 27 November 2023
+  layout: '@/templates/BasePost.astro'
+outputFile: "alfred_backend_with_open_food_facts_api.md"
+programmingLanguage: "dart"
+sections:
+  - 
+    type: "raw"
+    src: "This post is related to my last post at https://friendlyuser.github.io/posts/tech/flutter/how_to_deploy_dart_to_hs.html. I will be using the same backend to create a wrapper around the openfoodfacts api. The openfoodfacts api is a free and open source api that provides information about food products. The api is available at https://world.openfoodfacts.org/data. The api is available in different languages and I will be using dart."
+  - "Why are food facts important?"
+  - 
+    type: "url"
+    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/lib/core.dart"
+
+  - type: "raw"
+    src:
+      "
+      ```dart
+      import 'package:openfoodfacts/openfoodfacts.dart';
+      import 'package:dart_off_server/core.dart' as openfood;
+      void main(List<String> arguments) async  {
+        ...  
+        openfood.mkConfiguration();
+        final app = Alfred();
+          app.get('/food/search', (req, res) {
+          final query = req.uri.queryParameters;
+          return openfood.search(query).then((value) {
+            res.json(value);
+          }).catchError((error) {
+            res.json(error);
+          });
+        });
+      ```
+      "
+
+  - "describe dart code for
+      import 'package:openfoodfacts/openfoodfacts.dart';
+      import 'package:dart_off_server/core.dart' as openfood;
+      void main(List<String> arguments) async  {
+        ...  
+        openfood.mkConfiguration();
+        final app = Alfred();
+          app.get('/food/search', (req, res) {
+          final query = req.uri.queryParameters;
+          return openfood.search(query).then((value) {
+            res.json(value);
+          }).catchError((error) {
+            res.json(error);
+          });
+        });"
+  - 
+    type: "raw"
+    src: "
+      ## References
+
+      * https://friendlyuser-dart-off-server.hf.space/food/search?terms=%22Pizza%22
+      * https://huggingface.co/spaces/FriendlyUser/dart_off_server/tree/main
+    "
