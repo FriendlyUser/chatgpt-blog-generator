@@ -1,21 +1,22 @@
 
 outputFormat: "astro-tech-blog"
 genImage: true
-outputArgs:
+imageArgs:
+  prompt: "blank newspaper with paper funnel on top"
 frontMatter:
   tags: ["googleNews", "C#"]
   title: "Searching for news with google news rss feeds"
   description: "Here we'll look at how to use google news rss feeds to create custom news rss feeds."
   pubDate: Tues, 7 December 2023
-  layout: '@/templates/BasePost.astro'
-outputFile: "intro_to_linq.md"
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "news_app_csharp.md"
 programmingLanguage: "csharp"
 sections:
   - "What is Google News?"
   - "How to use google rss feeds to find custom news format is https://news.google.com/rss/search?q="
 
   - 
-    type: "raw"
+    type: "url"
     src: "https://raw.githubusercontent.com/FriendlyUser/news-alert/master/News.cs"
 
   - "Using rss feeds for news alerts as an investor"
