@@ -88,6 +88,18 @@ def use_programming_language(cfg: dict, section_text: str)-> None:
 
     return "\n".join(modified_lines)
 
+def try_chatgpt_response(text: str):
+    attempts = 0
+    while attempts < 3:
+        try:
+            resp = api.send_message(text)
+            return resp
+        except Exception as e:
+            attempts += 1
+            time.sleep(3)
+            if attempts == 3:
+                raise e
+    raise Exception("Failed to get response from ChatGPT")
 def generate_body(cfg: dict)-> None:
     # read CHATGPT_TOKEN from os
     CHATGPT_SESSION_TOKEN = os.getenv("CHATGPT_TOKEN")
@@ -96,7 +108,7 @@ def generate_body(cfg: dict)-> None:
     api = ChatGPT(session_token)  # auth with session token
     output_file = cfg['outputFile']
     sections = cfg['sections']
-    with open(output_file, 'a') as f:
+    with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
         for section in sections:
             # check if str or dict
             if isinstance(section, str):
@@ -130,11 +142,25 @@ def generate_body(cfg: dict)-> None:
                     clean_message = src
             f.write(clean_message)
             f.write('\n')
-            time.sleep(10)
+            time.sleep(3)
+        # output references
+        try:
+            references = cfg['references']
+            if references:
+                f.write('\n')
+                f.write('## References\n')
+                for reference in references:
+                    if 'title' in reference and 'url' in reference:
+                        f.write(f"- [{reference['title']}]({reference['url']})\n")
+                    else:
+                        f.write(f"- {reference}\n")
+        except Exception as e:
+            print(e)
+            pass
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/news_app_cli.yml')
+    parser.add_argument('--file', type=str, default='posts/github_actions_introduction.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

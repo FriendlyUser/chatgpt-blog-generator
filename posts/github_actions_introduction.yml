@@ -1,0 +1,42 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "ship over the blue ocean in the forest"
+frontMatter:
+  tags: ["github", "ci"]
+  title: "Introduction to github actions and how to use them"
+  description: "This blog post covers how to use github actions to automate tasks."
+  pubDate: Mon, 13 November 2023
+  layout: '@/templates/BasePost.astro'
+
+references: 
+  - https://github.com/FriendlyUser/news-alert/blob/master/.github/workflows/CRON.yml
+  - https://github.com/FriendlyUser/news-alert/blob/master/.github/workflows/scrapNews.yml
+  # - 
+  #   title: "Cron Job github action" 
+  #   url: "https://github.com/FriendlyUser/news-alert/blob/master/.github/workflows/CRON.yml"
+  # - 
+  #   title: "Scrap news github action"
+  #   url: "https://github.com/FriendlyUser/news-alert/blob/master/.github/workflows/scrapNews.yml"
+
+outputFile: "github_actions.md"
+programmingLanguage: "dart"
+sections:
+  - "Yml file format"
+  - "Schedule and cron jobs"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/news-alert/master/.github/workflows/scrapNews.yml"
+
+  - "Trigger github actions on push"
+
+  - "What are the advantages of continuous integration and continuous deployment with dart?"
+
+  - "Generating a github token with write permissions"
+
+
+  - "Why do github actions stop running with no new commits after 60 days?"
+  - 
+    type: "url"
+    src: "https://github.com/FriendlyUser/news-alert/blob/master/.github/workflows/CRON.yml"
