@@ -1,0 +1,28 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "web browser earth in space"
+frontMatter:
+  tags: ["python", "selenium", "bs4"]
+  title: "How to find the status of youtube livestream with web scrapping in python"
+  description: "By leveraging a web browser we can extract the livestream status from a upcoming video from a youtube channel."
+  pubDate: Fri, 10 Feb 2023
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "find_status_of_youtube_livestream.md"
+
+references: ["https://github.com/dli-invest/fdrtt/blob/main/livestream_scrapper.py", "https://github.com/dli-invest/fdrtt"]
+programmingLanguage: "python"
+sections:
+  - "What is youtube"
+  - "Why is transcribing livestreams in real time important for investing when the Federal Reserve is speaking?"
+  - 
+    type: "file"
+    src: "files/find_status_of_livestream.py"
+    lines: [0, 60]
+
+  - 
+    type: "file"
+    src: "files/find_status_of_livestream.py"
+    lines: [61, 103]
+    # in the future add lines of code

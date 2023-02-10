@@ -1,0 +1,21 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Convert pdf to png"
+frontMatter:
+  tags: ["python", "imagemagick"]
+  title: "Using chatgpt to generate blog posts"
+  description: "AI powered tools can whittle down writing time and making writing blog posts simplier."
+  pubDate: Mon, 20 September 2023
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "chatgpt_blog_generation.md"
+references: ["https://github.com/FriendlyUser/ELEC370/blob/master/Assignments/A1/html/pdfToPNGMagick.py"]
+programmingLanguage: "python"
+sections:
+  - "What is imagemagick"
+  - "How to call imagemagick from python using os."
+  - 
+    type: "file"
+    src: "files/pdftopng.py"
+  - "Uses for imagemagick"

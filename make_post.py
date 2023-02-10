@@ -123,6 +123,14 @@ def generate_body(cfg: dict)-> None:
                     # read src from file
                     with open(src, 'r') as src_file:
                         src_text = src_file.read()
+                    # check for lines argument
+                    if 'lines' in section:
+                        lines = section['lines']
+                        # make sure lines is a list
+                        if isinstance(lines, list):
+                            # get lines from src_text
+                            src_lines = src_text.split('\n')
+                            src_text = "\n".join(src_lines[lines[0]:lines[1]])
                     resp = api.send_message(src_text)
                     clean_message = resp['message']
                     # write original text
@@ -132,6 +140,20 @@ def generate_body(cfg: dict)-> None:
                 if input_type == 'url':
                     # load from url
                     src_text = requests.get(src).text
+                    if 'lines' in section:
+                        lines = section['lines']
+                        # make sure lines is a list
+                        if isinstance(lines, list):
+                            # get lines from src_text
+                            src_lines = src_text.split('\n')
+                            src_text = "\n".join(src_lines[lines[0]:lines[1]])
+                    # check if file should be saved to file
+                    if 'saveFile' in section:
+                        save_file = section['saveFile']
+                        if save_file:
+                            # save file to src
+                            with open(src, 'w') as src_file:
+                                src_file.write(src_text)
                     resp = api.send_message(src_text)
                     clean_message = resp['message']
                     # write original text
@@ -160,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/github_actions_introduction.yml')
+    parser.add_argument('--file', type=str, default='posts/how_to_download_files_from_the_cse_exchange.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

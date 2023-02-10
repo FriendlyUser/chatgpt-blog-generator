@@ -1,0 +1,32 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "web browser earth stacked on mars"
+frontMatter:
+  tags: ["python", "requests", "bs4"]
+  title: "How to download reports from the CSE exchange with python"
+  description: "By using the cad tickers library we can easily get links to docs from stocks."
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "download_files_from_cse_exchange.md"
+
+references: ["https://github.com/dli-invest/cse_file_downloader/blob/main/scrap_cse_releases.py"]
+programmingLanguage: "python"
+sections:
+  - "What is CSE exchange"
+  - "Why is it important to download reports from the CSE exchange"
+  - 
+    type: "file"
+    src: "files/cse_file_downloader.py"
+    lines: [0, 45]
+
+  - 
+    type: "file"
+    src: "files/cse_file_downloader.py"
+    lines: [46, 67]
+    # in the future add lines of code
+  - 
+    type: "file"
+    src: "files/cse_file_downloader.py"
+    lines: [68, 125]
