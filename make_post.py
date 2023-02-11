@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/how_to_download_files_from_the_cse_exchange.yml')
+    parser.add_argument('--file', type=str, default='posts/converting_circle_ci_to_github_actions.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

@@ -1,0 +1,34 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "web browser earth in space"
+frontMatter:
+  tags: ["latex", "githubactions", "circleci"]
+  title: "How I converted circleCi to github actions"
+  description: "For my latex diagrams project I converted the ci from circle to github actions."
+  pubDate: Fri, 10 Feb 2023
+  layout: '"@/templates/BasePost.astro"'
+  projects: ["LatexDiagrams"]
+  imgSrc : "/imgs/2023/"
+outputFile: "find_status_of_youtube_livestream.md"
+
+references: ["https://github.com/FriendlyUser/dli-vue-docs/blob/master/.circleci/config.yml", "https://github.com/FriendlyUser/dolwarp", "https://github.com/FriendlyUser/LatexDiagrams"]
+programmingLanguage: "yaml"
+sections:
+  - "What is Continuous Integration?"
+  - "What is circleCI and how does it compare to github actions?"
+  -
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/.circleci/config.yml"
+
+  - "Triggering another workflow from a workflow in circleCI"
+  -
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/dli-vue-docs/master/.circleci/config.yml"
+
+  - "How to use github actions to trigger a deployment to github pages"
+
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/.github/workflows/build.yml"
