@@ -1,0 +1,38 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["python", "latex", "openbb"]
+  title: "How I generate stock reports with python and latex"
+  description: "Generating premarket and postmarket reports with python and latex"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "download_files_from_cse_exchange.md"
+
+references: ["https://github.com/dli-invest/stonk_events", "https://friendlyuser.github.io/posts/stonks/web/scrapping_comments_from_reddit/", "https://friendlyuser.github.io/posts/tech/python/simple_deta_micro_service_to_view_uploaded_files"]
+programmingLanguage: "python"
+sections:
+  - "What is premarket in stock investing?"
+
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/stonk_events/main/src/gen_prereport.py"
+    # in the future add lines of code
+
+  - type: "raw"
+    src: "The fetch_reddit command calls a function from my finreddit project available on github at [finreddit](https://github.com/dli-invest/finreddit) and the corresponding article is at [scrapping comments from reddit](https://friendlyuser.github.io/posts/stonks/web/scrapping_comments_from_reddit/)"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/stonk_events/main/src/utils/parse_reddit.py"
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/stonk_events/main/tools/reddit/main.go"
+
+  - "Why are generating stock reports important?"
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/stonk_events/main/src/send_discord.py"
