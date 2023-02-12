@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/introduction_to_golang.yml')
+    parser.add_argument('--file', type=str, default='posts/parsing_steam_top_sellers_in_dart.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
