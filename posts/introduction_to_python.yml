@@ -1,0 +1,23 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["python"]
+  title: "Introduction to csharp"
+  description: "Explaining the history of csharp and how it is used"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "python_introduction.md"
+
+references: ["https://github.com/FriendlyUser/bookapi"]
+programmingLanguage: "python"
+sections:
+  - "What is the the history of the python?"
+
+  - "What are the uses of python"
+
+  - "What is lists in python?"
+
+  - "argparse example in python."

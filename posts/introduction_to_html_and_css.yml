@@ -1,0 +1,23 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["csharp", "dotnet"]
+  title: "Introduction to csharp"
+  description: "Explaining the history of csharp and how it is used"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "html_introduction.md"
+
+references: []
+programmingLanguage: "html"
+sections:
+  - "What is the the history of the web?"
+
+  - "What is HTML and example of a HTML document?"
+
+  - "What is CSS"
+
+  - "How can you use CSS in HTML?"

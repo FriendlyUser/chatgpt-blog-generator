@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/generate_stock_report_with_python_in_latex.yml')
+    parser.add_argument('--file', type=str, default='posts/introduction_to_golang.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

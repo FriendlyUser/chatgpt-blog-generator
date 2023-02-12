@@ -1,0 +1,27 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["csharp", "dotnet"]
+  title: "Introduction to csharp"
+  description: "Explaining the history of csharp and how it is used"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "introduction_to_golang.md"
+
+references: []
+programmingLanguage: "go"
+sections:
+  - "What is the the history of golang?"
+
+  - "Why are the advantages of golang?"
+
+  - "Structs and lists in golang"
+
+  - "created executable files in golang"
+
+  - "How to use golang in a web application?"
+
+  - "What is go doc?"

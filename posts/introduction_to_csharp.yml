@@ -1,0 +1,25 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["csharp", "dotnet", "openbb"]
+  title: "Introduction to csharp"
+  description: "Explaining the history of csharp and how it is used"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "csharp_introduction.md"
+
+references: ["https://github.com/FriendlyUser/bookapi"]
+programmingLanguage: "csharp"
+sections:
+  - "What is the the history of the csharp?"
+
+  - "What is dotnet?"
+
+  - "What is the dotnet cli?"
+
+  - "Lists, dictionaries, and tuples in csharp"
+
+  - "Modern development with dotnet vs java"

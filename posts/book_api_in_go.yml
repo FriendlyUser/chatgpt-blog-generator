@@ -1,0 +1,44 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog astronaut landing on the moon"
+frontMatter:
+  tags: ["go", "googlebooks", "deta"]
+  title: "How I made a book api in golang"
+  description: "Implementing a book api in golang using the google books api"
+  pubDate: Fri, 3 January 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "book_api_in_golang.md"
+
+references: ["https://github.com/FriendlyUser/bookapi"]
+programmingLanguage: "go"
+sections:
+  - "What is the google books api?"
+
+
+  - "Why is using openapi to generate server-side code helpful?"
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/go/api.go"
+    # in the future add lines of code
+
+  - 
+    type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/go/api_book.go"
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/go/api_book_service.go"
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/go/routers.go"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/main.go"
+
+
+  - "Why is using deta to host the api helpful?"
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/bookapi/main/Spacefile"
