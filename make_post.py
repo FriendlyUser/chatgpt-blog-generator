@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/moving_html_files_with_script_in_go.yml')
+    parser.add_argument('--file', type=str, default='posts/static_site_generators.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

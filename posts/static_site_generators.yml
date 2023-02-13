@@ -1,0 +1,25 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "streaming pot boiling on a stove with noodles"
+frontMatter:
+  tags: ["vuepress", "gridsome", "astro"]
+  title: "Introduction to static site generations"
+  description: "A comparison between static site generations including vuepress, gridsome and astro"
+  pubDate: Fri, 14 March 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "top_static_site_generator.md"
+
+references: ["https://raw.githubusercontent.com/FriendlyUser/Matlab/master/.github/workflows/deploy.yml", "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/main.go"]
+programmingLanguage: "yml"
+sections:
+  - "What is a static site generator?"
+
+  - "What are popular static site generators?"
+  - "What is the vuepress static site generator?"
+
+  - "What is the astro static site generator?"
+
+  - "What is the gridsome static site generator"
+  - "What are the pros and cons of each static site generator?"
