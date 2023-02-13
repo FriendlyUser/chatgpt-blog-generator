@@ -12,19 +12,29 @@ frontMatter:
 outputFile: "steam_top_sellers_in_dart.md"
 
 references: ["https://raw.githubusercontent.com/FriendlyUser/Matlab/master/.github/workflows/deploy.yml", "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/main.go"]
-programmingLanguage: "dart"
+programmingLanguage: "go"
 sections:
-  - "What is the web scrapping?"
+  - "How to move files with a script in bash?"
+
+  - "I decided to use golang to move files to deploy to github pages."
 
   - 
     type: "url"
-    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/lib/core.dart"
-    lines: [108, 150]
+    src: "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/main.go"
+    lines: [0, 36]
 
   - 
     type: "url"
-    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/lib/types.dart"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/main.go"
+    lines: [37, 60]
 
   - 
     type: "url"
-    src: "https://huggingface.co/spaces/FriendlyUser/dart_off_server/raw/main/test/core_test.dart"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/main.go"
+    lines: [61, 83]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Matlab/master/.github/workflows/deploy.yml"
+
+
+  - "My old matlab university assignments are now available on github pages."
