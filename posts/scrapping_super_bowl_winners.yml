@@ -1,0 +1,39 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "football in the air"
+frontMatter:
+  tags: ["python", "football", "pandas"]
+  title: "Web Scrapping Super Bowl Winners"
+  description: "Web scrapping of the espn page for super bowl winners"
+  pubDate: Fri, 21 March 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "superbowl.md"
+
+references: ["https://github.com/FriendlyUser/data-science-projects/tree/main/superbowl"]
+programmingLanguage: "python"
+sections:
+  - "What is the super bowl?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/data-science-projects/main/superbowl/get_stats.py"
+    lines: [0, 20]
+
+  - type: "url"
+    src: https://raw.githubusercontent.com/FriendlyUser/data-science-projects/main/superbowl/output.txt
+    lines: [0, 20]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/data-science-projects/main/superbowl/get_stats.py"
+    lines: [21, 41]
+
+  - type: "url"
+    src: https://raw.githubusercontent.com/FriendlyUser/data-science-projects/main/superbowl/output.txt
+    lines: [22, 50]
+
+
+  - type: "raw"
+    src: "![football graph](https://raw.githubusercontent.com/FriendlyUser/data-science-projects/main/superbowl/winners.png)"
+
+  - "Hopefully this has been a fun introduction to web scrapping with data visualization."
