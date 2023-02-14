@@ -164,7 +164,7 @@ def generate_body(cfg: dict)-> None:
                     clean_message = src
             f.write(clean_message)
             f.write('\n')
-            time.sleep(3)
+            time.sleep(5)
         # output references
         try:
             references = cfg['references']
@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/css_animations_in_react.yml')
+    parser.add_argument('--file', type=str, default='posts/css_in_js_vs_plain_css.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

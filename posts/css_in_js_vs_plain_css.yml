@@ -1,0 +1,23 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "famous oil painting"
+frontMatter:
+  tags: ["css", "jsx", "react", "styled"]
+  title: "Css in js vs plain css and styled components"
+  description: "Comparing css in js to plain css and styled components"
+  pubDate: Fri, 28 March 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "css_in_jsx_vs_react_styled.md"
+
+references: []
+programmingLanguage: "jsx"
+sections:
+  - "What is jsx?"
+  - "What is css in js and why use it?"
+  - "What are the advantages of using css in js?"
+  - "What are the disadvantages of using css in js?"
+  - "Styled components examples"
+  - "Styled components vs css in js"

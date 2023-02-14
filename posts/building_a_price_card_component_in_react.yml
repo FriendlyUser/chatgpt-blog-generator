@@ -1,0 +1,23 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "pricing card with a blank label on it"
+frontMatter:
+  tags: ["css", "jsx", "react"]
+  title: "How I implemented a price card component in react"
+  description: "Building a price card component in react is a great way to learn how to use css"
+  pubDate: Fri, 28 March 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "building_a_price_card_component_in_react.md"
+
+references: []
+programmingLanguage: "jsx"
+sections:
+  - "What is jsx?"
+  - "What is css in js and why use it?"
+  - "What are the advantages of using css in js?"
+  - "What are the disadvantages of using css in js?"
+  - "Styled components examples"
+  - "Styled components vs css in js"
