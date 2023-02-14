@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/how-I-created-a-vuepress-theme.yml')
+    parser.add_argument('--file', type=str, default='posts/dart_lcg.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

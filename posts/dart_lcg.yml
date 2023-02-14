@@ -1,0 +1,27 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "dog dancing next to a fountain, digital art"
+frontMatter:
+  tags: ["dart"]
+  title: "Web Scrapping Super Bowl Winners"
+  description: "Web scrapping of the espn page for super bowl winners"
+  pubDate: Fri, 21 March 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "dart_lcg.md"
+
+references: ["https://github.com/FriendlyUser/dart-basic-math-lib"]
+programmingLanguage: "dart"
+sections:
+  - "Why use dart over java?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/dart-basic-math-lib/master/lib/rat/rational.dart"
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/dart-basic-math-lib/master/lib/lcg/lcg.dart"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/dart-basic-math-lib/master/lib/lcg/lcg_interface.dart"
+
