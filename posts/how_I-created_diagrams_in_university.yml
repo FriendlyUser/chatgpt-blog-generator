@@ -1,0 +1,37 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "football in the air"
+frontMatter:
+  tags: ["vuepress", "vuepress-theme-cool"]
+  title: "Created diagrams like latex for university"
+  description: "Throughout my engineering degree, I generated diagrams using latex for circuits and software development."
+  pubDate: Fri, 9 March 2023
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "latex_diagrams.md"
+
+references: ["https://github.com/FriendlyUser/vuepress-theme-cool-starter", "https://github.com/FriendlyUser/vuepress-theme-cool"]
+programmingLanguage: "python"
+sections:
+  - "What is the vuepress?"
+
+  - "How to make a custom theme for vuepress?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/vuepress-theme-cool/master/index.js"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/vuepress-theme-cool/master/global-components/mermaid.vue"
+
+  - type: "url"
+    src: https://raw.githubusercontent.com/FriendlyUser/vuepress-theme-cool/master/global-components/pros-cons.vue
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/vuepress-theme-cool/master/enhanceApp.js"
+
+  - "What are admonitions?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/vuepress-theme-cool/master/styles/index.styl"
