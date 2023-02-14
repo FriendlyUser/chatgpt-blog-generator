@@ -182,7 +182,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/css_in_js_vs_plain_css.yml')
+    parser.add_argument('--file', type=str, default='posts/building_a_price_card_component_in_react.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
