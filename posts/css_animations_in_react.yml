@@ -1,0 +1,23 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "animation on a painting"
+frontMatter:
+  tags: ["css", "intersectionobserver", "react"]
+  title: "Implementation animations with css and react-intersection-observer"
+  description: "Using the react-intersection-observer library to implement animations with css"
+  pubDate: Fri, 21 March 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "css_animations_in_react.md"
+
+references: ["https://www.npmjs.com/package/react-intersection-observer"]
+programmingLanguage: "jsx"
+sections:
+  - "Why use css animations"
+
+  - "How to use the react intersection observer library"
+  - "Simple css animations with react-intersection-observer"
+
+  - "Transition property for animations in css"
