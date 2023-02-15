@@ -1,0 +1,53 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "ships on the ocean"
+frontMatter:
+  tags: ["phaser", "nodejs", "js"]
+  title: "Creating a networked game with phaser and nodejs part I"
+  description: "In this post I will show you how to create a simple networked game with phaser and nodejs."
+  pubDate: Fri, 14 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "phaser_networked_game.md"
+
+seedPrompt: "Topic: networked game with phaser and nodejs
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with "confirm" to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/Pirates-Game/tree/master"]
+programmingLanguage: "js"
+sections:
+  - "What is is a networked game?"
+
+
+  - "What does server-side code have to manage in a multiplayer game"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/server.js"
+    lines: [0, 90]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/server.js"
+    lines: [91, 211]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/server.js"
+    lines: [212, 253]
+
+  
+  - "What does client-side code have to manage in a multiplayer game"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/js/client.js"
+    lines: [0, 165]
+
+  - "What is socket.io?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/js/client.js"
+    lines: [182, 440]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/Pirates-Game/master/js/client.js"
+    lines: [441, 641]

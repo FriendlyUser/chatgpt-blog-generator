@@ -112,6 +112,7 @@ def generate_body(cfg: dict)-> None:
     if 'seedPrompt' in cfg:
         seed_prompt = cfg['seedPrompt']
         resp = api.send_message(seed_prompt)
+        time.sleep(3)
     with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
         for section in sections:
             # check if str or dict
@@ -187,7 +188,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/getting_videos_from_youtube.yml')
+    parser.add_argument('--file', type=str, default='posts/building_a_networked_game_with_phaser_and_node_II.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
