@@ -52,9 +52,9 @@ def generate_frontmatter(cfg: dict)-> None:
         # write body
     pass
 
-def use_programming_language(cfg: dict, section_text: str)-> None:
+def use_programming_language(cfg: dict, section_text: str, language: str = None)-> None:
     # get programming language
-    programming_language = cfg['programmingLanguage']
+    programming_language = language or cfg['programmingLanguage']
     # use regex to find plain ``` and replace with ```programming_language
     type_start_line = None
     type_end_line = None
@@ -119,6 +119,7 @@ def generate_body(cfg: dict)-> None:
                 # type and src from dict
                 input_type = section['type']
                 src = section['src']
+                language = section.get('language', None)
                 if input_type == 'file':
                     # read src from file
                     with open(src, 'r') as src_file:
@@ -134,7 +135,7 @@ def generate_body(cfg: dict)-> None:
                     resp = api.send_message(src_text)
                     clean_message = resp['message']
                     # write original text
-                    programming_language = cfg['programmingLanguage']
+                    programming_language = language or cfg['programmingLanguage'] 
                     f.write(f"```{programming_language} \n {src_text} \n ```\n")
                     f.write('\n')
                 if input_type == 'url':
@@ -157,7 +158,7 @@ def generate_body(cfg: dict)-> None:
                     resp = api.send_message(src_text)
                     clean_message = resp['message']
                     # write original text
-                    programming_language = cfg['programmingLanguage']
+                    programming_language = language or cfg['programmingLanguage']
                     f.write(f"```{programming_language} \n {src_text} \n ```\n")
                     f.write('\n')
                 if input_type == 'raw':
@@ -182,7 +183,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/building_a_price_card_component_in_react.yml')
+    parser.add_argument('--file', type=str, default='posts/stock_screener_part_two.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

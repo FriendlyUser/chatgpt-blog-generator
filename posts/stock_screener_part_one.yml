@@ -1,0 +1,31 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Pile of gold coins floating in the ocean"
+frontMatter:
+  tags: ["python", "jsx", "react"]
+  title: "How I implemented a stock screener in python"
+  description: "A stock screener is a tool that helps you find stocks that meet your criteria. In this post I will show you how I implemented a stock screener in python."
+  pubDate: Fri, 11 April 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "stonk_screener_part_I.md"
+
+references: ["https://github.com/FriendlyUser/stock_screener/tree/master"]
+programmingLanguage: "jsx"
+sections:
+  - "Why is a stock screener important?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/stock_screener/master/stock_screener/interfaces.py"
+    language: "python"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/stock_screener/master/stock_screener/tickers/v2.py"
+    language: "python"
+
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/stock_screener/master/stock_screener/tickers/v2.py"
+    language: "python"
