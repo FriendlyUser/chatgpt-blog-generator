@@ -188,7 +188,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/building_a_networked_game_with_phaser_and_node_II.yml')
+    parser.add_argument('--file', type=str, default='posts/introduction_to_google_maps.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
