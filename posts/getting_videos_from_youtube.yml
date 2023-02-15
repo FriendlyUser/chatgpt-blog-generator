@@ -1,0 +1,35 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Pile of sliver coins floating in the ocean"
+frontMatter:
+  tags: ["python", "youtube"]
+  title: "Getting youtube videos of interest in python"
+  description: "In this post I will show you how to use the youtube api to get videos of interest in python."
+  pubDate: Fri, 2 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "youtube_api_get_videos_of_interest.md"
+
+seedPrompt: "Topic: Using the youtube api to get videos in python
+
+For the above topic, write for a technical audience for a blog post and give detailed explainations for code.
+"
+references: ["https://github.com/dli-invest/media_nlp"]
+programmingLanguage: "python"
+sections:
+  - "What is the youtube api?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/media_nlp/main/scripts/main.py"
+    lines: [0, 128]
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/media_nlp/main/scripts/lib/cfg/investing_channels.yml"
+    lines: [0, 25]
+
+  - "Sending reports to email using jinja and mailjet"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/dli-invest/media_nlp/main/scripts/lib/email.jinja2"

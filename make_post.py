@@ -108,6 +108,10 @@ def generate_body(cfg: dict)-> None:
     api = ChatGPT(session_token)  # auth with session token
     output_file = cfg['outputFile']
     sections = cfg['sections']
+    # send seed prompt if available
+    if 'seedPrompt' in cfg:
+        seed_prompt = cfg['seedPrompt']
+        resp = api.send_message(seed_prompt)
     with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
         for section in sections:
             # check if str or dict
@@ -183,7 +187,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/stock_screener_part_two.yml')
+    parser.add_argument('--file', type=str, default='posts/getting_videos_from_youtube.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually

@@ -1,0 +1,24 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Pile of sliver coins floating in the ocean"
+frontMatter:
+  tags: ["deno"]
+  title: "Using the league of legends api to get games via deno"
+  description: "In this post I will show you how to use the league of legends api to get games via deno."
+  pubDate: Fri, 25 April 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "using_lol_api_to_get_games.md"
+
+seedPrompt: "Pile of gold coins floating in the ocean"
+references: ["https://github.com/FriendlyUser/deno-riot-games-custom-games/tree/master"]
+programmingLanguage: ""
+sections:
+  - "What is the league of legends api?"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/deno-riot-games-custom-games/master/grab_matches.ts"
+
+  - "Why doesnt the league of legends api return custom games?"
