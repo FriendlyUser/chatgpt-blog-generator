@@ -1,0 +1,32 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "a horse, a cow, and a sheep racing on the track, digital art"
+frontMatter:
+  tags: ["git"]
+  title: "In this post I will compare github, gitlab, and bitbucket"
+  description: "Looking at pros and cons of the main code hosting choices."
+  pubDate: Fri, 22 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "free_education_software_development.md"
+seedPrompt: "Topic: Free Education using internet resources to learn software development
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+programmingLanguage: ""
+sections:
+  - "Why is free education important?"
+
+  - "What are the pros and cons of free education?"
+
+  - "What should I focus on to become a software developer?"
+
+  - "What are the best resources to learn software development?"
+
+  - "How to focus on front end development?"
+
+  - "How to focus on back end development?"
+
+  - "Why is prompt engineering important in the era of AI?"
+

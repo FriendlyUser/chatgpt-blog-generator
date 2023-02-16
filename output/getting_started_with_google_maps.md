@@ -4,7 +4,7 @@ title: How to use Google Maps API in your web application
 description: In this post I will show how to integrate google maps into a web page.
 pubDate: Fri, 15 May 2024
 layout: "@/templates/BasePost.astro"
-imgSrc: /imgs/2023/test.png
+imgSrc: /imgs/2023/654074938.png
 ---
 
 
