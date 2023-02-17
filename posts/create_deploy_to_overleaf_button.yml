@@ -1,0 +1,29 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "latex suit on the bed"
+frontMatter:
+  tags: ["next", "latex", "nextra"]
+  title: "Getting started with google maps"
+  description: "In this post I will show you how to create a simple networked game with phaser and nodejs."
+  pubDate: Fri, 30 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "deploy_to_overleaf_button.md"
+seedPrompt: "Topic: Button to deploy to overleaf
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/dli-vue-docs", "https://github.com/FriendlyUser/latex-diagrams-docs", "https://latex-diagrams-docs.vercel.app/"]
+programmingLanguage: "js"
+sections:
+
+  - What is overleaf and why is it useful for writing reports in latex?
+
+  - How to use the overleaf api to open a file, example link is 
+    https://www.overleaf.com/docs?snip_uri=http://pathtoyourfile.tex?
+
+  - 
+    type: "file"
+    src: files/overleaf.mdx
+
+  - "parameterizing the component as a react component"
