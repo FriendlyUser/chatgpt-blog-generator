@@ -1,0 +1,30 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "ships on the ocean on a map"
+frontMatter:
+  tags: ["Vscode"]
+  title: "How to customize vscode settings"
+  description: "In this post I will show you how to customize visual studio code settings."
+  pubDate: Fri, 22 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "customizing_vscode_settings.md"
+seedPrompt: "Topic: Visual Studio Code settings customization
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+programmingLanguage: "js"
+sections:
+  - "Make detailed blog post targetting a technical audience and/or a beginner audience. Make sure the post is well written and has good grammar. Cover the following points
+    
+    What is vscode?
+
+    What is the settings.json file?
+
+    How to customize vscode settings?
+
+    How to install extensions?
+
+    Debugging in vscode
+  "
