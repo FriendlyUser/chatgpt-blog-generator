@@ -1,0 +1,39 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "latex suit on the bed"
+frontMatter:
+  tags: ["next", "latex", "nextra"]
+  title: "Getting started with google maps"
+  description: "In this post I will show you how to create a simple networked game with phaser and nodejs."
+  pubDate: Fri, 30 May 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "cloud_env_vars.md"
+seedPrompt: "Topic: Environment Variables for Cloud
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/dli-vue-docs", "https://github.com/FriendlyUser/latex-diagrams-docs", "https://latex-diagrams-docs.vercel.app/"]
+programmingLanguage: "js"
+sections:
+
+  - What is next.js?
+
+  - What is the saber static site generator that uses vue.js?
+
+  - 
+    type: "raw"
+    src: "Saber is a older framework and relies on hacks to implement search and/or analytics plus google adsense. By leveraging newer framework I was aiming to improve the user experience and improve the quality of my [latex diagrams site](grandfleet.eu.org)."
+
+  - What is nextra?
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/latex-diagrams-docs/main/next.config.js"
+
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/latex-diagrams-docs/main/theme.config.tsx"
+
+  - What is mdx?
+
+  - What are the advantages of using next.js
+
+  - What are the advantages to deploying to vercel

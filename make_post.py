@@ -188,7 +188,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/cloud_env_vars.yml')
+    parser.add_argument('--file', type=str, default='posts/porting_static_site_to_nextra.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
