@@ -9,7 +9,7 @@ frontMatter:
   pubDate: Fri, 7 June 2024
   layout: '"@/templates/BasePost.astro"'
   imgSrc : "/imgs/2023/test.png"
-outputFile: "cloud_env_vars.md"
+outputFile: "chat_gpt_generation.md"
 seedPrompt: "Topic: ChatGpt Script in Python to describe code and get keywords
 
 For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
