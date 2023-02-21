@@ -188,7 +188,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/Using_chatgpt_description_and_keywords.yml')
+    parser.add_argument('--file', type=str, default='posts/chatgpt_chrome_extension.yml')
     args = parser.parse_args()
     # valid files exist
     # argparse for file eventually
