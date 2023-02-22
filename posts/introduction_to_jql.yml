@@ -1,0 +1,24 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "A dream of a distant world with a forest, concept art, matte painting, HQ, 4k"
+frontMatter:
+  tags: ["jira", "jql"]
+  title: "Introduction to JIRA query languages."
+  description: "In this post I will show you how to use jql to find jira issues."
+  pubDate: Fri, 14 July 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "intro_to_jql.md"
+seedPrompt: "Topic: JIRA Query Language
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+programmingLanguage: "sql"
+sections:
+
+  - What is JIRA
+
+  - What is the JIRA Query Language (JQL)
+
+  - How to filter for issues in JIRA that you have created in the last 15 days.
