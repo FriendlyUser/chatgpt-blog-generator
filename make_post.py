@@ -8,6 +8,7 @@ from pyChatGPT import ChatGPT
 from yaml import load, dump, Loader
 import io
 import warnings
+import shutil
 from PIL import Image
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
@@ -36,7 +37,9 @@ def generate_image(cfg:dict)-> None:
             if artifact.type == generation.ARTIFACT_IMAGE:
                 img = Image.open(io.BytesIO(artifact.binary))
                 # images
-                img.save("images" + "/" + str(artifact.seed)+ ".png") # Save our generated images with their seed number as the filename.
+                image_root = "images" + "/" + str(artifact.seed)+ ".png"
+                img.save(image_root) # Save our generated images with their seed number as the filename.
+                return image_root
 
 def generate_frontmatter(cfg: dict)-> None:
     # open output file
@@ -190,6 +193,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--file', type=str, default='posts/introduction_to_jql.yml')
     args = parser.parse_args()
+
+    image_root = ""
     # valid files exist
     # argparse for file eventually
     with open(args.file, 'r') as f:
@@ -201,8 +206,29 @@ if __name__ == "__main__":
         exit(0)
     # if genImage is true, then makeImage
     if cfg['imageArgs']:
-        generate_image(cfg)
+        image_path = generate_image(cfg)
         pass
-
+    
+    astro_image_folder = "/imgs/2023"
+    # grab basename from image_path
+    image_basename = os.path.basename(image_path)
+    imgSrc = f"{astro_image_folder}/{image_basename}"
+    #
+    cfg["frontMatter"]["imgSrc"] = imgSrc
     generate_frontmatter(cfg)
     generate_body(cfg)
+
+    ## cp file to ../astro-tech-blog/${directory}
+    if cfg["postOutput"]:
+        # check for postOutput.folder
+        # check for postOutput.imgFolder
+        # mv cfg['outputFile'] to ../astro-tech-blog/${postOutput.folder}
+        post_output_folder = cfg['postOutput']['folder']
+        post_output_img_folder = cfg['postOutput']['imgFolder']
+        if post_output_folder:
+            # copy file to ../astro-tech-blog/${postOutput.folder}
+            shutil.copy(cfg['outputFile'], post_output_folder)
+            # copy image to ../astro-tech-blog/${postOutput.imgFolder}
+        if post_output_img_folder:
+            shutil.copy(image_path, post_output_img_folder)
+        pass

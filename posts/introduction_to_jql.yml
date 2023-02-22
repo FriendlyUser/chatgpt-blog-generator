@@ -8,8 +8,10 @@ frontMatter:
   description: "In this post I will show you how to use jql to find jira issues."
   pubDate: Fri, 14 July 2024
   layout: '"@/templates/BasePost.astro"'
-  imgSrc : "/imgs/2023/test.png"
-outputFile: "intro_to_jql.md"
+outputFile: "intro_to_jql2.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
 seedPrompt: "Topic: JIRA Query Language
 
 For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."

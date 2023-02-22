@@ -1,0 +1,31 @@
+frontMatter:
+  description: In this post I will show you how to use chatgpt to describe code and
+    get keywords.
+  imgSrc: /imgs/2023/test.png
+  layout: '"@/templates/BasePost.astro"'
+  pubDate: Fri, 7 July 2024
+  tags:
+  - chatgpt
+  - flutter
+  title: Here I will cover how to use chatgpt extract keywords and describe code.
+genImage: true
+imageArgs:
+  prompt: A dream of a distant world with a forest, concept art, matte painting, HQ,
+    4k
+outputFile: chrome_extension_flutter.md
+outputFormat: astro-tech-blog
+programmingLanguage: dart
+references:
+- https://raw.githubusercontent.com/FriendlyUser/chatgpt_chrome_extension/main/lib/main.dart
+sections:
+- What is a chrome extension
+- How to build a chrome extension in flutter
+- src: https://raw.githubusercontent.com/FriendlyUser/chatgpt_chrome_extension/main/lib/main.dart
+  type: url
+- How to install a chrome extension from bundle.
+seedPrompt: 'Topic: Chrome Extension To Show Software Development ChatGpt Prompts
+
+  For the above topic, use future prompts to write for a technical audience for a
+  blog post and give consise explainations for code. Optimize the post for medium
+  and google seo. Ensure this content is original. Respond with ''confirm'' to acknowledge
+  that you understand the prompt.'
