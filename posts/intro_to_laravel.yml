@@ -1,0 +1,25 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Bridge built with bricks in the rainforest across the river"
+frontMatter:
+  tags: ["laravel"]
+  title: "What is laravel."
+  description: "Explaining what laravel is."
+  pubDate: Fri, 14 June 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "intro_to_laravel.md"
+seedPrompt: "Topic: Introduction to laravel
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "js"
+sections:
+  - "What is php"
+  - What is laravel?
+  - "What are the uses of laravel?"
+  - "How popular is php is software development?"

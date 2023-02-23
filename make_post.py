@@ -191,7 +191,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/introduction_to_jql.yml')
+    parser.add_argument('--file', type=str, default='posts/intro_to_laravel.yml')
     args = parser.parse_args()
 
     image_root = ""
@@ -219,16 +219,19 @@ if __name__ == "__main__":
     generate_body(cfg)
 
     ## cp file to ../astro-tech-blog/${directory}
-    if cfg["postOutput"]:
-        # check for postOutput.folder
-        # check for postOutput.imgFolder
-        # mv cfg['outputFile'] to ../astro-tech-blog/${postOutput.folder}
-        post_output_folder = cfg['postOutput']['folder']
-        post_output_img_folder = cfg['postOutput']['imgFolder']
-        if post_output_folder:
-            # copy file to ../astro-tech-blog/${postOutput.folder}
-            shutil.copy(cfg['outputFile'], post_output_folder)
-            # copy image to ../astro-tech-blog/${postOutput.imgFolder}
-        if post_output_img_folder:
-            shutil.copy(image_path, post_output_img_folder)
+    try:
+        if cfg["postOutput"]:
+            # check for postOutput.folder
+            # check for postOutput.imgFolder
+            # mv cfg['outputFile'] to ../astro-tech-blog/${postOutput.folder}
+            post_output_folder = cfg['postOutput']['folder']
+            post_output_img_folder = cfg['postOutput']['imgFolder']
+            if post_output_folder:
+                # copy file to ../astro-tech-blog/${postOutput.folder}
+                shutil.copy(cfg['outputFile'], post_output_folder)
+                # copy image to ../astro-tech-blog/${postOutput.imgFolder}
+            if post_output_img_folder:
+                shutil.copy(image_path, post_output_img_folder)
+    except Exception as e:
+        print(e)
         pass

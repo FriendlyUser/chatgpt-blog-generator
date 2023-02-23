@@ -1,0 +1,27 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Bridge built with bricks in the rainforest across the river"
+frontMatter:
+  tags: ["web3"]
+  title: "What is web3."
+  description: "Explaining what web3 is."
+  pubDate: Fri, 14 June 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "web3_introduction.md"
+seedPrompt: "Topic: Introduction to web3
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "js"
+sections:
+
+  - What is web3?
+  - "What are the uses of web3?"
+  - "What is solidity"
+  - "What are smart contracts?"
+  - "What are the different types of smart contracts?"
