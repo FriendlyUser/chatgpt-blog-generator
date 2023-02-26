@@ -1,0 +1,28 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Bridge built with bricks in the rainforest across the river"
+frontMatter:
+  tags: ["php", "laravel"]
+  title: "Laravel api that takes parses ip addresses."
+  description: "Explaining how to use laravel to parse ip addresses."
+  pubDate: Fri, 14 June 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "laravel_minimum_api.md"
+seedPrompt: "Topic: How to implement laravel api for ip addresses
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/php"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "php"
+sections:
+
+
+  - "What is laravel?"
+  - For the prompt below, convert the C# code to laravel
+  - type: "url"
+    src: "https://raw.githubusercontent.com/FriendlyUser/dotnet-minimum-api/main/Program.cs"
+

@@ -1,0 +1,27 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Bridge built with bricks in the rainforest across the river"
+frontMatter:
+  tags: ["bs4", "python", "pandas"]
+  title: "Using pandas and bs4 for web scrapping."
+  description: "Explaining how to use pandas and bs4 for web scrapping."
+  pubDate: Fri, 14 June 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc : "/imgs/2023/test.png"
+outputFile: "pandas.md"
+seedPrompt: "Topic: How to pandas and bs4 for web scrapping
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "python"
+sections:
+
+  - What is pandas? How can it be used for web scrapping
+  - Getting the source of a website with a table with bs4
+  - parsing that table using pandas
+  - outputting that table to a csv file using pandas
+  - Advanced topics with pandas to clean the data
