@@ -191,7 +191,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/laravel_api_for_ip_addresses.yml')
+    parser.add_argument('--file', type=str, default='posts/scrapping_with_pandas_and_bs4.yml')
     args = parser.parse_args()
 
     image_root = ""
