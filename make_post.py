@@ -50,6 +50,17 @@ def generate_frontmatter(cfg: dict)-> None:
         # get frontmatter
         frontmatter = cfg['frontMatter']
         for key, value in frontmatter.items():
+            # jupytext and kernelspec convert items to yaml
+            if key in ['jupytext', 'kernelspec']:
+                f.write(f'{key}:\n')
+                for k, v in value.items():
+                    if k in ['text_representation']:
+                        f.write(f'{k}:\n')
+                        for k2, v2 in v.items():
+                            f.write(f' {k2}: {v2}\n')
+                        continue
+                    f.write(f'  {k}: {v}\n')
+                continue
             f.write(f'{key}: {value}\n')
         f.write('---\n')
         # write body
@@ -173,7 +184,7 @@ def generate_body(cfg: dict)-> None:
                     clean_message = src
             f.write(clean_message)
             f.write('\n')
-            time.sleep(5)
+            time.sleep(6)
         # output references
         try:
             references = cfg['references']
@@ -191,7 +202,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/scrapping_with_pandas_and_bs4.yml')
+    parser.add_argument('--file', type=str, default='posts/chapter1_intro_to_python.yml')
     args = parser.parse_args()
 
     image_root = ""

@@ -1,0 +1,40 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "python in the rainforest crossing the river"
+frontMatter:
+  tags: ["python", "introtopython"]
+  title: "Chapter 1 Introduction to Python."
+  description: "Describing how to use python to program."
+  pubDate: Fri, 14 June 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+  jupytext:
+    formats: md:myst
+    text_representation:
+      extension: .md
+      format_name: myst
+      format_version: 0.13
+      jupytext_version: 1.11.5
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+outputFile: "chap_1.md"
+seedPrompt: "Chapter: Introduction to Python
+
+For the above chapter in a book named introduction to python, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/python"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "python"
+sections:
+  # - "What is Python and why use it? Ensure at least 1 page of content"
+
+  # - "Introduction to Python as a high-level, interpreted, general-purpose programming language. Ensure at least 1 page of content"
+  # - "The benefits and features of Python such as readability, simplicity, portability, multiple paradigms, rich libraries and community. Ensure at least 2 page of content"
+  - "How to install Python and set up the development environment? Cover windows installation with choco, linux and macosx. Ensure at least 1 page of content."
+  - "How to run Python scripts and use the interactive shell? Ensure at least 1 page of content."
+  - "How to use IPython as a calculator and to calculate tax rates? Ensure at least 1 page of content."
+
