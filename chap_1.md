@@ -1,15 +1,15 @@
 ---
-tags: ['python', 'introtopython']
 title: Chapter 1 Introduction to Python.
 description: Describing how to use python to program.
-pubDate: Fri, 14 June 2024
-layout: "@/templates/BasePost.astro"
-imgSrc: /imgs/2023/4039349639.png
 jupytext:
   formats: md:myst
 text_representation:
  formats: md:myst
- text_representation: {'extension': '.md', 'format_name': 'myst', 'format_version': 0.13, 'jupytext_version': '1.11.5'}
+ text_representation: 
+  extension: .md
+  format_name: myst
+  format_version: 0.13
+  jupytext_version: 1.11.5
 kernelspec:
   display_name: Python 3
   language: python
@@ -17,7 +17,9 @@ kernelspec:
 ---
 
 ## History of Python
+```{note}
 Python is a high-level, interpreted programming language that has become increasingly popular in recent years. Its design philosophy emphasizes code readability, which means that it is easy for humans to read and write. It is also known for its flexibility and versatility, with a wide range of applications that include web development, data analysis, artificial intelligence, and more.
+```
 
 One of the biggest advantages of using Python is its simplicity. Python code is often much shorter and easier to read than other languages, which makes it easier to learn and understand. Additionally, Python has a large community of developers who contribute to the language and its ecosystem. This means that there are many libraries and frameworks available for Python, making it easier to write complex programs quickly.
 
@@ -35,7 +37,7 @@ Python is a high-level, interpreted, general-purpose programming language that h
 One of the defining features of Python is its high-level nature. This means that Python code is closer to human language than to machine code. Python is often called a "readable" language, because its syntax is designed to be easy to understand and follow. For example, in Python, the code to print "Hello, World!" to the console is simply:
 
 
-```python
+```{code-cell} ipython3
 print("Hello, World!")
 ```
 Python's high-level nature means that it is often faster and easier to write code in Python than in other programming languages. This is especially true for tasks that involve data analysis or machine learning, where Python's ease of use and large number of available libraries can be a significant advantage.
@@ -105,7 +107,7 @@ choco install python
 4. Verify that Python is installed correctly by opening a command prompt and entering the following command:
 
 
-```python
+```{code-cell} ipython3
 python --version
 ```
 Installing Python on Linux
@@ -215,23 +217,21 @@ This is the Python prompt, which indicates that you can start entering Python co
 4. Enter some Python code, such as:
 
 
-```python
+```{code-cell} ipython3
 print("Hello, world!")
 ```
 5. Press Enter to execute the code. You should see the following output:
 
 
-```python
+```{code-cell} ipython3
 Hello, world!
 ```
 6. You can also use the interactive shell as a calculator. For example, you can enter the following code to perform basic arithmetic operations:
 
 
-```python
->>> 2 + 2
-4
->>> 10 / 2
-5.0
+```{code-cell} ipython3
+print(2 + 2)
+print(10 / 2)
 ```
 7. To exit the interactive shell, enter the following command:
 
@@ -255,16 +255,13 @@ Running Python scripts and using the interactive shell are essential skills for 
   Here's an example of using IPython as a calculator:
 
 
-  ```python
-  In [1]: 2 + 2
-  Out[1]: 4
-
-  In [2]: 10 / 2
-  Out[2]: 5.0
-  ```
+```{code-cell} ipython3
+print(2 + 2)
+print(10 / 2)
+```
   As you can see, IPython returns the results of the mathematical expressions you enter. You can use IPython to perform more complex calculations as well, such as exponentiation and trigonometric functions.
 
-  Using IPython to Calculate Tax Rates
+#### Using IPython to Calculate Tax Rates
 
   Now let's see how to use IPython to calculate tax rates. Suppose you have a salary of $50,000 and you want to calculate your federal income tax. The federal income tax rate is based on your income and is calculated using a series of brackets.
 
@@ -305,11 +302,20 @@ Running Python scripts and using the interactive shell are essential skills for 
   5. Call the `calculate_tax()` function with your salary as an argument:
 
 
-  ```python
-  In [4]: calculate_tax(salary)
-  Out[4]: 7160.0
-  ```
-  According to this calculation, your federal income tax would be $7,160 based on a salary of $50,000.
+ ```{code-cell} ipython3
+salary = 50000
+rates = [0.1, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37]
+brackets = [9875, 40125, 85525, 163300, 207350, 518400]
+def calculate_tax(salary):
+  tax = 0
+  for i in range(len(brackets)):
+    if salary > brackets[i]:
+      tax += (brackets[i] - (brackets[i-1] if i>0 else 0)) * rates[i]
+    else:
+      tax += (salary - (brackets[i-1] if i>0 else 0)) * rates[i]
+    break
+  return tax
+print("Your income tax is: " + calculate_tax(salary))
+```
 
-
-
+According to this calculation, your federal income tax would be $7,160 based on a salary of $50,000.
