@@ -21,7 +21,7 @@ Conditional statements allow you to execute specific pieces of code based on cer
 
 
 ```python
-  if condition:
+if condition:
  # execute this code if the condition is True
 ```
 The `condition` can be any expression that evaluates to a Boolean value (i.e., `True` or `False`). If the `condition` is `True`, then the code inside the `if` block is executed. If the `condition` is `False`, then the code inside the `if` block is skipped.
@@ -240,7 +240,7 @@ Here is an example of how to call the `square_and_cube` function and assign the 
 
 
 ```python
-python`square, cube = square_and_cube(2)
+square, cube = square_and_cube(2)
 print(square)
 print(cube)
 ```

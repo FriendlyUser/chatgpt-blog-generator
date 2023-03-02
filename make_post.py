@@ -202,7 +202,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/chapter3_intro_to_python.yml')
+    parser.add_argument('--file', type=str, default='posts/chapter6_intro_to_python.yml')
     args = parser.parse_args()
 
     image_root = ""
