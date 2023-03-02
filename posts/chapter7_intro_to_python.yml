@@ -1,0 +1,41 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "python in the rainforest crossing the river"
+frontMatter:
+  tags: ["python", "introtopython"]
+  title: "Chapter 7 File handling and data processing."
+  description: "For my introductory book on python, I am going to explain how to handle files."
+  pubDate: Fri, 30 September 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+  jupytext:
+    formats: md:myst
+    text_representation:
+      extension: .md
+      format_name: myst
+      format_version: 0.13
+      jupytext_version: 1.11.5
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+outputFile: "chap_7.md"
+seedPrompt: "Chapter 7: File handling and data processing
+
+For the above chapter in a book named introduction to python, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/python"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "python"
+sections:
+- How to work with files in Python using open(), close(), read(), write() and other methods
+- Explain what write permissions are in linux, code such as 700, 755, 777 etc. Give a example using chmod
+- How to use different modes such as 'r', 'w', 'a', 'b' etc. to open files for reading, writing or appending
+- How to use context managers using with statement to automatically close files
+- How to process data from files using loops, string methods, regular expressions etc.
+- How to use some of the built-in modules such as csv, json, xml etc. to read and write data in different formats
+- How to use generators to process large data sets
+- Using subprocess to run ffmpeg to convert video files from mp4 to mp3
+

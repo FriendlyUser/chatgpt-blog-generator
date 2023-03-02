@@ -15,6 +15,11 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 # Our Host URL should not be prepended with "https" nor should it have a trailing slash.
 os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
 os.environ["STABILITY_KEY"] = os.getenv("STABILITY_KEY")
+# chatgpt api
+CHATGPT_SESSION_TOKEN = os.getenv("CHATGPT_TOKEN")
+# print(CHATGPT_SESSION_TOKEN)
+session_token = CHATGPT_SESSION_TOKEN  # `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
+api = ChatGPT(session_token)  # auth with session token
 
 def generate_image(cfg:dict)-> None:
     prompt = cfg['imageArgs']['prompt']
@@ -55,18 +60,18 @@ def generate_frontmatter(cfg: dict)-> None:
                 f.write(f'{key}:\n')
                 for k, v in value.items():
                     if k in ['text_representation']:
-                        f.write(f'{k}:\n')
+                        f.write(f'\t{k}:\n')
                         for k2, v2 in v.items():
-                            f.write(f' {k2}: {v2}\n')
+                            f.write(f'\t\t{k2}: {v2}\n')
                         continue
-                    f.write(f'  {k}: {v}\n')
+                    f.write(f'\t{k}: {v}\n')
                 continue
             f.write(f'{key}: {value}\n')
         f.write('---\n')
         # write body
     pass
 
-def use_programming_language(cfg: dict, section_text: str, language: str = None)-> None:
+def use_programming_language(cfg: dict, section_text: str, language: str = None)-> str:
     # get programming language
     programming_language = language or cfg['programmingLanguage']
     # use regex to find plain ``` and replace with ```programming_language
@@ -110,81 +115,94 @@ def try_chatgpt_response(text: str):
             return resp
         except Exception as e:
             attempts += 1
-            time.sleep(3)
+            time.sleep(5)
             if attempts == 3:
                 raise e
     raise Exception("Failed to get response from ChatGPT")
-def generate_body(cfg: dict)-> None:
-    # read CHATGPT_TOKEN from os
-    CHATGPT_SESSION_TOKEN = os.getenv("CHATGPT_TOKEN")
-    # print(CHATGPT_SESSION_TOKEN)
-    session_token = CHATGPT_SESSION_TOKEN  # `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
-    api = ChatGPT(session_token)  # auth with session token
+
+
+def generate_section(cfg: dict)-> None:
     output_file = cfg['outputFile']
     sections = cfg['sections']
+    for section in sections:
+        # check if str or dict
+        if isinstance(section, str):
+            resp = try_chatgpt_response(section)
+            clean_message = use_programming_language(cfg, resp['message'])
+        else:
+            # assume dict
+            # type and src from dict
+            input_type = section['type']
+            src = section['src']
+            language = section.get('language', None)
+            if input_type == 'file':
+                # read src from file
+                with open(src, 'r') as src_file:
+                    src_text = src_file.read()
+                # check for lines argument
+                if 'lines' in section:
+                    lines = section['lines']
+                    # make sure lines is a list
+                    if isinstance(lines, list):
+                        # get lines from src_text
+                        src_lines = src_text.split('\n')
+                        src_text = "\n".join(src_lines[lines[0]:lines[1]])
+                resp = try_chatgpt_response(src_text)
+                clean_message = resp['message']
+                # write original text
+                programming_language = language or cfg['programmingLanguage']
+                with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
+                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
+                    f.write('\n')
+            if input_type == 'url':
+                # load from url
+                src_text = requests.get(src).text
+                if 'lines' in section:
+                    lines = section['lines']
+                    # make sure lines is a list
+                    if isinstance(lines, list):
+                        # get lines from src_text
+                        src_lines = src_text.split('\n')
+                        src_text = "\n".join(src_lines[lines[0]:lines[1]])
+                # check if file should be saved to file
+                if 'saveFile' in section:
+                    save_file = section['saveFile']
+                    if save_file:
+                        # save file to src
+                        with open(src, 'w') as src_file:
+                            src_file.write(src_text)
+                resp = try_chatgpt_response(src_text)
+                clean_message = resp['message']
+                # write original text
+                programming_language = language or cfg['programmingLanguage']
+                with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
+                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
+                    f.write('\n')
+            if input_type == 'raw':
+                clean_message = src
+        # remove programmingLanguage` from clean_message
+        clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
+        yield clean_message
+    
+def generate_body(cfg: dict)-> None:
+    # read CHATGPT_TOKEN from os
+    output_file = cfg['outputFile']
     # send seed prompt if available
     if 'seedPrompt' in cfg:
         seed_prompt = cfg['seedPrompt']
         resp = api.send_message(seed_prompt)
         time.sleep(3)
-    with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
-        for section in sections:
-            # check if str or dict
-            if isinstance(section, str):
-                resp = api.send_message(section)
-                clean_message = use_programming_language(cfg, resp['message'])
-            else:
-                # assume dict
-                # type and src from dict
-                input_type = section['type']
-                src = section['src']
-                language = section.get('language', None)
-                if input_type == 'file':
-                    # read src from file
-                    with open(src, 'r') as src_file:
-                        src_text = src_file.read()
-                    # check for lines argument
-                    if 'lines' in section:
-                        lines = section['lines']
-                        # make sure lines is a list
-                        if isinstance(lines, list):
-                            # get lines from src_text
-                            src_lines = src_text.split('\n')
-                            src_text = "\n".join(src_lines[lines[0]:lines[1]])
-                    resp = api.send_message(src_text)
-                    clean_message = resp['message']
-                    # write original text
-                    programming_language = language or cfg['programmingLanguage'] 
-                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
-                    f.write('\n')
-                if input_type == 'url':
-                    # load from url
-                    src_text = requests.get(src).text
-                    if 'lines' in section:
-                        lines = section['lines']
-                        # make sure lines is a list
-                        if isinstance(lines, list):
-                            # get lines from src_text
-                            src_lines = src_text.split('\n')
-                            src_text = "\n".join(src_lines[lines[0]:lines[1]])
-                    # check if file should be saved to file
-                    if 'saveFile' in section:
-                        save_file = section['saveFile']
-                        if save_file:
-                            # save file to src
-                            with open(src, 'w') as src_file:
-                                src_file.write(src_text)
-                    resp = api.send_message(src_text)
-                    clean_message = resp['message']
-                    # write original text
-                    programming_language = language or cfg['programmingLanguage']
-                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
-                    f.write('\n')
-                if input_type == 'raw':
-                    clean_message = src
-            f.write(clean_message)
-            f.write('\n')
+    for output in generate_section(cfg):
+        try:
+            with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
+                f.write(output)
+                f.write('\n')
             time.sleep(6)
+        except Exception as e:
+            print("FAILED TO OUTPUT SECTION")
+            print(e)
+            time.sleep(3)
+            pass
         # output references
         try:
             references = cfg['references']
@@ -202,7 +220,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/chapter6_intro_to_python.yml')
+    parser.add_argument('--file', type=str, default='posts/chapter8_intro_to_python.yml')
     args = parser.parse_args()
 
     image_root = ""

@@ -293,5 +293,3 @@ person = Person(name="Alice", age=25)
 person.say_hello() # prints "Hello, my name is Alice and I am 25 years old."
 ```
 In this example, we create a `Person` object called `person` with a `name` attribute set to "Alice" and an `age` attribute set to 25. We then call the `person` object's `say_hello` method, which prints "Hello, my name is Alice and I am 25 years old."
-
-
