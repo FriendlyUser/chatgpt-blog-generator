@@ -182,6 +182,8 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
+        for phrase in ["bash", "javascript", "makefile", "dotnet"]:
+            clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     
 def generate_body(cfg: dict)-> None:
@@ -220,7 +222,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/chapter8_intro_to_python.yml')
+    parser.add_argument('--file', type=str, default='posts/chapter10_ds_in_python.yml')
     args = parser.parse_args()
 
     image_root = ""
