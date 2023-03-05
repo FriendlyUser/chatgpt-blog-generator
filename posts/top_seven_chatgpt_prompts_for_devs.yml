@@ -6,10 +6,10 @@ frontMatter:
   tags: ["php", "css", "react"]
   title: "Seven Useful Chatgpt prompts for Software Developers."
   description: "As a software developer using chatgpt can save you lots of time.."
-  pubDate: Fri, 30 September 2024
+  pubDate: Fri, 7 October 2024
   layout: '"@/templates/BasePost.astro"'
   imgSrc: "/imgs/2023/test.png"
-outputFile: "making_wordpress_theme.md"
+outputFile: "seven_chatgpt_prompts.md"
 seedPrompt: "Topic: Top Seven Chatgpt prompts
 
 For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
@@ -17,7 +17,7 @@ postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/php"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
 references: ["https://github.com/FriendlyUser/bluey-wordpress-theme"]
-programmingLanguage: "php"
+programmingLanguage: "js"
 sections:
 - What is prompt engineering and why is it useful?
 

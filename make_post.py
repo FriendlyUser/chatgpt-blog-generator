@@ -223,7 +223,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/intro_to_making_a_wordpress_theme.yml')
+    parser.add_argument('--file', type=str, default='posts/top_seven_chatgpt_prompts_for_devs.yml')
     args = parser.parse_args()
 
     image_root = ""
