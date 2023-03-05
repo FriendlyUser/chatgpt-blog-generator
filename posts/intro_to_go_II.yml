@@ -1,0 +1,26 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Rocketship in the sky with a rainbow"
+frontMatter:
+  tags: ["go"]
+  title: "History of golang."
+  description: "Covering reasons to use golang and why it's a good choice for your next project."
+  pubDate: Fri, 21 October 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+outputFile: "chapter_2_why_golang.md"
+seedPrompt: "chapter 2: Introduction to Golang Programming Language
+
+For the above chapter in a introductory book geared towards beginners, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/go"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: ["https://github.com/FriendlyUser/bluey-wordpress-theme"]
+programmingLanguage: "go"
+sections:
+- Basic Concepts of Go Programming
+- A. Variables and Constants
+- B. Data Types
+- C. Operators
+- D. Control Structures

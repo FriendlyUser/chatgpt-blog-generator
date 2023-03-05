@@ -1,0 +1,34 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Rocketship in the sky with a rainbow"
+frontMatter:
+  tags: ["go"]
+  title: "History of golang."
+  description: "Covering reasons to use golang and why it's a good choice for your next project."
+  pubDate: Fri, 14 October 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+outputFile: "chapter_1_why_golang.md"
+seedPrompt: "chapter 1: Introduction to Golang Programming Language
+
+For the above chapter in a introductory book geared towards beginners, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/php"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: ["https://github.com/FriendlyUser/bluey-wordpress-theme"]
+programmingLanguage: "js"
+sections:
+- What is Go?
+- History and Development of Go
+- Features and Advantages of Go
+- Installing Go on Windows, Mac, and Linux
+- type: raw
+  src: "One of the key advantages of Go over many other programming languages is its performance. Go is designed to be a fast and efficient language, with a focus on concurrent and parallel computing.
+
+Compared to interpreted languages such as Python and Ruby, Go is much faster. This is because Go is a compiled language, meaning that the code is translated into machine code before it is executed, resulting in faster execution times. In addition, Go's garbage collector is designed to be more efficient than those of other languages, resulting in less memory usage and faster performance.
+
+Compared to other compiled languages such as C and C++, Go is generally slower. However, Go is often faster than Java and other managed languages, especially when it comes to concurrent and parallel computing.
+
+Overall, Go's performance is highly competitive with other programming languages, and its focus on concurrency and parallelism make it an attractive choice for many applications that require high performance."
+- "Tasks golang would be good for"
