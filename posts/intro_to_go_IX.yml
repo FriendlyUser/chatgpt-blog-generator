@@ -1,0 +1,24 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "Rocketship in the sky with a rainbow"
+frontMatter:
+  tags: ["go"]
+  title: "File Handling and Error Handling in Go."
+  description: "File Handling and Error Handling in Go."
+  pubDate: Fri, 21 October 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+outputFile: "chapter_9_why_golang.md"
+seedPrompt: "chapter 9: Web Development in Go
+
+For the above chapter in a introductory book geared towards beginners, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/go"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: ["https://github.com/FriendlyUser/bluey-wordpress-theme"]
+programmingLanguage: "go"
+sections:
+- IX. Web Development in Go
+- A. HTTP Package
+- B. Web Applications

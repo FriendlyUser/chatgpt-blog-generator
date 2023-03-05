@@ -6,6 +6,10 @@ pubDate: Fri, 21 October 2024
 layout: "@/templates/BasePost.astro"
 imgSrc: /imgs/2023/454515535.png
 ---
+
+
+# Chapter 2 Introduction to Go
+
 Go is an open-source, statically typed, compiled programming language that is designed for simplicity and efficiency. Go was created at Google in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson, and was officially released in 2009.
 
 Go's design is influenced by C and its syntax is similar to C, making it easy for C programmers to learn Go. However, Go includes modern language features, such as garbage collection, concurrent programming, and memory safety. These features make Go a popular choice for building high-performance, scalable, and distributed systems.
@@ -47,13 +51,13 @@ A variable is a named storage location that holds a value of a specific type. In
 
 
 ```go
-java`var message string = "Hello, World!"
+var message string = "Hello, World!"
 ```
 In this example, we declare a variable named `message` of type `string` and assign it the value `"Hello, World!"`. We can also declare multiple variables in a single statement, like this:
 
 
 ```go
-java`var x, y int = 10, 20
+var x, y int = 10, 20
 ```
 In this example, we declare two variables `x` and `y` of type `int` and assign them the values `10` and `20`, respectively.
 
@@ -114,7 +118,7 @@ Here's an example of declaring variables of these types:
 
 
 ```go
-java`var x int = 10
+var x int = 10
 var y uint = 20
 var z float32 = 3.14
 ```
@@ -124,7 +128,7 @@ The `bool` data type represents a boolean value, which can be either `true` or `
 
 
 ```go
-java`var a bool = true
+var a bool = true
 var b bool = false
 ```
 ### String Type
@@ -133,7 +137,7 @@ The `string` data type represents a sequence of characters. Strings are immutabl
 
 
 ```go
-java`var message string = "Hello, World!"
+var message string = "Hello, World!"
 ```
 ### Other Types
 
@@ -171,7 +175,7 @@ Here's an example:
 
 
 ```go
-java`var x int = 10
+var x int = 10
 var y int = 5
 var z int = x + y // z will be 15
 ```
@@ -190,7 +194,7 @@ Here's an example:
 
 
 ```go
-java`var x int = 10
+var x int = 10
 var y int = 5
 var result bool = x > y // result will be true
 ```
@@ -206,7 +210,7 @@ Here's an example:
 
 
 ```go
-java`var x bool = true
+var x bool = true
 var y bool = false
 var result bool = x && y // result will be false
 ```
@@ -225,7 +229,7 @@ Here's an example:
 
 
 ```go
-java`var x int = 10
+var x int = 10
 x += 5 // x will be 15
 ```
 ### Bitwise Operators
@@ -242,7 +246,7 @@ Here's an example:
 
 
 ```go
-java`var x uint8 = 0b00001010
+var x uint8 = 0b00001010
 var y uint8 = 0b00000101
 var z uint8 = x & y // z will be 0b00000000
 ```
@@ -263,7 +267,7 @@ The if statement is used to execute a block of code if a condition is true. Here
 
 
 ```go
-java`var x int = 10
+var x int = 10
 if x > 5 {
  fmt.Println("x is greater than 5")
 }
@@ -274,7 +278,7 @@ The if-else statement is used to execute a block of code if a condition is true,
 
 
 ```go
-java`var x int = 10
+var x int = 10
 if x > 5 {
  fmt.Println("x is greater than 5")
 } else {
@@ -291,7 +295,7 @@ The for loop is used to execute a block of code a fixed number of times. Here's 
 
 
 ```go
-css`for i := 0; i < 5; i++ {
+for i := 0; i < 5; i++ {
  fmt.Println(i)
 }
 ```
@@ -301,7 +305,7 @@ Go doesn't have a dedicated while loop, but you can simulate one using the for l
 
 
 ```go
-css`var i int = 0
+var i int = 0
 for i < 5 {
  fmt.Println(i)
  i++
@@ -313,7 +317,7 @@ The infinite loop is used to execute a block of code indefinitely. Here's an exa
 
 
 ```go
-python`for {
+for {
  fmt.Println("Hello, world!")
 }
 ```
@@ -323,7 +327,3 @@ You can exit an infinite loop using the `break` statement.
 
 In this section, we discussed the control structures that are available in Go, including conditional statements and looping statements. By using these control structures, you can control the flow of execution of your program and build more complex programs.
 
-
-
-## References
-- https://github.com/FriendlyUser/bluey-wordpress-theme

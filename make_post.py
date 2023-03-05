@@ -223,7 +223,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/intro_to_go_II.yml')
+    parser.add_argument('--file', type=str, default='posts/intro_to_go_III.yml')
     args = parser.parse_args()
 
     image_root = ""

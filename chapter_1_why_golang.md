@@ -6,6 +6,8 @@ pubDate: Fri, 14 October 2024
 layout: "@/templates/BasePost.astro"
 imgSrc: /imgs/2023/4225416985.png
 ---
+
+# Chapter 1 History of golang
 Go, also known as Golang, is an open-source programming language developed by Google in 2007. It is a statically typed language with syntax similar to C and C++ but with added features and improvements.
 
 Go was created with the goal of being simple, efficient, and easy to use. It was designed to make it easier to write software that can take advantage of modern computing architectures, such as multicore processors, while being faster and more reliable than other programming languages.
