@@ -1,0 +1,27 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "car on the road in the forest"
+frontMatter:
+  tags: ["javascript", "css", "react"]
+  title: "Creating a custom wordpress theme."
+  description: "After thoughts of building a lousy wordpress theme."
+  pubDate: Fri, 30 September 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+outputFile: "making_wordpress_theme.md"
+seedPrompt: "Topic: Creating a custom wordpress theme
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/php"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: ["https://github.com/FriendlyUser/bluey-wordpress-theme"]
+programmingLanguage: "php"
+sections:
+- What is wordpress?
+- What is the structure of a wordpress theme?
+- How to create a custom wordpress theme?
+- type: "url"
+  src: "https://raw.githubusercontent.com/FriendlyUser/bluey-wordpress-theme/master/bluey/loopPosts.php"
+- Ways to publish your wordpress theme on the internet

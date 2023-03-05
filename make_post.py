@@ -206,9 +206,10 @@ def generate_body(cfg: dict)-> None:
             time.sleep(3)
             pass
         # output references
-        try:
-            references = cfg['references']
-            if references:
+    try:
+        references = cfg['references']
+        if references:
+            with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
                 f.write('\n')
                 f.write('## References\n')
                 for reference in references:
@@ -216,13 +217,13 @@ def generate_body(cfg: dict)-> None:
                         f.write(f"- [{reference['title']}]({reference['url']})\n")
                     else:
                         f.write(f"- {reference}\n")
-        except Exception as e:
-            print(e)
-            pass
+    except Exception as e:
+        print(e)
+        pass
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/chapter10_ds_in_python.yml')
+    parser.add_argument('--file', type=str, default='posts/intro_to_making_a_wordpress_theme.yml')
     args = parser.parse_args()
 
     image_root = ""

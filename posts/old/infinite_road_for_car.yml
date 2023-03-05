@@ -1,0 +1,33 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "car on the road in the forest"
+frontMatter:
+  tags: ["javascript", "css", "react"]
+  title: "How to create an infinite animation for a car."
+  description: "Using basic css and html to animate a car in react."
+  pubDate: Fri, 30 September 2024
+  layout: '"@/templates/BasePost.astro"'
+  imgSrc: "/imgs/2023/test.png"
+outputFile: "car_animation.md"
+seedPrompt: "Topic: car animation in react using css
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Optimize the post for medium and google seo. Ensure this content is original. Respond with 'confirm' to acknowledge that you understand the prompt."
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/js"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+references: []
+programmingLanguage: "python"
+sections:
+- Why are animations important in web development?
+- type: "file"
+  src: "files/carInfinite.js"
+- type: "file"
+  src: "files/styles.css"
+- type: "raw"
+  src: '<iframe src="https://codesandbox.io/embed/elated-haibt-3e8pph?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="elated-haibt-3e8pph"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>'
