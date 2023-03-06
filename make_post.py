@@ -223,7 +223,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/rank_engineers.yml')
+    parser.add_argument('--file', type=str, default='posts/introduction_to_react_context.yml')
     args = parser.parse_args()
 
     image_root = ""
