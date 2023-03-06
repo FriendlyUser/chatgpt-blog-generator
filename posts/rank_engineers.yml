@@ -1,0 +1,32 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "astronaut landing on the moon cartoon style"
+frontMatter:
+  tags: ["bash"]
+  title: "How to rank software engineers using bash"
+  description: "Using simple bash scripts to rank engineers"
+  pubDate: Fri, 7 November 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "rank_engineers_in_bash.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/python"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Topic: Ranking software engineers using scripts
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/Pirates-Game/tree/master"]
+programmingLanguage: "go"
+sections:
+  - "How do companies rank their software engineers?"
+  - "Why would big companies measure performance with lines of code written and number of commits?"
+
+  - type: "file"
+    src: "files/scripts/count_commits_for_files.sh"
+
+  - type: "file"
+    src: "files/scripts/count_commits.sh"
+
+  - type: "file"
+    src: "files/scripts/count_lines.sh"
