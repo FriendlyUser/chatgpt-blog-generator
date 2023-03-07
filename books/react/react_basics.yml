@@ -13,14 +13,15 @@ outputFile: "chap_2_react.md"
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/react"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
+programmingLanguage: "tsx"
 seedPrompt: "Chapter: React Basics
 
 For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
-
-- JSX syntax and usage
-- Components and props
-- overview of class components and functional components
-- State and lifecycle methods
-- installing react packages using npm or yarn
-- Installing and managing packages in a React application
-- Best practices for package management in a React application
+sections:
+  - JSX syntax and usage
+  - Components and props
+  - overview of class components and functional components
+  - State and lifecycle methods
+  - installing react packages using npm or yarn
+  - Installing and managing packages in a React application
+  - Best practices for package management in a React application

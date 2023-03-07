@@ -4,7 +4,7 @@ genImage: true
 imageArgs:
   prompt: "river in the forest, 4K HD wallpaper"
 frontMatter:
-  tags: ["react", "context"]
+  tags: ["react"]
   title: "Introduction to React"
   description: "Explaining how to use react to create a website"
   pubDate: Fri, 29 November 2024
@@ -13,10 +13,10 @@ outputFile: "chap_1_react.md"
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/react"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
+programmingLanguage: "tsx"
 seedPrompt: "Chapter: Introduction to React
 
 For the above chapter in a technical book, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
-references: ["https://github.com/FriendlyUser/Pirates-Game/tree/master"]
 programmingLanguage: "jsx"
 sections:
   - "Why is front-end development introduction?"

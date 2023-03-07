@@ -49,14 +49,14 @@ Here's an example of a fade-in animation using the `opacity` property:
 
 
 ```jsx
-jsx`import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 import './styles.css';
 ```
 3. Use the `useInView` hook to track the visibility of your target element:
 
 
 ```jsx
-jsx`function MyComponent() {
+function MyComponent() {
  const { ref, inView } = useInView();
 
  return (
@@ -70,7 +70,7 @@ jsx`function MyComponent() {
 
 
 ```jsx
-css`.fade-in {
+.fade-in {
  opacity: 0;
  transition: opacity 1s ease-in-out;
 }
@@ -83,7 +83,7 @@ css`.fade-in {
 
 
 ```jsx
-jsx`function MyComponent() {
+function MyComponent() {
  const { ref, inView } = useInView();
 
  return (

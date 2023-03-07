@@ -9,16 +9,16 @@ frontMatter:
   description: "How to make react class components"
   pubDate: Fri, 29 November 2024
   layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "tsx"
 outputFile: "chap_4_react.md"
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/react"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
 seedPrompt: "Chapter: Building a React Application
-
 For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
-
-- Planning and designing a React application
-- Creating and managing components
-- Handling user input and events
-- Managing state and lifecycle methods using a state management library
-- responsive design and styling with css
+sections:
+  - Planning and designing a React application
+  - Creating and managing components
+  - Handling user input and events
+  - Managing state and lifecycle methods using a state management library
+  - responsive design and styling with css
