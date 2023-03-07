@@ -1,0 +1,25 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "river in the forest, 4K HD wallpaper"
+frontMatter:
+  tags: ["react"]
+  title: "React Functional Components"
+  description: "How to make react class components"
+  pubDate: Fri, 29 November 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "chap_5_react.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: React Functional Components
+
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+
+- What is functional programming
+- Creating and managing functional components
+- React hooks, how and why are they useful
+- Handling user input and events
+- implement functional components in typescript
+- input form with functional components

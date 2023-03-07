@@ -1,0 +1,31 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "river in the forest, 4K HD wallpaper"
+frontMatter:
+  tags: ["react", "bootstrap", "material"]
+  title: "Using UI Frameworks with React"
+  description: "How to use UI frameworks with react"
+  pubDate: Fri, 29 November 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "chap_7_react.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: UI Frameworks with React including bootstrap 5 and material-ui
+
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+
+- What is bootstrap 5
+- Getting started with reactstrap
+- Core concepts in bootstraps
+- Make a basic landing page component using reactstrap
+- Using built in classes to style components
+- Using scss mixins to style components and implement responsive design
+
+- What is material ui
+- Getting started with material ui
+- Core concepts in material ui
+- Make a basic landing page component using material ui
+- Styling with material ui with js in css
