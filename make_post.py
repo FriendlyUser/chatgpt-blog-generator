@@ -223,7 +223,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/react/ui_frameworks.yml')
+    parser.add_argument('--file', type=str, default='books/csharp/introduction_to_csharp.yml')
     args = parser.parse_args()
 
     image_root = ""
