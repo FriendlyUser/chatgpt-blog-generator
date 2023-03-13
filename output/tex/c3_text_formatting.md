@@ -72,7 +72,7 @@ And to create a paragraph of left-aligned, italicized, small text, you can use t
 
 
 ```latex
-sql`\begin{flushleft}
+\begin{flushleft}
 \textit{\small This is a left-aligned paragraph of italicized, small text.}
 \end{flushleft}
 ```
@@ -136,7 +136,7 @@ The `itemize` environment is used to create bulleted lists, while the `enumerate
 
 
 ```latex
-sql`\begin{itemize}
+\begin{itemize}
 \item This is the first item in the list.
 \item This is the second item in the list.
 \end{itemize}
@@ -152,7 +152,7 @@ The `verbatim` environment is used to typeset text exactly as it appears in the 
 
 
 ```latex
-ruby`\begin{verbatim}
+\begin{verbatim}
 This is a verbatim environment.
 \end{verbatim}
 ```
@@ -219,13 +219,13 @@ The `\large` command is used to make text larger than the default size. This is 
 
 
 ```latex
-sql`This text is not {\large large}.
+This text is not {\large large}.
 ```
 Note that these commands only affect the text enclosed in their curly braces. If you want to apply a font size to an entire paragraph, you can use an environment like `\begin{tiny}...\end{tiny}` or `\begin{Large}...\end{Large}`. For example:
 
 
 ```latex
-sql`\begin{Large}
+\begin{Large}
 This entire paragraph will be displayed in a large font.
 \end{Large}
 ```
@@ -262,7 +262,7 @@ Note that these commands only affect the text that follows them. If you want to 
 
 
 ```latex
-ruby`\begin{center}
+\begin{center}
 This entire paragraph will be centered.
 \end{center}
 ```
@@ -278,7 +278,7 @@ The `itemize` environment is used to create an unordered list, or a list of item
 
 
 ```latex
-ruby`\begin{itemize}
+\begin{itemize}
  \item Item 1
  \item Item 2
  \item Item 3
@@ -312,7 +312,7 @@ Note that you can also nest lists inside each other. For example:
 
 
 ```latex
-ruby`\begin{enumerate}
+\begin{enumerate}
  \item Item 1
  \item Item 2
  \begin{itemize}
@@ -400,7 +400,7 @@ The `tabular` environment is used to create tables with rows and columns of data
 
 
 ```latex
-sql`\begin{tabular}{lcr}
+\begin{tabular}{lcr}
  \hline
  Left & Center & Right \\
  \hline
@@ -481,7 +481,7 @@ This sets the main font to "MyFont-Regular" and specifies the bold, italic, and 
 
 
 ```latex
-sql`\documentclass{article}
+\documentclass{article}
 \usepackage{fontspec}
 
 \setmainfont{MyFont}
@@ -503,7 +503,7 @@ Suppose you want to format all instances of a certain term in your document in b
 
 
 ```latex
-less`\newcommand{\myterm}[1]{\textbf{#1}}
+\newcommand{\myterm}[1]{\textbf{#1}}
 ```
 Here, we define a new command `\myterm` that takes one argument, and formats it in bold using the `\textbf` command.
 
@@ -519,7 +519,7 @@ You can also redefine existing commands using the `\renewcommand` command. For e
 
 
 ```latex
-less`\renewcommand{\section}[1]{\Large\textbf{#1}}
+\renewcommand{\section}[1]{\Large\textbf{#1}}
 ```
 Here, we redefine the `\section` command to use the `\Large` font size and `\textbf` font style.
 

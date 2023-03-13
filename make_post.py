@@ -189,7 +189,7 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
-        for phrase in ["bash", "javascript", "makefile", "dotnet", "css", "python"]:
+        for phrase in ["bash", "javascript", "makefile", "dotnet", "css", "python", "less", "sql", "ruby"]:
             clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     

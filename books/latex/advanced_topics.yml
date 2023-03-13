@@ -10,13 +10,13 @@ frontMatter:
   pubDate: Fri, 14 December 2024
   layout: '"@/templates/BasePost.astro"'
 programmingLanguage: "latex"
-outputFile: "collaborating_on_documents.md"
+outputFile: "advanced_topic_topics.md"
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/tex"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
 seedPrompt: "Chapter: Advanced Topics in LaTeX
 For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
-references: ["https://grandfleet.eu.org", "https://github.com/FriendlyUser/LatexDiagrams/tree/master"]
+references: ["https://ctan.org"]
 sections:
   - type: "raw"
     src: "# Chapter 8: Advanced Topics in LaTeX \n \n ## Introduction to advanced LaTeX topics"

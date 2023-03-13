@@ -8,7 +8,6 @@ imgSrc: /imgs/2023/2062539924.png
 ---
 # Chapter 4: Creating Front and Back Matter with LaTeX 
  
-
 ## Overview of front and back matter in LaTeX
 The front matter of a technical book typically includes elements that come before the main content of the book, such as the title page, copyright information, table of contents, preface, and acknowledgements.
 

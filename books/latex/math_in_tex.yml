@@ -10,7 +10,7 @@ frontMatter:
   pubDate: Fri, 14 December 2024
   layout: '"@/templates/BasePost.astro"'
 programmingLanguage: "latex"
-outputFile: "math_in_tex .md"
+outputFile: "math_in_tex.md"
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/tex"
   imgFolder: "../astro-tech-blog/public/imgs/2023"

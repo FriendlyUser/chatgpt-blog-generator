@@ -8,7 +8,7 @@ imgSrc: /imgs/2023/2291827528.png
 ---
 # Chapter 1: Introduction to LaTeX 
  
- ## What is LaTeX and why use it?
+## What is LaTeX and why use it?
 LaTeX was first developed by Leslie Lamport in the 1980s as a way to simplify the creation of scientific and technical documents. Lamport built on top of Donald Knuth's TeX typesetting system, which was already popular among computer scientists and mathematicians.
 
 LaTeX quickly became popular in academia, particularly in the fields of mathematics, physics, and computer science, due to its ability to handle complex mathematical notation and equations with ease. Today, it remains one of the most widely used document preparation systems for scientific and technical documents.
