@@ -230,7 +230,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/implementing_search_on_webpage.yml')
+    parser.add_argument('--file', type=str, default='books/bash/bash_book.yml')
     args = parser.parse_args()
 
     image_root = ""
