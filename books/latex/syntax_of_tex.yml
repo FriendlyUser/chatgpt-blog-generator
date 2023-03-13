@@ -1,0 +1,40 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["latex"]
+  title: "Latex Syntax"
+  description: "Introduction to latex syntax and how to use it"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "latex"
+outputFile: "syntax_of_tex.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/tex"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: Latex Syntax
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+sections:
+  - type: "raw"
+    src: "# Chapter 2: LaTeX Syntax \n \n ## Overview of LaTeX syntax?"
+  - Explanation of LaTeX commands and how they work
+  - Introduction to the use of curly braces and backslashes
+  - Overview of LaTeX environments and how they work
+  - type: "raw"
+    src: "## Basic LaTeX commands"
+  - Introduction to mathematical symbols and equations
+  - Explanation of how to insert images, tables, and figures
+  - Introduction to creating lists and bullet points
+  - type: "raw"
+    src: "## Advanced LaTeX commands"
+  - Explanation of customizing document layout with packages
+  - Introduction to creating and using macros
+  - Structure of a LaTeX document
+  - How to compile a LaTeX document
+  - Explanation of how LaTeX commands work, including the use of curly braces and backslashes
+  - Introduction to LaTeX environments and how they work
+  - type: "raw"
+    src: "## Document structure"

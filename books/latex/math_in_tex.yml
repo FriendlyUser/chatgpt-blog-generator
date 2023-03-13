@@ -1,0 +1,52 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["latex"]
+  title: "Typesetting Mathematical Equations with LaTeX"
+  description: "Covers the basics of typesetting mathematical equations in LaTeX, including basic and advanced math typesetting and the use of math packages in LaTeX."
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "latex"
+outputFile: "math_in_tex .md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/tex"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: Typesetting Mathematical Equations with LaTeX
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+sections:
+  - type: "raw"
+    src: "# Chapter 5: Typesetting Mathematical Equations with LaTeX \n \n ## Introduction to math typesetting in LaTeX"
+  - Explanation of the benefits of using LaTeX for math typesetting
+  - Overview of the different types of math environments in LaTeX
+  - Introduction to the different math packages and tools available in LaTeX
+  - type: "raw"
+    src: "## Basic math typesetting with LaTeX"
+  - Explanation of the basic syntax for inline and display math environments
+  - Introduction to the different math symbols and operators available in LaTeX
+  - Overview of using LaTeX to create fractions, exponents, and other basic math expressions
+  - type: "raw"
+    src: "## Advanced math typesetting with LaTeX"
+  - Explanation of the syntax for creating more advanced math expressions, such as matrices and integrals
+  - Introduction to using LaTeX to create equations with multiple lines and alignment
+  - Overview of using LaTeX to create custom symbols and operators
+  - type: "raw"
+    src: "## Using math packages in LaTeX"
+  - Explanation of popular math packages, such as amsmath and mathtools
+  - ntroduction to the syntax and commands for using these packages
+  - Overview of the advanced math features provided by these packages, such as aligning equations and typesetting matrices
+  - type: "raw"
+    src: "## Best practices for typesetting math in LaTeX"
+  - Tips for efficient math typesetting with LaTeX
+  - Explanation of common errors and how to troubleshoot them
+  - Tips for maintaining consistency in math formatting and layout
+  - type: "raw"
+    src: "## Using math in documents"
+  - Explanation of how to incorporate math equations into LaTeX documents
+  - Overview of using the equation and align environments to present math equations in a professional manner
+  - Introduction to using cross-referencing commands to refer to equations in text
+  - Explanation of using packages such as mathtools to typeset math within section headings
+

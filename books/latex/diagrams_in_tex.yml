@@ -1,0 +1,109 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["latex"]
+  title: "Getting started with tikz"
+  description: "Creation of diagrams with LaTeX, including basic diagrams with TikZ, advanced diagrams with PGFPlots,."
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "latex"
+outputFile: "collaborating_on_documents.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/tex"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: Getting started with tikz
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://grandfleet.eu.org", "https://github.com/FriendlyUser/LatexDiagrams/tree/master"]
+sections:
+  - type: "raw"
+    src: "# Chapter 7: Creating Diagrams with LaTeX \n \n ## Overview of creating diagrams with LaTeX"
+  - Explanation of the different types of diagrams that can be created with LaTeX
+  - Introduction to the different packages and tools available for creating diagrams
+  - cover the standalone package and how to convert the images from pdf to png using imagemagick
+  - type: "raw"
+    src: "## Basic diagrams with TikZ"
+  - Explanation of the TikZ package for creating basic diagrams
+  - Introduction to the TikZ syntax and commands for creating shapes, lines, and arrows
+  - Overview of using TikZ to create flowcharts, mindmaps, and other basic diagrams
+  - type: "raw"
+    src: "## Circuit Diagrams with Circuitikz"
+  - Explanation of the Circuitikz package for creating circuit diagrams
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/SuperPosition.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/SuperPosition_description.txt"
+  - type: "raw"
+    src: "![Circuitikz](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/SuperPosition.png)]"
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/NodeAnalysis.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/NodeAnalysis_description.txt"
+  - type: "raw"
+    src: "![Circuitikz](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/NodeAnalysis.png)]"
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/TheveinEquivalent.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/TheveinEquivalent_description.txt"
+  - type: "raw"
+    src: "![TheveinEquivalent](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/Circuits/TheveinEquivalent.png)]"
+  - type: "raw"
+    src: "## Control Systems with Tikz"
+  - Explain how to use Tikz to create block diagrams
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/BlockDiagramex2.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/BlockDiagramex2_description.txt"
+  - type: "raw"
+    src: "![Block](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/BlockDiagramex2.png)]"
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/Q2Diagram614.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/Q2Diagram614_description.txt"
+  - type: "raw"
+    src: "![Block](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/ControlSystems/CSI/Q2Diagram614.png)]"
+  - Benefits of tikz to create control systems diagrams
+  - type: "raw"
+    src: "## Diagrams with PGFPlots"
+  - Explanation of the PGFPlots package for creating advanced diagrams such as graphs and plots
+  - Introduction to the PGFPlots syntax and commands for creating various types of graphs and plots
+  - Overview of using PGFPlots to create bar graphs, line graphs, scatter plots, and other advanced diagrams
+  - Overview of using Git to track changes and collaborate with other authors
+  - type: "raw"
+    src: "## Best practices for creating diagrams with LaTeX"
+  - Tips for efficient diagram creation with TikZ and PGFPlots
+  - Explanation of common errors and how to troubleshoot them
+  - Tips for maintaining consistency in diagram formatting and layout
+  - type: "url"
+    noApi: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/software/vscodeArch.tex"
+  - type: "url"
+    noApi: true
+    noCode: true
+    src: "https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/software/vscodeArch_description.txt"
+  - type: "raw"
+    src: "![Block](https://raw.githubusercontent.com/FriendlyUser/LatexDiagrams/master/software/vscodeArch.png)]"
+  - Benefits of tikz to create control systems diagrams
+  - type: "raw"
+    src: "## Using diagrams in documents"
+  - Explanation of how to incorporate diagrams into LaTeX documents
+  - Overview of using figures and captions to present diagrams in a professional manner
+  - Introduction to using cross-referencing commands to refer to diagrams in text
+  - Explanation of using packages such as subfig and wrapfig for placing multiple diagrams in a single figure

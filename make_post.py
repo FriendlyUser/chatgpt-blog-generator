@@ -171,13 +171,20 @@ def generate_section(cfg: dict)-> None:
                         # save file to src
                         with open(src, 'w') as src_file:
                             src_file.write(src_text)
-                resp = try_chatgpt_response(src_text)
-                clean_message = resp['message']
+
+                # check for noApi argument
+                if 'noApi' not in section:
+                    resp = try_chatgpt_response(src_text)
+                    clean_message = resp['message']
+                else:
+                    clean_message = src_text
                 # write original text
-                programming_language = language or cfg['programmingLanguage']
-                with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
-                    f.write(f"```{programming_language} \n {src_text} \n ```\n")
-                    f.write('\n')
+
+                if 'noCode' not in section:
+                    programming_language = language or cfg['programmingLanguage']
+                    with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
+                        f.write(f"```{programming_language} \n {src_text} \n ```\n")
+                        f.write('\n')
             if input_type == 'raw':
                 clean_message = src
         # remove programmingLanguage` from clean_message

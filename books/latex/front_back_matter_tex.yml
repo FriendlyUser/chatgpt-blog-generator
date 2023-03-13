@@ -1,0 +1,63 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["latex"]
+  title: "Creating Front and Back Matter with LaTeX"
+  description: "Creating Front and Back Matter with LaTeX is a comprehensive guide to using LaTeX for creating professional-looking front and back matter in documents. The article provides an overview of the importance of front and back matter and the different elements typically included in these sections."
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "latex"
+outputFile: "front_back_matter_tex.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/tex"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Chapter: Creating Front and Back Matter with LaTeX
+For the above chapter in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: []
+sections:
+  - type: "raw"
+    src: "# Chapter 4: Creating Front and Back Matter with LaTeX \n \n"
+  - type: "raw"
+    src: "## Overview of front and back matter in LaTeX"
+  - Explanation of the purpose and contents of front matter
+  - Introduction to the purpose and contents of back matter
+  - Overview of common front and back matter elements in different document types
+  - type: "raw"
+    src: "## Front matter in LaTeX"
+  - Explanation of the document preamble and its contents
+  - Introduction to title pages, abstracts, and dedications
+  - Explanation of using the maketitle command to create a title page
+  - Introduction to using the abstract and dedication environments
+  - Overview of table of contents and list of figures/tables creation
+  - type: "raw"
+    src: "## Back matter in LaTeX"
+  - Explanation of the document ending commands and their placement
+  - Introduction to using the bibliography and citation commands
+  - Explanation of creating a glossary or an index
+  - Overview of creating an appendix
+  - type: "raw"
+    src: "## Bibliographies with BibTeX"
+  - Overview of the BibTeX file format and syntax
+  - Introduction to creating and using BibTeX databases
+  - Explanation of how to cite references in LaTeX documents
+  - Introduction to using the natbib package for more advanced citation styles
+  - type: "raw"
+    src: "## Glossaries and indexes"
+  - Glossaries and indexes
+  - Explanation of the benefits of using glossaries and indexes in LaTeX
+  - Introduction to creating and using glossaries with the glossaries package
+  - Explanation of how to create and use indexes with the makeindex tool
+  - type: "raw"
+    src: "## Advanced topics in front and back matter"
+  - Explanation of using the memoir class for more complex documents
+  - Introduction to customizing the table of contents with the tocloft package
+  - Explanation of using the hyperref package to create clickable links in the table of contents
+  - Introduction to creating a list of abbreviations using the nomencl package
+  - type: "raw"
+    src: "## Best practices for creating front and back matter with LaTeX"
+  - Tips for efficient front and back matter editing
+  - Explanation of common errors and how to troubleshoot them
+  - Tips for maintaining consistency in front and back matter formatting and layout"
