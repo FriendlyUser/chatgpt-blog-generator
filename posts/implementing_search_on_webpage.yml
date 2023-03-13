@@ -1,0 +1,27 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "river in the forest, 4K HD wallpaper"
+frontMatter:
+  tags: ["react", "context"]
+  title: "Options to implement search on your website"
+  description: "Explaining the use of react context to manage state"
+  pubDate: Fri, 29 November 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "react_context.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Topic: Options to implement search on your website
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/Pirates-Game/tree/master"]
+programmingLanguage: "jsx"
+sections:
+
+  - "What is algolia search? How can I add it to my website"
+  - "Custom search with react and fuse.js"
+  - "Using google search on your site"
+  - "Adding search using php."
+  - "Adding search using pagefind. This requires a static site bundle to be generated and uploaded to a server. Althought this package was made in 2022, please write about it and how it can benefit you, but does not work in development mode."
