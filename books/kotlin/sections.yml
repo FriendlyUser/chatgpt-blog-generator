@@ -1,0 +1,116 @@
+sections:
+- src: "raw"
+  type: "# Chapter 1: Introduction to Kotlin"
+  subsections:
+  - What is Kotlin and why use it?
+  - Kotlin vs Java
+  - Setting up the development environment
+  - Hello World in Kotlin
+
+- src: "raw"
+  type: "# Chapter 2: Basic Syntax and Data Types"
+  subsections:
+  - Variables and constants
+  - Basic data types (int, double, Boolean, etc.)
+  - Type inference and type casting
+  - Strings and string templates
+  - Basic operators
+
+- src: "raw"
+  type: "# Chapter 3: Control Flow"
+  subsections:
+  - Conditional statements (if, when)
+  - Looping (for, while)
+  - Break and continue statements
+  - Return statements
+
+- src: "raw"
+  type: "# Chapter 4: Functions and Lambdas"
+  subsections:
+  - Defining and calling functions
+  - Parameters and return types
+  - Lambda expressions
+  - Function types
+
+- src: "raw"
+  type: "# Chapter 5: Collections and Data Structures"
+  subsections:
+  - Arrays and lists
+  - Maps and sets
+  - Iterating over collections
+  - Manipulating collections
+  - Nullable types
+
+- src: "raw"
+  type: "# Chapter 6: Object-Oriented Programming"
+  subsections:
+  - Classes and objects
+  - Properties and fields
+  - Methods and constructors
+  - Inheritance
+  - Polymorphism
+
+- src: "raw"
+  type: "# Chapter 7: Interfaces and Abstract Classes"
+  subsections:
+  - Interfaces and implementations
+  - Abstract classes and inheritance
+  - Multiple inheritance using interfaces
+  - Overriding and implementing methods
+
+- src: "raw"
+  type: "# Chapter 8: Generics and Type Constraints"
+  subsections:
+  - Introduction to generics
+  - Type constraints
+  - Type variance
+  - Reified type parameters
+
+- src: "raw"
+  type: "# Chapter 9: Exception Handling"
+  subsections:
+  - Handling exceptions with try-catch
+  - Throwing exceptions
+  - Creating custom exceptions
+  - Using the finally block
+
+- src: "raw"
+  type: "# Chapter 10: File I/O and Streams"
+  subsections:
+  - Reading and writing files
+  - Reading and writing streams
+  - Serialization and deserialization
+  - Working with JSON
+
+- src: "raw"
+  type: "# Chapter 11: Coroutines"
+  subsections:
+  - Asynchronous programming with coroutines
+  - Coroutine builders
+  - Suspending functions
+  - Coroutine scopes
+  - Exception handling with coroutines
+
+- src: "raw"
+  type: "# Chapter 12: Advanced Topics in Kotlin"
+  subsections:
+  - Reflection and annotations
+  - Destructuring declarations
+  - Sealed classes
+  - Type aliases
+  - Operator overloading
+
+- src: "raw"
+  type: "# Chapter 13: Kotlin in Practice"
+  subsections:
+  - Building Android apps with Kotlin
+  - Web development with Kotlin
+  - Building server-side applications with Kotlin
+  - Using Kotlin with popular frameworks (Spring, Ktor, etc.)
+  - Best practices for using Kotlin in production
+
+- src: "raw"
+  type: "# Conclusion"
+  subsections:
+  - Recap of what has been covered in the book
+  - Next steps for learning Kotlin

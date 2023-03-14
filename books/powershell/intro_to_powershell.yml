@@ -1,0 +1,122 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["bash"]
+  title: "Automation with Powershell"
+  description: "Getting started with powershell"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "powershell"
+outputFile: "powershell_2.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Automation with Powershell. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Introduction to PowerShell"
+  # - What is PowerShell and why use it?
+  # - Overview of PowerShell
+  # - Benefits of using PowerShell
+  # - Comparison of PowerShell to other scripting languages
+  # - Setting up PowerShell on Windows
+
+  # - type: "raw"
+  #   src: "# Chapter 2: PowerShell Basics"
+  # - Understanding cmdlets, aliases, and functions
+  # - Working with variables and data types
+  # - Using operators and expressions
+  # - "Control flow statements: If-else, loops, and switches"
+
+  - type: "raw"
+    src: "# Chapter 3: Working with Files and Folders"
+  # - Navigating the file system
+  # - Creating, deleting, copying, and moving files and folders
+  - Modifying file attributes and permissions
+  - Handling errors and exceptions
+
+  - type: "raw"
+    src: "# Chapter 4: Managing System Processes and Services"
+  - Getting process information
+  - Starting, stopping, and restarting services
+  - Killing processes
+  - Working with scheduled tasks
+
+  - type: "raw"
+    src: "# Chapter 5: Managing Active Directory"
+  - Introduction to Active Directory
+  - Working with users, groups, and computers
+  - Managing permissions and access control
+  - Creating and managing Organizational Units (OUs)
+
+  - type: "raw"
+    src: "# Chapter 6: Managing Network Configuration"
+  - Working with network adapters
+  - Configuring IP addresses and DNS settings
+  - Checking network connectivity
+  - Troubleshooting network issues
+
+  - type: "raw"
+    src: "# Chapter 7: Working with Registry and Windows Management Instrumentation (WMI)"
+  - Understanding the Windows Registry
+  - Reading and modifying registry keys and values
+  - Introduction to WMI
+  - Querying WMI classes and objects
+
+  - type: "raw"
+    src: "# Chapter 8: Managing Exchange Server with PowerShell"
+  - Introduction to Exchange Server
+  - Using PowerShell for Exchange Server administration
+  - Creating and managing mailboxes, distribution lists, and contacts
+  - Managing Exchange Server permissions and policies
+
+  - type: "raw"
+    src: "# Chapter 9: Managing SharePoint with PowerShell"
+  - Introduction to SharePoint Server
+  - Using PowerShell for SharePoint administration
+  - Managing site collections, sites, and lists
+  - Configuring SharePoint permissions and workflows
+
+  - type: "raw"
+    src: "# Chapter 10: Managing Azure with PowerShell"
+  - Introduction to Microsoft Azure
+  - Using PowerShell for Azure administration
+  - Creating and managing virtual machines, storage accounts, and databases
+  - Managing Azure subscriptions and resources
+
+  - type: "raw"
+    src: "# Chapter 11: Creating PowerShell Scripts"
+  - Best practices for writing PowerShell scripts
+  - Debugging and troubleshooting scripts
+  - Creating reusable functions and modules
+  - Managing script execution policies
+
+  - type: "raw"
+    src: "# Chapter 12: Automating Windows with PowerShell"
+  - Introduction to Windows automation
+  - Using PowerShell to automate routine tasks
+  - Building workflows and scripts for automated processes
+  - Best practices for managing automated processes
+
+  - type: "raw"
+    src: "# Chapter 13: Arrays"
+  - Understanding arrays in PowerShell
+  - Creating and managing arrays
+  - Working with multidimensional arrays
+  - Using arrays for data processing
+
+  - type: "raw"
+    src: "# Chapter 14: Functions and Arguments"
+  - Defining and calling functions in PowerShell
+  - Understanding function parameters and arguments
+  - Creating advanced functions with parameters, validation, and help messages
+  - Using functions for code reuse and modularity
+
+  - type: "raw"
+    src: "# Chapter 15: Regular Expressions"
+  - Introduction to regular expressions
+  - Understanding regex syntax and operators
+  - Using regex with PowerShell cmdlets
