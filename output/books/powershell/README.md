@@ -30,3 +30,6 @@ sections:
   src: "# Chapter 1: Introduction to PowerShell"
 - Overview of PowerShell?
 ```
+
+
+pandoc -f markdown -t html --standalone --toc --toc-depth=3 --css=output/tex/styles.css output/books/powershell/powershell.md -o output_file.html

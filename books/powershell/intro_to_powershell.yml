@@ -14,7 +14,7 @@ references: []
 postOutput:
   folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
-seedPrompt: "Title: Automation with Powershell. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+seedPrompt: "Title: Introduction to Powershell. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
 sections:
   # - type: "raw"
   #   src: "# Chapter 1: Introduction to PowerShell"
@@ -35,42 +35,42 @@ sections:
     src: "# Chapter 3: Working with Files and Folders"
   # - Navigating the file system
   # - Creating, deleting, copying, and moving files and folders
-  - Modifying file attributes and permissions
-  - Handling errors and exceptions
+  # - Modifying file attributes and permissions
+  # - Handling errors and exceptions
 
-  - type: "raw"
-    src: "# Chapter 4: Managing System Processes and Services"
-  - Getting process information
-  - Starting, stopping, and restarting services
-  - Killing processes
-  - Working with scheduled tasks
+  # - type: "raw"
+  #   src: "# Chapter 4: Managing System Processes and Services"
+  # - Getting process information
+  # - Starting, stopping, and restarting services
+  # - Killing processes
+  # - Working with scheduled tasks
 
-  - type: "raw"
-    src: "# Chapter 5: Managing Active Directory"
-  - Introduction to Active Directory
-  - Working with users, groups, and computers
-  - Managing permissions and access control
-  - Creating and managing Organizational Units (OUs)
+  # - type: "raw"
+  #   src: "# Chapter 5: Managing Active Directory"
+  # - Introduction to Active Directory
+  #- Working with users, groups, and computers
+  # - Managing permissions and access control
+  # - Creating and managing Organizational Units (OUs)
 
-  - type: "raw"
-    src: "# Chapter 6: Managing Network Configuration"
-  - Working with network adapters
-  - Configuring IP addresses and DNS settings
-  - Checking network connectivity
-  - Troubleshooting network issues
+  # - type: "raw"
+  #   src: "# Chapter 6: Managing Network Configuration"
+  # - Working with network adapters
+  # - Configuring IP addresses and DNS settings
+  # - Checking network connectivity
+  # - Troubleshooting network issues
 
-  - type: "raw"
-    src: "# Chapter 7: Working with Registry and Windows Management Instrumentation (WMI)"
-  - Understanding the Windows Registry
-  - Reading and modifying registry keys and values
-  - Introduction to WMI
-  - Querying WMI classes and objects
+  # - type: "raw"
+  #   src: "# Chapter 7: Working with Registry and Windows Management Instrumentation (WMI)"
+  # - Understanding the Windows Registry
+  # - Reading and modifying registry keys and values
+  # - Introduction to WMI
+  # - Querying WMI classes and objects
 
   - type: "raw"
     src: "# Chapter 8: Managing Exchange Server with PowerShell"
-  - Introduction to Exchange Server
-  - Using PowerShell for Exchange Server administration
-  - Creating and managing mailboxes, distribution lists, and contacts
+  # - Introduction to Exchange Server
+  # - Using PowerShell for Exchange Server administration
+  # - Creating and managing mailboxes, distribution lists, and contacts
   - Managing Exchange Server permissions and policies
 
   - type: "raw"
