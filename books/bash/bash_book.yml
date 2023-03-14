@@ -17,24 +17,24 @@ postOutput:
   imgFolder: "../astro-tech-blog/public/imgs/2023"
 seedPrompt: "Title: Introduction to bash. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
 sections:
-  # - type: "raw"
-  #   src: "# Introduction Welcome to Bash Scripting"
-  # - What is Bash?
-  # - Why Learn Bash Scripting?
-  # - How to Use This Book
-  # - type: "raw"
-  #   src: "# Chapter 1: Getting Started with Bash Scripting"
-  # - Installing Bash on Linux
-  # - Installing Windows Subsystem for Linux (WSL)
-  # - Understanding the Terminal
-  # - Writing Your First Bash Script
-  # - type: "raw"
-  #   src: "# Chapter 2: Variables and Input"
-  # - Understanding Variables in Bash
-  # - Declaring Variables
-  # - Input and Output in Bash
-  # - type: "raw"
-  #   src: "# Chapter 3: Conditionals and Loops"
+  - type: "raw"
+    src: "# Introduction Welcome to Bash Scripting"
+  - What is Bash?
+  - Why Learn Bash Scripting?
+  - How to Use This Book
+  - type: "raw"
+    src: "# Chapter 1: Getting Started with Bash Scripting"
+  - Installing Bash on Linux
+  - Installing Windows Subsystem for Linux (WSL)
+  - Understanding the Terminal
+  - Writing Your First Bash Script
+  - type: "raw"
+    src: "# Chapter 2: Variables and Input"
+  - Understanding Variables in Bash
+  - Declaring Variables
+  - Input and Output in Bash
+  - type: "raw"
+    src: "# Chapter 3: Conditionals and Loops"
   - If Statements
   - Else and Elif Statements
   - Case Statements

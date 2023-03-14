@@ -1,0 +1,79 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["java"]
+  title: "Introduction to Java"
+  description: "Introduction to Java"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "java"
+outputFile: "java_book_2.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/java"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Java. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Ensure the content is original and does not infridge on copyright. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Introduction to Java Programming"
+  # - Brief history of Java
+  # - Java development environments (IDEs)
+  # - Installing Java Development Kit (JDK) and setting up environment variables
+  # - type: "raw"
+  #   src: "# Chapter 2: Java Syntax and Variables"
+  # - Java keywords, identifiers, and literals
+  # - Java data types and variables
+  # - Understanding operators and expressions
+  # - type: "raw"
+  #   src: "# Chapter 3: Control Flow Statements"
+  # - If-else statements
+  # - Switch statements
+  # - For and while loops
+  # - Break and continue statements
+  # - type: "raw"
+  #   src: "# Chapter 4: Object-Oriented Programming"
+  # # - Classes and objects
+  # # - Inheritance and polymorphism
+  # - Encapsulation and abstraction
+  # - Interfaces and abstract classes
+  # - type: "raw"
+  #   src: "# Chapter 5: Exception Handling"
+  # - Understanding exceptions
+  # - Handling exceptions with try-catch blocks
+  # - Creating and throwing exceptions
+  # - type: "raw"
+  #   src: "# Chapter 6: Input and Output in Java"
+  # - Reading and writing to files
+  # - Using the console for input and output
+  # - Working with streams
+  - type: "raw"
+    src: "# Chapter 7: Arrays and Collections"
+  - Understanding arrays
+  - ArrayLists and LinkedLists
+  - HashSets and HashMaps
+  - type: "raw"
+    src: "# Chapter 8: GUI Programming"
+  - Introduction to Swing
+  - Creating a simple GUI application
+  - Handling user events
+  - type: "raw"
+    src: "# Chapter 9: Networking"
+  - Working with URLs
+  - Creating and using sockets
+  - HTTP requests and responses
+  - type: "raw"
+    src: "# Chapter 10: Multithreading"
+  - Understanding threads
+  - Creating and starting threads
+  - Synchronization and thread safety
+  - type: "raw"
+    src: "# Chapter 11: Debugging and Testing"
+  - Debugging techniques and tools
+  - JUnit testing framework
+  - Writing and running unit tests
+  - type: "raw"
+    src: "# Chapter 12: Final Project"
+  - Applying all the concepts learned in the book to create a simple Java application
+  - Future of Java programming and resources for further learning.

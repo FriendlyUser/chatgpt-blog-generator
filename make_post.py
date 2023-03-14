@@ -189,7 +189,7 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
-        for phrase in ["bash", "javascript", "makefile", "dotnet", "css", "python", "less", "sql", "ruby"]:
+        for phrase in ["bash", "typescript", "javascript", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby"]:
             clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     
@@ -230,7 +230,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/bash/bash_book.yml')
+    parser.add_argument('--file', type=str, default='books/java/intro_to_java.yml')
     args = parser.parse_args()
 
     image_root = ""
