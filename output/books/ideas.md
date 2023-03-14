@@ -1,5 +1,4 @@
 
-- powershell
 - sql
 - perl
 - projects in python
