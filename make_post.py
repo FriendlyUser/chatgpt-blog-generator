@@ -189,7 +189,7 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
-        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "cpp", "perl"]:
+        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "csharp", "cpp", "perl", "vbnet", "kotlin"]:
             clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     
@@ -230,7 +230,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/perl/perl.yml')
+    parser.add_argument('--file', type=str, default='books/projects_in_python/vue.yml')
     args = parser.parse_args()
 
     image_root = ""

@@ -4,90 +4,130 @@ imageArgs:
   prompt: "stars in the sky, 4K HD wallpaper"
 frontMatter:
   tags: ["bash"]
-  title: "Introduction to Python by building Projects"
-  description: "Introduction to Python by building projects"
+  title: "Introduction to Flutter by building Projects"
+  description: "Introduction to Flutter by building projects"
   pubDate: Fri, 14 December 2024
   layout: '"@/templates/BasePost.astro"'
 programmingLanguage: "dart"
-outputFile: "flutter.md"
+outputFile: "flutter_2.md"
 references: []
 postOutput:
-  folder: "../astro-tech-blog/src/pages/posts/tech/python"
+  folder: "../astro-tech-blog/src/pages/posts/tech/flutter"
   imgFolder: "../astro-tech-blog/public/imgs/2023"
-seedPrompt: "Title: Introduction to Python by building projects. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+seedPrompt: "Title: Introduction to Flutter by building projects. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
 sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Introduction to Dart and Flutter"
+  # - What is Dart?
+  # - What is Flutter?
+  # - Why use Dart with Flutter?
+  # - Setting up the development environment
+  # - Creating your first Dart program
+
+  # - type: "raw"
+  #   src: "# Chapter 2: Dart Fundamentals"
+  # - Variables and Data Types
+  # - Control Structures
+  # - Functions
+  # - Classes and Objects
+  # - Exception Handling
+
+  # - type: "raw"
+  #   src: "# Chapter 3: Flutter Widgets"
+  # - Introduction to Widgets
+  # - Stateful vs Stateless Widgets
+  # - Layout Widgets
+  # - Container Widgets
+  # - Text and Image Widgets
+
+  # - type: "raw"
+  #   src: "# Chapter 4: Building a Resume Generator CLI Tool"
+  # - Understanding the requirements
+  # - Creating a command-line interface
+  # - Reading and writing files
+  # - Creating and formatting a resume
+  # - Testing and Debugging the tool
+
+  # - type: "raw"
+  #   src: "# Chapter 5: Building a Counter App"
+  # - Designing the user interface
+  # - Creating the app structure
+  # - Implementing the counter logic
+  # - Adding styling and animations
+  # - Testing and Debugging the app
+
+  # - type: "raw"
+  #   src: "# Chapter 6: Building a Clock Website"
+  # - Designing the website layout
+  # - Implementing the clock functionality
+  # - Adding time zone selectors
+  # - Implementing the countdown calculator
+  # - Testing and Debugging the website
+
+  # - type: "raw"
+  #   src: "# Chapter 7: Flutter Navigation"
+  # # - Navigation Concepts
+  # - Navigation Options in Flutter
+  # - Tab Navigation in Flutter
+  # - Drawer Navigation in Flutter
+  # - Testing and Debugging Navigation in Flutter
+
+  # - type: "raw"
+  #   src: "# Chapter 8: Flutter Animation"
+  # - Animation Basics
+  # - Implicit Animations
+  # - Explicit Animations
+  # - Animating Widgets
+  # - Testing and Debugging Animations
+
+  # - type: "raw"
+  #   src: "# Chapter 9: Flutter Networking"
+  # - Understanding APIs
+  # - Making API Calls
+  # - Parsing JSON data
+  # - Authentication and Authorization
+  # - Testing and Debugging Networking
+
+  # - type: "raw"
+  #   src: "# Chapter 10: Flutter State Management"
+  # - Understanding State Management
+  # - State Management Options
+  # - Provider Package
+  # - Bloc Pattern
+  # - Testing and Debugging State Management
+
+  # - type: "raw"
+  #   src: "# Chapter 11: Building a Weather App"
+  # - Designing the app UI
+  # - Making API calls for weather data
+  # - Displaying weather data
+  # - Adding location functionality
+  # - Testing and Debugging the app
+
+  # - type: "raw"
+  #   src: "# Chapter 12: Building a Todo App"
+  # - Designing the app UI for a Todo app
+  # - Implementing CRUD operations for the Todo app
+  # - Using Local Storage for Data Persistence in the Todo app
+  # - Adding User Authentication to the Todo app
+  # - Testing and Debugging the app for the Todo app
+
   - type: "raw"
-    src: "# Chapter 1: Introduction to Python"
-  - What is Python and why it's a popular language?
-  - Setting up Python environment
-  - Basic syntax and data types
+    src: "# Chapter 13: Building an Expense Tracker App"
+  - Designing the app UI
+  - Implementing CRUD operations
+  - Using Firebase for Data Persistence
+  - Adding User Authentication
+  - Testing and Debugging the app
+
   - type: "raw"
-    src: "# Chapter 2: URL Shortener"
-  - Introduction to URL shorteners
-  - Design and implement a URL shortener in Python
-  - Use of Flask framework to create web applications
+    src: "# Chapter 14: Conclusion and Next Steps"
+  - Review of what we learned
+  - Possible Next Steps
+  - Final Thoughts
+
   - type: "raw"
-    src: "# Chapter 3: Code Generator"
-  - Basics of string manipulation
-  - Creating a simple code generator
-  - Implementing different encryption algorithms
-  - type: "raw"
-    src: "# Chapter 4: Building a Counter App"
-  - Introduction to graphical user interface (GUI)
-  - Creating a simple counter app using Python's tkinter library
-  - Handling button clicks and updating values
-  - type: "raw"
-    src: "# Chapter 5: Understanding Modules and Packages"
-  - What are modules and packages in Python
-  - How to use them in projects
-  - Installing and importing third-party packages
-  - type: "raw"
-    src: "# Chapter 6: Python Libraries for Data Analysis"
-  - Introduction to data analysis with Python
-  - Exploring NumPy, Pandas, and Matplotlib libraries
-  - Analyzing and visualizing data using Python
-  - type: "raw"
-    src: "# Chapter 7: Web Scraping with Python"
-  - Understanding the basics of web scraping
-  - Using Beautiful Soup and Requests libraries to extract data from web pages
-  - Data cleaning and analysis
-  - type: "raw"
-    src: "# Chapter 8: Building a Weather App"
-  - Retrieving weather data using APIs
-  - Designing and building a weather app using Python's tkinter library
-  - Handling user inputs and displaying weather information
-  - type: "raw"
-    src: "# Chapter 9: Building a Chatbot"
-  - Understanding chatbots and their applications
-  - Designing and building a simple chatbot using Python's Natural Language Toolkit (NLTK)
-  - Training the chatbot using sample data
-  - type: "raw"
-    src: "# Chapter 10: Introduction to Machine Learning"
-  - Basics of machine learning and its applications
-  - Understanding supervised and unsupervised learning
-  - Implementing simple machine learning models using scikit-learn
-  - type: "raw"
-    src: "# Chapter 11: Image Processing with Python"
-  - Understanding digital images and their properties
-  - Using Python's Pillow library for image processing
-  - Applying filters, resizing, and cropping images
-  - type: "raw"
-    src: "# Chapter 12: Building a Music Player"
-  - Understanding audio files and their properties
-  - Designing and building a music player using Python's tkinter library
-  - Handling user inputs and playing audio files
-  - type: "raw"
-    src: "# Chapter 13: Building a Clock Website"
-  - Introduction to web development with Python
-  - Creating a clock website using Flask and JavaScript
-  - Implementing different time zone selectors and countdown calculator functionality
-  - type: "raw"
-    src: "# Chapter 14: Automating Tasks with Python"
-  - Automating repetitive tasks using Python
-  - Using Python to scrape data from websites and automate emails
-  - Building scripts to schedule tasks and automate workflows
-  - type: "raw"
-    src: "# Conclusion"
-  - Summary of key concepts covered in the book
-  - Further resources for learning Python
-  - Inspiring projects for readers to work on
+    src: "# Appendix"
+  - Setting up an Emulator
+  - Setting up a Physical Device
+  - Useful Resources and Links

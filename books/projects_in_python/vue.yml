@@ -1,0 +1,92 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["vue"]
+  title: "Introduction to Vue by building Projects"
+  description: "Introduction to Vue by building projects"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "vue"
+outputFile: "vue.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Vue by building projects. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+sections:
+  - type: "raw"
+    src: "# Chapter 1: Introduction to vue"
+  - What is vue and why it's a popular language?
+  - Setting up vue environment
+  - Basic syntax and data types
+  - type: "raw"
+    src: "# Chapter 2: URL Shortener"
+  - Introduction to URL shorteners
+  - Design and implement a URL shortener in vue
+  - Use of Flask framework to create web applications
+  - type: "raw"
+    src: "# Chapter 3: Code Generator"
+  - Basics of string manipulation
+  - Creating a simple code generator
+  - Implementing different encryption algorithms
+  - type: "raw"
+    src: "# Chapter 4: Building a Counter App"
+  - Introduction to graphical user interface (GUI)
+  - Creating a simple counter app using vue
+  - Handling button clicks and updating values
+  - type: "raw"
+    src: "# Chapter 5: Understanding Modules and Packages"
+  - What are modules and packages in vue
+  - How to use them in projects
+  - Installing and importing third-party packages
+  - type: "raw"
+    src: "# Chapter 6: vue Libraries for Data Analysis"
+  - Introduction to data analysis with vue
+  - Exploring NumPy, Pandas, and Matplotlib libraries
+  - Analyzing and visualizing data using vue
+  - type: "raw"
+    src: "# Chapter 7: Web Scraping with vue"
+  - Understanding the basics of web scraping
+  - Using Beautiful Soup and Requests libraries to extract data from web pages
+  - Data cleaning and analysis
+  - type: "raw"
+    src: "# Chapter 8: Building a Weather App"
+  - Retrieving weather data using APIs
+  - Designing and building a weather app using Python's tkinter library
+  - Handling user inputs and displaying weather information
+  - type: "raw"
+    src: "# Chapter 9: Building a Chatbot"
+  - Understanding chatbots and their applications
+  - Designing and building a simple chatbot using Python's Natural Language Toolkit (NLTK)
+  - Training the chatbot using sample data
+  - type: "raw"
+    src: "# Chapter 10: Introduction to Machine Learning"
+  - Basics of machine learning and its applications
+  - Understanding supervised and unsupervised learning
+  - Implementing simple machine learning models
+  - type: "raw"
+    src: "# Chapter 11: Image Processing with Vue"
+  - Understanding digital images and their properties
+  - Using Vue's Libraries for image processing
+  - Applying filters, resizing, and cropping images
+  - type: "raw"
+    src: "# Chapter 12: Building a Music Player"
+  - Understanding audio files and their properties
+  - Designing and building a music player using Vue  tkinter library
+  - Handling user inputs and playing audio files
+  - type: "raw"
+    src: "# Chapter 13: Building a Clock Website"
+  - Creating a clock website using Vue
+  - Implementing different time zone selectors and countdown calculator functionality
+  - type: "raw"
+    src: "# Chapter 14: Automating Tasks with Vue"
+  - Automating repetitive tasks using Vue
+  - Using Vue to scrape data from websites and automate emails
+  - Building scripts to schedule tasks and automate workflows
+  - type: "raw"
+    src: "# Conclusion"
+  - Summary of key concepts covered in the book
+  - Further resources for learning Python
+  - Inspiring projects for readers to work on
