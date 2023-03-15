@@ -1,0 +1,115 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["perl"]
+  title: "Introduction to Programming with Perl"
+  description: "Introduction to Python by building projects"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "python"
+outputFile: "perl_2.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/scripting"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Programming with Perl. For the above title in a technical book use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+sections:
+sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Introduction to Perl"
+  # - History of Perl
+  # - Future of Perl development
+  # - What is Perl and why is it useful?
+  # - type: "raw"
+  #   src: "# Chapter 2: Installing Perl"
+  # - Installing Perl on different platforms
+  # - Best practices for installing Perl
+  # - type: "raw"
+  #   src: "# Chapter 3: Basic Structure of a Perl Program"
+  # - Writing your first Perl program
+  # - Understanding the structure of a Perl program
+  # - Best practices for writing Perl code
+  # - type: "raw"
+  #   src: "# Chapter 4: Variables and Data Types"
+  # - Different types of data in Perl
+  # - Declaring and using variables in Perl
+  # - Variable naming conventions
+  # - Scalars, arrays, and hashes
+  # - Working with data types in Perl
+  # - type: "raw"
+  #   src: "# Chapter 5: Control Structures"
+  # - If/else statements
+  # - Loops (while, for, foreach)
+  # - Switch statements
+  # - Control statements (next, last, redo)
+  # - type: "raw"
+  #   src: "# Chapter 6: Input and Output"
+  # - Standard input and output
+  # - Reading and writing to files
+  # - Reading and writing to databases
+  # - Formatted input and output
+  # - type: "raw"
+  #   src: "# Chapter 7: Regular Expressions"
+  # - What are regular expressions?
+  # - Pattern matching in Perl
+  # - Regular expression metacharacters
+  # - Modifiers and quantifiers
+  # - Using regular expressions in Perl
+  # - type: "raw"
+  #   src: "# Chapter 8: Subroutines"
+  # - What are subroutines?
+  # - Declaring and calling subroutines
+  # - Passing arguments to subroutines
+  # - Returning values from subroutines
+  # - Best practices for subroutines
+  # - type: "raw"
+  #   src: "# Chapter 9: References and Data Structures"
+  # - What are references?
+  # - Creating and using references
+  # - References to arrays and hashes
+  # - Nested data structures in Perl
+  - type: "raw"
+    src: "# Chapter 10: Object-Oriented Programming in Perl"
+  - Basics of OOP in Perl
+  - Creating classes and objects
+  - Inheritance and polymorphism in Perl
+  - Overloading operators
+  - type: "raw"
+    src: "# Chapter 11: Modules"
+  - What are modules?
+  - Using built-in and external modules
+  - Creating and using custom modules
+  - Best practices for using modules
+  - type: "raw"
+    src: "# Chapter 12: Error Handling and Debugging"
+  - Types of errors in Perl
+  - Basic debugging techniques
+  - Using the debugger
+  - Handling errors with die and warn statements
+  - type: "raw"
+    src: "# Chapter 13: File and Directory Manipulation"
+  - File input and output
+  - File manipulation (renaming, copying, deleting)
+  - Directory manipulation (creating, changing, deleting)
+  - Using Perl to manage file and directory permissions
+  - type: "raw"
+    src: "# Chapter 14: Networking and Web Programming with Perl"
+  - Using Perl to create web applications
+  - Basics of HTTP requests and responses
+  - Creating and parsing HTML forms
+  - CGI programming with Perl
+  - type: "raw"
+    src: "# Chapter 15: Advanced Topics in Perl"
+  - Multithreading and multiprocessing in Perl
+  - Parsing and generating XML with Perl
+  - Regular expressions in Perl
+  - Perl one-liners for text manipulation
+  - Best practices for writing maintainable Perl code
+  - type: "raw"
+    src: "# Conclusion"
+  - Recap of what was covered in the book
+  - Best practices for continuing to learn Perl
+  - Resources for further learning and exploration
+

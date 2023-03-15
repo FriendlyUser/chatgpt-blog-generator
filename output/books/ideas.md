@@ -1,7 +1,6 @@
 
 - sql
 - perl
-- projects in python
 - vuejs
 - angular book
 - asp.net core
