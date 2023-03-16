@@ -127,6 +127,7 @@ def generate_section(cfg: dict)-> None:
     for section in sections:
         # check if str or dict
         if isinstance(section, str):
+            print(f"Generating section: {section}")
             resp = try_chatgpt_response(section)
             clean_message = use_programming_language(cfg, resp['message'])
         else:
@@ -189,7 +190,7 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
-        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "csharp", "cpp", "perl", "vbnet", "kotlin"]:
+        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "csharp", "cpp", "perl", "vbnet", "kotlin", "CSS"]:
             clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     
@@ -202,6 +203,7 @@ def generate_body(cfg: dict)-> None:
         resp = api.send_message(seed_prompt)
         time.sleep(3)
     for output in generate_section(cfg):
+        # if output is string print it
         try:
             with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
                 f.write(output)
