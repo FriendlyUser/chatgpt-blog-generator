@@ -232,7 +232,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/projects_in_python/vue.yml')
+    parser.add_argument('--file', type=str, default='posts/python_generate_audio_training_data.yml')
     args = parser.parse_args()
 
     image_root = ""

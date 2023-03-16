@@ -1,0 +1,39 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "river in the forest, 4K HD wallpaper"
+frontMatter:
+  tags: ["python", "tortoise-tts", "ffmpeg"]
+  title: "Using python to generate audio files from youtube"
+  description: "A simple demonstrating how to use ffmpeg and ytp-dl to generate audio clips from youtube videos"
+  pubDate: Fri, 29 November 2024
+  layout: '"@/templates/BasePost.astro"'
+outputFile: "audio_training.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Topic: Using python to generate audio files from youtube
+
+For the above topic, use future prompts to write for a technical audience for a blog post and give consise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt."
+references: ["https://github.com/FriendlyUser/Pirates-Game/tree/master"]
+programmingLanguage: "python"
+sections:
+
+  - What is training data important in machine learning?
+
+  - type: url
+    src: "https://raw.githubusercontent.com/FriendlyUser/ai_voice_president_clone/main/clip_voices.py"
+    lines: [0, 35]
+  
+  - type: url
+    src: "https://raw.githubusercontent.com/FriendlyUser/ai_voice_president_clone/main/clip_voices.py"
+    lines: [36, 78]
+
+  - type: url
+    src: "https://raw.githubusercontent.com/FriendlyUser/ai_voice_president_clone/main/clip_voices.py"
+    lines: [79, 113]
+
+  - type: url
+    src: "https://raw.githubusercontent.com/FriendlyUser/ai_voice_president_clone/main/clip_voices.py"
+    lines: [114, 147]
