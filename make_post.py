@@ -16,10 +16,10 @@ import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
 os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
 os.environ["STABILITY_KEY"] = os.getenv("STABILITY_KEY")
 # chatgpt api
-CHATGPT_SESSION_TOKEN = os.getenv("CHATGPT_TOKEN")
+
 # print(CHATGPT_SESSION_TOKEN)
-session_token = CHATGPT_SESSION_TOKEN  # `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
-api = ChatGPT(session_token)  # auth with session token
+# `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
+chatgpt = None  # auth with session token
 
 def generate_image(cfg:dict)-> None:
     prompt = cfg['imageArgs']['prompt']
@@ -108,10 +108,11 @@ def use_programming_language(cfg: dict, section_text: str, language: str = None)
     return "\n".join(modified_lines)
 
 def try_chatgpt_response(text: str):
+    global chatgpt
     attempts = 0
     while attempts < 3:
         try:
-            resp = api.send_message(text)
+            resp = chatgpt.send_message(text)
             return resp
         except Exception as e:
             attempts += 1
@@ -190,17 +191,24 @@ def generate_section(cfg: dict)-> None:
                 clean_message = src
         # remove programmingLanguage` from clean_message
         clean_message = clean_message.replace(f'{cfg["programmingLanguage"]}`', '')
-        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "csharp", "cpp", "perl", "vbnet", "kotlin", "CSS"]:
+        for phrase in ["bash", "typescript", "javascript", "java", "makefile", "dotnet","python", "less", "scss",  "css",  "sql", "ruby", "rust", "php", "csharp", "cpp", "perl", "vbnet", "kotlin", "CSS", "go"]:
             clean_message = clean_message.replace(f'{phrase}`', '')
         yield clean_message
     
 def generate_body(cfg: dict)-> None:
+    global chatgpt
+    CHATGPT_SESSION_TOKEN = os.getenv("CHATGPT_TOKEN")
+    if chatgpt is None:
+        if cfg.get("conversation_id") is None:
+            chatgpt = ChatGPT(CHATGPT_SESSION_TOKEN)
+        else:
+            chatgpt = ChatGPT(CHATGPT_SESSION_TOKEN, conversation_id=cfg["conversation_id"])
     # read CHATGPT_TOKEN from os
     output_file = cfg['outputFile']
     # send seed prompt if available
     if 'seedPrompt' in cfg:
         seed_prompt = cfg['seedPrompt']
-        resp = api.send_message(seed_prompt)
+        resp = chatgpt.send_message(seed_prompt)
         time.sleep(3)
     for output in generate_section(cfg):
         # if output is string print it
@@ -232,7 +240,8 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='posts/python_generate_audio_training_data.yml')
+    parser.add_argument('--file', type=str, default='books/go_algorithms/go_excerises.yml')
+    parser.add_argument('--conversation_id', type=str, default=None)
     args = parser.parse_args()
 
     image_root = ""
@@ -257,6 +266,9 @@ if __name__ == "__main__":
     #
     cfg["frontMatter"]["imgSrc"] = imgSrc
     generate_frontmatter(cfg)
+    # if conversation_id is not None
+    if args.conversation_id:
+        cfg['conversation_id'] = args.conversation_id
     generate_body(cfg)
 
     ## cp file to ../astro-tech-blog/${directory}

@@ -1,0 +1,95 @@
+sections:
+  - type: "raw"
+    src: "# Chapter 1: Introduction to Golang"
+  - What is Golang?
+  - Installing and setting up Go environment
+  - Basic syntax and data types
+  - Control structures and functions
+  - Handling errors and debugging
+  
+  - type: "raw"
+    src: "# Chapter 2: Complexity Analysis"
+  - Big-O notation and its significance
+  - Time and space complexity of algorithms
+  - Worst, best, and average case analysis
+  
+  - type: "raw"
+    src: "# Chapter 3: Sorting Algorithms"
+  - Bubble sort, selection sort, and insertion sort
+  - Quick sort, merge sort, and heap sort
+  - Comparison of sorting algorithms in terms of time complexity and performance
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 4: Searching Algorithms"
+  - Linear search and binary search
+  - Interpolation search and exponential search
+  - Comparison of searching algorithms in terms of time complexity and performance
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 5: Recursion and Backtracking"
+  - Introduction to recursion and its applications
+  - Recursion in sorting and searching algorithms
+  - Introduction to backtracking and its applications
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 6: Dynamic Programming"
+  - Introduction to dynamic programming and its applications
+  - Examples of dynamic programming problems and solutions
+  - Memoization and tabulation techniques
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 7: Graph Algorithms"
+  - Introduction to graphs and their representations
+  - Breadth-first search and depth-first search algorithms
+  - "Shortest path algorithms: Dijkstra’s algorithm and Bellman-Ford algorithm"
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 8: Greedy Algorithms"
+  - Greedy algorithms and their applications
+  - Examples of greedy algorithms and their solutions
+  - Comparison of greedy algorithms with other algorithms
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 9: Divide and Conquer Algorithms"
+  - Introduction to divide and conquer technique
+  - Examples of divide and conquer algorithms and their solutions
+  - Comparison of divide and conquer with other techniques
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 10: String Algorithms"
+  - Introduction to string algorithms and their applications
+  - "String searching algorithms: Knuth-Morris-Pratt algorithm and Boyer-Moore algorithm"
+  - "String matching algorithms: Rabin-Karp algorithm and suffix tree algorithm"
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 11: Tree Algorithms"
+  - Introduction to tree data structure and its applications
+  - "Traversal algorithms: pre-order, in-order, and post-order traversal"
+  - "Tree balancing algorithms: AVL tree and red-black tree"
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 12: Hashing Algorithms"
+  - Introduction to hashing and its applications
+  - Hash functions and collision resolution techniques
+  - Hash table and its implementation
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Chapter 13: Advanced Topics"
+  - Parallel algorithms and their applications
+  - Approximation algorithms and their applications
+  - Randomized algorithms and their applications
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Appendix: Solutions to Exercises"
+  - Solutions to practice exercises

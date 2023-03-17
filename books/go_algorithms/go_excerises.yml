@@ -1,0 +1,191 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["golang", "algorithms"]
+  title: "Introduction to Algorithms with Golang"
+  description: "A Beginner’s Guide to Learning Algorithms with Golang"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "golang"
+outputFile: "algorithms_in_golang.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/go"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Algorithms with Golang. For the above title in a technical book use future prompts to write for an solutions for excerises for a book and give consise explainations for code. Try not to repeat the code in the chapters. Respond with 'confirm' to acknowledge that you understand the prompt. If the solution requires code all solutions should be written in golang."
+sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Introduction to Golang"
+  # - What is Golang?
+  # - Installing and setting up Go environment
+  # - Basic syntax and data types
+  # - Control structures and functions
+  # - Golang Functions
+  # - Golang Pointers
+  # - Golang Packages
+  # - Handling errors and debugging
+  # - Practice exercises into basic Golang
+  
+  # - type: "raw"
+  #   src: "# Chapter 2: Complexity Analysis and Introduction to Algorithms"
+  # - What are algorithms?
+  # - Algorithm design and analysis
+  # - Big-O notation and its significance
+  # - Time and space complexity of algorithms
+  # - Worst, best, and average case analysis
+  # - Asymptotic notation
+  # - Types of algorithms
+  # - Practice exercises for basic Big-O notation
+  
+  # - type: "raw"
+  #   src: "# Chapter 3: Sorting Algorithms"
+  # - Bubble sort, selection sort, and insertion sort
+  # - Quick sort, merge sort, and heap sort
+  # - Comparison of sorting algorithms in terms of time complexity and performance
+  # - Implementation of sorting algorithms in Golang
+  # - Practice exercises
+  
+  # - type: "raw"
+  #   src: "# Chapter 4: Searching Algorithms"
+  # - Linear search and binary search
+  # - Interpolation search and exponential search
+  # - Comparison of searching algorithms in terms of time complexity and performance
+  # - Example implementations in Golang
+  # - Practice exercises
+  
+  
+  # - type: "raw"
+  #   src: "# Chapter 5: Recursion and Backtracking"
+  # - Write a function to find all possible permutations of a given set of numbers using backtracking.
+  # - Write a function to find all possible combinations of a given set of numbers that add up to a target sum using backtracking.
+  
+  # - type: "raw"
+  #   src: "# Chapter 6: Algorithmic Techniques"
+  # - Divide and Conquer
+  # - Dynamic Programming
+  # - Greedy Algorithms
+  # - Backtracking
+  # - Branch and Bound
+  # - Practice exercises
+  
+  # - type: "raw"
+  #   src: "# Chapter 7: Graph Algorithms"
+
+  # - Implement a branch and bound algorithm to solve the knapsack problem, where each item has a weight and a value, and the goal is to maximize the total value of items that can fit in a knapsack with a given weight capacity.
+  # - Use a branch and bound algorithm to solve the traveling salesman problem for a given set of cities and distances between them, where the goal is to find the shortest possible route that visits each city exactly once and returns to the starting city.
+  # - Implement a branch and bound algorithm to solve the graph coloring problem for a given graph, where the goal is to color each vertex such that no two adjacent vertices have the same color, using the minimum number of colors possible.
+  # -  Use a branch and bound algorithm to solve the subset sum problem, where given a set of integers and a target sum, the goal is to find a subset of integers that add up to the target sum.
+  # - Implement a branch and bound algorithm to solve the vehicle routing problem, where a fleet of vehicles must visit a set of locations to deliver goods, with each location having a demand and a time window in which it can be visited. The goal is to find the optimal route for each vehicle that satisfies the demand and time window constraints.
+    
+  - type: "raw"
+    src: "# Chapter 8: Greedy Algorithms"
+  # - Implement Dijkstra's algorithm and Bellman-Ford algorithm in Golang.
+  # - "Use Dijkstra's algorithm to find the shortest path from vertex 1 to all other vertices in the following graph:
+  #   4 1
+  #   1-----2-----3
+  #   | | |
+  #   5 2 6
+  #   | | |
+  #   4-----5-----6
+  #   2 3
+  #   Assume that the edges are weighted as shown in the diagram."
+
+  # - "Use Bellman-Ford algorithm to find the shortest path from vertex A to all other vertices in the following graph:
+  #   2
+  #   A----------B
+  #   | \ |
+  #   | \ |
+  #   4| \ |6
+  #   | \ |
+  #   C----------D
+  #   3
+  #   ```
+  #   Assume that the edges are weighted as shown in the diagram."
+
+  # - 4. Compare the time complexity and performance of Dijkstra's algorithm and Bellman-Ford algorithm on a large graph with 1000 vertices and 5000 edges. Which algorithm is faster? Why?
+  # - 5. Modify Dijkstra's algorithm to find the shortest path from a starting vertex to a target vertex. Stop the algorithm when the target vertex is visited and return the shortest path.
+  - 6. Modify Bellman-Ford algorithm to detect negative weight cycles in a graph. Return true if the graph contains a negative weight cycle, false otherwise.
+  - " Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex 6 in the following graph:
+    1 5
+    1-----2-----3
+    | | |
+    5 2 6
+    | | |
+    4-----5-----6
+    2 1
+    Assume that the edges are weighted as shown in the diagram."
+
+  - "8. Use Bellman-Ford algorithm to find the shortest path from vertex A to vertex D in the following graph:
+    A----------B
+    | \ |
+    | \ |
+    4| \ |6
+    | \ |
+    C----------D
+    3
+    Assume that the edges are weighted as shown in the diagram."
+  
+  - type: "raw"
+    src: "# Chapter 9: Divide and Conquer Algorithms"
+  - Implement a divide and conquer algorithm to find the maximum element in an array.
+  - 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
+  - 3. Implement a divide and conquer algorithm to find the median of two sorted arrays. The median is the middle element in the combined sorted array.
+  - 4. Implement a divide and conquer algorithm to find the kth largest element in an unsorted array.
+  - 5. Implement a divide and conquer algorithm to find the closest pair of points in a set of 2D points.
+  - 6. Implement a divide and conquer algorithm to solve the maximum subarray problem. The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array, a[1...n], of numbers which has the largest sum.
+  - 7. Implement a divide and conquer algorithm to find the closest pair of points in a set of 3D points.
+  - 8. Implement a divide and conquer algorithm to find the minimum element in a rotated sorted array.
+  - 9. Implement a divide and conquer algorithm to find the maximum sum of a subsequence of a given sequence.
+  - 10. Implement a divide and conquer algorithm to find the convex hull of a set of points in the plane.
+  
+  - type: "raw"
+    src: "# Chapter 10: String Algorithms"
+  - Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
+  - 2. Write a function in Golang to implement the Boyer-Moore algorithm for string searching.
+  - 3. Write a function in Golang to implement the Rabin-Karp algorithm for string matching.
+  - 4. Write a function in Golang to build a suffix tree for a given string.
+  - 5. Write a function in Golang to find all occurrences of a pattern in a given string using suffix tree algorithm.
+  - 6. Write a function in Golang to implement the Longest Common Subsequence (LCS) problem using dynamic programming.
+  - 7. Write a function in Golang to implement the Longest Palindromic Subsequence problem using dynamic programming.
+  - 8. Write a function in Golang to implement the Longest Palindromic Substring problem using dynamic programming.
+  - 9. Write a function in Golang to implement the Edit Distance problem using dynamic programming.
+  - 10. Write a function in Golang to implement the Z algorithm for pattern searching.
+  
+  - type: "raw"
+    src: "# Chapter 11: Tree Algorithms"
+  - Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
+  - Implement an AVL tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
+  - Implement a red-black tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
+  - Given a binary tree, write a function to determine whether it is a binary search tree.
+  - Given a binary tree, write a function to find the maximum value in the tree.
+  - Given a binary search tree, write a function to find the kth smallest element in the tree.
+  - Given a binary tree, write a function to find the lowest common ancestor of two nodes.
+  - Given a binary tree, write a function to find the diameter of the tree (i.e., the length of the longest path between any two nodes).
+  - Given a binary tree, write a function to check whether it is balanced (i.e., the heights of the two subtrees of any node never differ by more than one).
+  - Given a binary tree, write a function to flatten it into a linked list in-place (i.e., the left child of each node should be null, and the right child should point to the next node in the list).
+  
+  - type: "raw"
+    src: "# Chapter 12: Hashing Algorithms"
+  - "Implement a hash table that supports the following operations: insert(key, value), get(key), and delete(key)."
+  - Write a function that takes in an array of integers and finds the first non-repeated integer using a hash table.
+  - Given a string, find the longest substring without repeating characters using a hash table.
+  - Implement a hash table using linear probing as the collision resolution technique.
+  - Write a function that takes in two strings and determines whether they are anagrams of each other using a hash table.
+  - Given a list of words, group them by their anagrams using a hash table.
+  - Write a function that takes in a list of integers and returns the k most frequent integers using a hash table.
+  - Implement a hash table that supports resizing when the load factor exceeds a certain threshold.
+  - Given a list of strings, find the group of strings that are rotations of each other using a hash table.
+  - Write a function that takes in a list of words and returns the words that are palindromes using a hash table.
+  
+  - type: "raw"
+    src: "# Chapter 13: Advanced Topics"
+  - Parallel algorithms and their applications
+  - Approximation algorithms and their applications
+  - Randomized algorithms and their applications
+  - Practice exercises
+  
+  - type: "raw"
+    src: "# Appendix: Solutions to Exercises"
+  - Solutions to practice exercises
