@@ -79,8 +79,8 @@ sections:
   # -  Use a branch and bound algorithm to solve the subset sum problem, where given a set of integers and a target sum, the goal is to find a subset of integers that add up to the target sum.
   # - Implement a branch and bound algorithm to solve the vehicle routing problem, where a fleet of vehicles must visit a set of locations to deliver goods, with each location having a demand and a time window in which it can be visited. The goal is to find the optimal route for each vehicle that satisfies the demand and time window constraints.
     
-  - type: "raw"
-    src: "# Chapter 8: Greedy Algorithms"
+  # - type: "raw"
+  #   src: "# Chapter 8: Greedy Algorithms"
   # - Implement Dijkstra's algorithm and Bellman-Ford algorithm in Golang.
   # - "Use Dijkstra's algorithm to find the shortest path from vertex 1 to all other vertices in the following graph:
   #   4 1
@@ -106,35 +106,35 @@ sections:
 
   # - 4. Compare the time complexity and performance of Dijkstra's algorithm and Bellman-Ford algorithm on a large graph with 1000 vertices and 5000 edges. Which algorithm is faster? Why?
   # - 5. Modify Dijkstra's algorithm to find the shortest path from a starting vertex to a target vertex. Stop the algorithm when the target vertex is visited and return the shortest path.
-  - 6. Modify Bellman-Ford algorithm to detect negative weight cycles in a graph. Return true if the graph contains a negative weight cycle, false otherwise.
-  - " Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex 6 in the following graph:
-    1 5
-    1-----2-----3
-    | | |
-    5 2 6
-    | | |
-    4-----5-----6
-    2 1
-    Assume that the edges are weighted as shown in the diagram."
+  # - 6. Modify Bellman-Ford algorithm to detect negative weight cycles in a graph. Return true if the graph contains a negative weight cycle, false otherwise.
+  # - " Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex 6 in the following graph:
+  #   1 5
+  #   1-----2-----3
+  #   | | |
+  #   5 2 6
+  #   | | |
+  #   4-----5-----6
+  #   2 1
+  #   Assume that the edges are weighted as shown in the diagram."
 
-  - "8. Use Bellman-Ford algorithm to find the shortest path from vertex A to vertex D in the following graph:
-    A----------B
-    | \ |
-    | \ |
-    4| \ |6
-    | \ |
-    C----------D
-    3
-    Assume that the edges are weighted as shown in the diagram."
+  # - "8. Use Bellman-Ford algorithm to find the shortest path from vertex A to vertex D in the following graph:
+  #   A----------B
+  #   | \ |
+  #   | \ |
+  #   4| \ |6
+  #   | \ |
+  #   C----------D
+  #   3
+  #   Assume that the edges are weighted as shown in the diagram."
   
   - type: "raw"
     src: "# Chapter 9: Divide and Conquer Algorithms"
-  - Implement a divide and conquer algorithm to find the maximum element in an array.
-  - 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
-  - 3. Implement a divide and conquer algorithm to find the median of two sorted arrays. The median is the middle element in the combined sorted array.
-  - 4. Implement a divide and conquer algorithm to find the kth largest element in an unsorted array.
-  - 5. Implement a divide and conquer algorithm to find the closest pair of points in a set of 2D points.
-  - 6. Implement a divide and conquer algorithm to solve the maximum subarray problem. The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array, a[1...n], of numbers which has the largest sum.
+  # - Implement a divide and conquer algorithm to find the maximum element in an array.
+  # - 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
+  # - 3. Implement a divide and conquer algorithm to find the median of two sorted arrays. The median is the middle element in the combined sorted array.
+  # - 4. Implement a divide and conquer algorithm to find the kth largest element in an unsorted array.
+  # - 5. Implement a divide and conquer algorithm to find the closest pair of points in a set of 2D points.
+  # - 6. Implement a divide and conquer algorithm to solve the maximum subarray problem. The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array, a[1...n], of numbers which has the largest sum.
   - 7. Implement a divide and conquer algorithm to find the closest pair of points in a set of 3D points.
   - 8. Implement a divide and conquer algorithm to find the minimum element in a rotated sorted array.
   - 9. Implement a divide and conquer algorithm to find the maximum sum of a subsequence of a given sequence.

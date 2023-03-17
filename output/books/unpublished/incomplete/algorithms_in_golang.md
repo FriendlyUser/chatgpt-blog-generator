@@ -260,7 +260,7 @@ In summary, pointers are an important feature in Go that allow us to indirectly 
 
 In Go, a package is a collection of related Go source files that can be used to build software. Go comes with a large standard library of packages, but you can also create your own packages and import them into your code.
 
-To create a new package, you simply need to create a directory with the same name as your package, and add one or more `. files containing your package's source code. For example, let's say we want to create a package called `math` that provides some basic mathematical functions. We can create a new directory called `math` and add a file called `math. with the following code:
+To create a new package, you simply need to create a directory with the same name as your package, and add one or more `.go` files containing your package's source code. For example, let's say we want to create a package called `math` that provides some basic mathematical functions. We can create a new directory called `math` and add a file called `math. with the following code:
 
 
 ```golang
@@ -1243,7 +1243,7 @@ Assume that the edges are weighted as shown in the diagram.
 
 
 ```golang
-luaCopy code `1 5
+1 5
  1-----2-----3
  | | |
  5 2 6
@@ -1302,6 +1302,7 @@ A --4-- B --2-- C
 1| 3|
 | |
 D --5-- E --1-- F
+```
 
 and we want to find the shortest path from A to F, the algorithm would visit the vertices in the following order: A, B, C, E, F, and the shortest path would be A -> B -> C -> E -> F, with a total distance of 7.
 
@@ -1315,6 +1316,7 @@ A --1-- B --3-- C
 4| 2|
 | |
 D --5-- E --6-- F
+```
 
 the algorithm would select the edges in the following order: A-B, B-C, B-E, D-A, E-F, with a total weight of 17.
 
@@ -1360,7 +1362,7 @@ Here are some examples of divide and conquer algorithms and their solutions:
 1. Merge Sort: Merge sort is a sorting algorithm that uses the divide and conquer technique to sort an array of elements. The algorithm works by dividing the array into two halves, sorting each half recursively, and then merging the sorted halves to form a sorted array. The time complexity of merge sort is O(n log n), where n is the number of elements in the array.
 2. Quick Sort: Quick sort is another sorting algorithm that uses the divide and conquer technique. The algorithm works by selecting a pivot element from the array, partitioning the array into two sub-arrays based on the pivot element, sorting each sub-array recursively, and then combining the sorted sub-arrays to form a sorted array. The time complexity of quick sort is O(n log n) on average, but can be O(n^2) in the worst case.
 3. Binary Search: Binary search is a searching algorithm that uses the divide and conquer technique to find a specific element in a sorted array. The algorithm works by repeatedly dividing the array in half and searching the half that contains the element being searched for. The time complexity of binary search is O(log n), where n is the number of elements in the array.
-4. Strassen's Algorithm: Strassen's algorithm is an algorithm for matrix multiplication that uses the divide and conquer technique. The algorithm works by dividing the input matrices into sub-matrices, computing the products of the sub-matrices recursively, and then combining the products to form the product of the original matrices. The time complexity of Strassen's algorithm is O(n^log2(7)), which is faster than the traditional matrix multiplication algorithm.
+4. Strassen's Algorithm: Strassen's algorithm is an algorithm for matrix multiplication that uses the divide and conquer technique. The algorithm works by dividing the input matrices into sub-matrices, computing the products of the sub-matrices recursively, and then combining the products to form the product of the original matrices. The time complexity of Strassen's algorithm is $O(n^log2(7))$, which is faster than the traditional matrix multiplication algorithm.
 
 These are just a few examples of divide and conquer algorithms and their solutions. The divide and conquer technique is widely used in computer science and engineering, and there are many other algorithms that use this technique to solve various problems.
 
@@ -1585,7 +1587,7 @@ Value found: John
 In the above example, we create a hash table using a map and add elements to it. We then print the hash table and delete an element from it. Finally, we search for an element in the hash table using its key.
 
 
-Sure, here are some practice exercises:
+Here are some practice exercises:
 
 1. Implement a hash table that supports the following operations: insert(key, value), get(key), and delete(key).
 2. Write a function that takes in an array of integers and finds the first non-repeated integer using a hash table.
