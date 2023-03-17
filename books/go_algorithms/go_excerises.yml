@@ -127,36 +127,36 @@ sections:
   #   3
   #   Assume that the edges are weighted as shown in the diagram."
   
-  - type: "raw"
-    src: "# Chapter 9: Divide and Conquer Algorithms"
-  # - Implement a divide and conquer algorithm to find the maximum element in an array.
-  # - 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
-  # - 3. Implement a divide and conquer algorithm to find the median of two sorted arrays. The median is the middle element in the combined sorted array.
-  # - 4. Implement a divide and conquer algorithm to find the kth largest element in an unsorted array.
-  # - 5. Implement a divide and conquer algorithm to find the closest pair of points in a set of 2D points.
-  # - 6. Implement a divide and conquer algorithm to solve the maximum subarray problem. The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array, a[1...n], of numbers which has the largest sum.
-  - 7. Implement a divide and conquer algorithm to find the closest pair of points in a set of 3D points.
-  - 8. Implement a divide and conquer algorithm to find the minimum element in a rotated sorted array.
-  - 9. Implement a divide and conquer algorithm to find the maximum sum of a subsequence of a given sequence.
-  - 10. Implement a divide and conquer algorithm to find the convex hull of a set of points in the plane.
+  # - type: "raw"
+  #   src: "# Chapter 9: Divide and Conquer Algorithms"
+  # # - Implement a divide and conquer algorithm to find the maximum element in an array.
+  # # - 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
+  # # - 3. Implement a divide and conquer algorithm to find the median of two sorted arrays. The median is the middle element in the combined sorted array.
+  # # - 4. Implement a divide and conquer algorithm to find the kth largest element in an unsorted array.
+  # # - 5. Implement a divide and conquer algorithm to find the closest pair of points in a set of 2D points.
+  # # - 6. Implement a divide and conquer algorithm to solve the maximum subarray problem. The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array, a[1...n], of numbers which has the largest sum.
+  # - 7. Implement a divide and conquer algorithm to find the closest pair of points in a set of 3D points.
+  # - 8. Implement a divide and conquer algorithm to find the minimum element in a rotated sorted array.
+  # - 9. Implement a divide and conquer algorithm to find the maximum sum of a subsequence of a given sequence.
+  # - 10. Implement a divide and conquer algorithm to find the convex hull of a set of points in the plane.
   
-  - type: "raw"
-    src: "# Chapter 10: String Algorithms"
-  - Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
-  - 2. Write a function in Golang to implement the Boyer-Moore algorithm for string searching.
-  - 3. Write a function in Golang to implement the Rabin-Karp algorithm for string matching.
-  - 4. Write a function in Golang to build a suffix tree for a given string.
-  - 5. Write a function in Golang to find all occurrences of a pattern in a given string using suffix tree algorithm.
-  - 6. Write a function in Golang to implement the Longest Common Subsequence (LCS) problem using dynamic programming.
-  - 7. Write a function in Golang to implement the Longest Palindromic Subsequence problem using dynamic programming.
-  - 8. Write a function in Golang to implement the Longest Palindromic Substring problem using dynamic programming.
-  - 9. Write a function in Golang to implement the Edit Distance problem using dynamic programming.
-  - 10. Write a function in Golang to implement the Z algorithm for pattern searching.
+  # - type: "raw"
+  #   src: "# Chapter 10: String Algorithms"
+  # - Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
+  # - 2. Write a function in Golang to implement the Boyer-Moore algorithm for string searching.
+  # - 3. Write a function in Golang to implement the Rabin-Karp algorithm for string matching.
+  # - 4. Write a function in Golang to build a suffix tree for a given string.
+  # - 5. Write a function in Golang to find all occurrences of a pattern in a given string using suffix tree algorithm.
+  # - 6. Write a function in Golang to implement the Longest Common Subsequence (LCS) problem using dynamic programming.
+  # - 7. Write a function in Golang to implement the Longest Palindromic Subsequence problem using dynamic programming.
+  # - 8. Write a function in Golang to implement the Longest Palindromic Substring problem using dynamic programming.
+  # - 9. Write a function in Golang to implement the Edit Distance problem using dynamic programming.
+  # - 10. Write a function in Golang to implement the Z algorithm for pattern searching.
   
   - type: "raw"
     src: "# Chapter 11: Tree Algorithms"
-  - Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
-  - Implement an AVL tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
+  # - Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
+  # - Implement an AVL tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
   - Implement a red-black tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
   - Given a binary tree, write a function to determine whether it is a binary search tree.
   - Given a binary tree, write a function to find the maximum value in the tree.

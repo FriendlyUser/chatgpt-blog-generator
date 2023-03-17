@@ -1884,18 +1884,7 @@ The `maxCrossingSubarray` function takes an array of integers and the index of t
 
 This algorithm has a time complexity of O(n log n) and a space complexity of O(log n), since it uses recursion to divide the array into smaller and smaller pieces.
 
-
-
----
-tags: ['golang', 'algorithms']
-title: Introduction to Algorithms with Golang
-description: A Beginner’s Guide to Learning Algorithms with Golang
-pubDate: Fri, 14 December 2024
-layout: "@/templates/BasePost.astro"
-imgSrc: /imgs/2023/323056288.png
----
-# Chapter 9: Divide and Conquer Algorithms
-Solution:
+7. Implement a divide and conquer algorithm to find the closest pair of points in a set of 3D points.
 
 To solve this problem, we can use the Divide and Conquer algorithm. The basic idea is to divide the set of 3D points into two halves, solve the problem recursively in each half, and then merge the solutions.
 
@@ -1963,6 +1952,7 @@ The nested `for` loops iterate over all pairs of points in the `strip` slice and
 
 Overall, this algorithm has a time complexity of O(n log n) and a space complexity of O(n).
 
+8. Implement a divide and conquer algorithm to find the minimum element in a rotated sorted array.
 
 Solution:
 
@@ -1995,6 +1985,7 @@ Otherwise, we calculate the middle index of the array, and we compare the middle
 
 Overall, this algorithm has a time complexity of O(log n) and a space complexity of O(log n), where n is the size of the array.
 
+9. Implement a divide and conquer algorithm to find the maximum sum of a subsequence of a given sequence.
 
 Solution:
 
@@ -2062,6 +2053,8 @@ Finally, we return the maximum of the maximum subsequence sums in the left half,
 
 Overall, this algorithm has a time complexity of O(n log n) and a space complexity of O(log n), where n is the size of the sequence.
 
+ 10. Implement a divide and conquer algorithm to find the convex hull of a set of points in the 
+plane.
 
 Solution:
 
@@ -2150,7 +2143,9 @@ The `distance` function takes two points as input and returns the squared
 
 
 # Chapter 10: String Algorithms
-Sure, here's the implementation of the Knuth-Morris-Pratt (KMP) algorithm for string searching in Go:
+
+1. Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
+Here's the implementation of the Knuth-Morris-Pratt (KMP) algorithm for string searching in Go:
 
 
 ```golang
@@ -2206,7 +2201,7 @@ To search for the pattern in the text, we initialize two indices `i` and `j` to 
 Note that the implementation assumes that the input strings are ASCII strings. If the input strings contain Unicode characters, the implementation will need to be modified to handle multi-byte characters.
 
 
-Sure, here's an implementation of the Boyer-Moore algorithm for string searching in Go:
+2. Write a function in Golang to implement the Boyer-Moore algorithm for string searching.
 
 
 ```golang
@@ -2264,7 +2259,7 @@ We continue until we reach the beginning of the text or find a match. If we find
 Note that this implementation assumes that the input strings are ASCII strings. If the input strings contain Unicode characters, the implementation will need to be modified to handle multi-byte characters.
 
 
-Sure, here's an implementation of the Rabin-Karp algorithm for string matching in Go:
+3. Write a function in Golang to implement the Rabin-Karp algorithm for string matching.
 
 
 ```golang
@@ -2333,7 +2328,7 @@ To compute the hash of each substring of the text, we use a rolling hash functio
 Note that this implementation assumes that the input strings are ASCII strings. If the input strings contain Unicode characters, the implementation will need to be modified to handle multi-byte characters.
 
 
-Sure, here's an implementation of the Ukkonen's algorithm for building a suffix tree in Go:
+4. Write a function in Golang to build a suffix tree for a given string.
 
 
 ```golang
@@ -2429,7 +2424,7 @@ The `BuildSuffixTree` function takes a string as input and returns the root node
 The implementation uses Ukkonen's algorithm to build the suffix tree one character at a time. The algorithm maintains an active point that is initially set to the root of the tree. For each character in the string, the algorithm either adds
 
 
-Sure, here's an implementation of finding all occurrences of a pattern in a given string using suffix tree algorithm in Go:
+5. Write a function in Golang to find all occurrences of a pattern in a given string using suffix tree algorithm.
 
 
 ```golang
@@ -2495,7 +2490,8 @@ The implementation first builds a suffix tree for the string `s` using the `buil
 Note that this implementation assumes that the pattern is non-empty and that it occurs at least once in the string. It also assumes that the string and the pattern consist only of ASCII characters.
 
 
-Sure, here's an implementation of the Longest Common Subsequence (LCS) problem using dynamic programming in Go:
+6. Write a function in Golang to implement the Longest Common Subsequence (LCS) problem using dynamic programming.
+Here's an implementation of the Longest Common Subsequence (LCS) problem using dynamic programming in Go:
 
 
 ```golang
@@ -2537,7 +2533,9 @@ The algorithm fills in the `dp` table row by row, starting from the first row an
 Finally, the function returns `dp[m][n]`, which represents the length of the LCS of the entire strings `s1` and `s2`.
 
 
-Sure! Here's an implementation of the Longest Palindromic Subsequence (LPS) problem using dynamic programming in Go:
+7. Write a function in Golang to implement the Longest Palindromic Subsequence problem using dynamic programming.
+
+Here's an implementation of the Longest Palindromic Subsequence (LPS) problem using dynamic programming in Go:
 
 
 ```golang
@@ -2581,7 +2579,7 @@ The algorithm fills in the `dp` table diagonally, starting from the main diagona
 Finally, the function returns `dp[0][n-1]`, which represents the length of the LPS of the entire input string `s`.
 
 
-Sure! Here's an implementation of the Longest Palindromic Substring (LPS) problem using dynamic programming in Go:
+8. Write a function in Golang to implement the Longest Palindromic Substring problem using dynamic programming.
 
 
 ```golang
@@ -2637,7 +2635,8 @@ The algorithm keeps track of the starting index and length of the longest palind
 Finally, the function returns the substring `s[start : start+maxLength]`, which represents the longest palindromic substring in the input string `s`.
 
 
-Certainly! Here's an implementation of the Edit Distance problem using dynamic programming in Go:
+9. Write a function in Golang to implement the Edit Distance problem using dynamic programming.
+Here's an implementation of the Edit Distance problem using dynamic programming in Go:
 
 
 ```golang
@@ -2701,8 +2700,9 @@ The algorithm returns the value `dp[m][n]`, which represents the minimum edit di
 
 In addition, the implementation includes a helper function `min` that computes the minimum of three integers.
 
+10. Write a function in Golang to implement the Z algorithm for pattern searching.
 
-Sure! Here's an implementation of the Z algorithm for pattern searching in Golang:
+Here's an implementation of the Z algorithm for pattern searching in Golang:
 
 
 ```golang
@@ -2768,7 +2768,9 @@ In this implementation, `calculateZArray` function calculates the Z array for a 
 
 
 # Chapter 11: Tree Algorithms
-Sure! Here's an implementation of a binary search tree in Golang that includes pre-order, in-order, and post-order traversal methods:
+
+1. Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
+Here's an implementation of a binary search tree in Golang that includes pre-order, in-order, and post-order traversal methods:
 
 
 ```golang
@@ -2860,8 +2862,8 @@ In this implementation, `Node` represents a single node in the binary search tre
 
 The `PreOrderTraversal`, `InOrderTraversal`, and `PostOrderTraversal` methods perform the respective traversals on the tree, starting from the given node. In the `main` function, we create a binary search tree, insert some values into it, and then print out the results of the three different traversal methods.
 
-
-Sure! Here's an implementation of an AVL tree in Golang that demonstrates its self-balancing properties by inserting and deleting nodes:
+2. 
+Here's an implementation of an AVL tree in Golang that demonstrates its self-balancing properties by inserting and deleting nodes:
 
 
 ```golang
