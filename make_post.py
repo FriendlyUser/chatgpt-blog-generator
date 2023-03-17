@@ -131,6 +131,10 @@ def generate_section(cfg: dict)-> None:
             print(f"Generating section: {section}")
             resp = try_chatgpt_response(section)
             clean_message = use_programming_language(cfg, resp['message'])
+            if cfg.get("writePrompt", False):
+                with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
+                    f.write(section)
+                    f.write('\n')
         else:
             # assume dict
             # type and src from dict

@@ -572,7 +572,7 @@ pos := low + ((target - arr[low]) * (high - low)) / (arr[high] - arr[low])
 
 This formula calculates the approximate position of the target value by estimating its location between the low and high bounds based on its value. If the target value is found at this position, the function returns its index. Otherwise, it adjusts the range of the search based on whether the target value is greater or less than the value at the calculated position, and repeats the process until either the target value is found or the search range is exhausted.
 
-## Chapter 5
+## Chapter 5: Recursion and Backtracking
 
 Solution for problem 1: Solve the Sudoku puzzle using backtracking.
 
@@ -806,7 +806,7 @@ func main() {
 
 The subsetSumBacktracking function takes an input set and a target sum, and returns a 2D slice containing all the subsets of the input set that add up to the target sum. The function uses a recursive backtracking algorithm to generate all possible subsets, and checks if each subset's sum equals the target sum. If so, the subset is added to the result slice.
 
-# Chapter 5: Recursion and Backtracking
+
 Here's an implementation of a function to find all possible permutations of a given set of numbers using backtracking in Go:
 
 
@@ -894,7 +894,7 @@ The function uses a backtracking approach, where it tries out different combinat
 Overall, this algorithm has a time complexity of O(2^n), since it generates all possible combinations of candidates. However, by using backtracking, it is able to prune some branches of the recursion tree, making it faster in practice for small to medium sized inputs.
 
 
-# Chapter 6: Algorithmic Techniques
+## Chapter 6: Algorithmic Techniques
 Divide and conquer is a problem-solving technique in computer science and mathematics. The basic idea behind this technique is to break down a problem into smaller, more manageable subproblems, solve them independently, and combine the solutions to the subproblems to obtain the solution to the original problem.
 
 The divide and conquer technique is typically applied recursively, with each level of recursion reducing the problem size by a constant factor. This approach leads to algorithms with logarithmic or linear time complexity.
@@ -957,7 +957,7 @@ Branch and Bound is used in a wide range of optimization problems, including sch
 Sure, what kind of practice exercises would you like?
 
 
-# Chapter 7: Graph Algorithms
+## Chapter 7: Graph Algorithms
 Sure, here's an implementation of branch and bound algorithm to solve the knapsack problem in Golang:
 
 
@@ -1331,7 +1331,7 @@ The algorithm starts by initializing the variables, adding the initial states to
 Note that this implementation assumes that the demand and time window constraints are the same for all vehicles, but it can be easily modified to handle different constraints for each vehicle.
 
 
-# Chapter 8: Greedy Algorithms
+## Chapter 8: Greedy Algorithms
 Sure! Here are implementations of Dijkstra's algorithm and Bellman-Ford algorithm in Golang:
 
 Dijkstra's Algorithm:
@@ -1573,7 +1573,7 @@ Vertex 6: 4
 ```
 So the shortest path from vertex 1 to vertex 6 is 4.
 
-# Chapter 9: Divide and Conquer Algorithms
+## Chapter 9: Divide and Conquer Algorithms
 
 1. Implement a divide and conquer algorithm to find the maximum element in an array
 
@@ -2142,7 +2142,7 @@ The `crossProduct` function takes three points as input and returns the cross pr
 The `distance` function takes two points as input and returns the squared
 
 
-# Chapter 10: String Algorithms
+## Chapter 10: String Algorithms
 
 1. Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
 Here's the implementation of the Knuth-Morris-Pratt (KMP) algorithm for string searching in Go:
@@ -2767,7 +2767,7 @@ func main() {
 In this implementation, `calculateZArray` function calculates the Z array for a given string. The `searchPattern` function appends the positions of pattern occurrences to a result slice and returns it. The main function demonstrates how to use the `searchPattern` function.
 
 
-# Chapter 11: Tree Algorithms
+## Chapter 11: Tree Algorithms
 
 1. Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
 Here's an implementation of a binary search tree in Golang that includes pre-order, in-order, and post-order traversal methods:
@@ -2990,3 +2990,1108 @@ func (node *Node) delete(value int) *Node {
  return node
 ```
 
+3. here's an implementation of a red-black tree in Golang. We'll start by defining the `Node` struct:
+
+
+```golang
+type color bool
+
+const (
+ black color = false
+ red color = true
+)
+
+type Node struct {
+ key int
+ value interface{}
+ color color
+ left, right *Node
+}
+```
+Next, we'll define the `RedBlackTree` struct and the functions associated with it:
+
+
+```golang
+type RedBlackTree struct {
+ root *Node
+}
+
+func NewRedBlackTree() *RedBlackTree {
+ return &RedBlackTree{}
+}
+
+func (t \*RedBlackTree) Insert(key int, value interface{}) {
+ t.root = t.insert(t.root, key, value)
+ t.root.color = black
+}
+
+func (t \*RedBlackTree) Delete(key int) {
+ if t.root == nil {
+ return
+ }
+
+ t.root = t.delete(t.root, key)
+ if t.root != nil {
+ t.root.color = black
+ }
+}
+
+func (t \*RedBlackTree) insert(n *Node, key int, value interface{}) *Node {
+ if n == nil {
+ return &Node{key: key, value: value, color: red}
+ }
+
+ if key < n.key {
+ n.left = t.insert(n.left, key, value)
+ } else if key > n.key {
+ n.right = t.insert(n.right, key, value)
+ } else {
+ n.value = value
+ }
+
+ if isRed(n.right) && !isRed(n.left) {
+ n = rotateLeft(n)
+ }
+ if isRed(n.left) && isRed(n.left.left) {
+ n = rotateRight(n)
+ }
+ if isRed(n.left) && isRed(n.right) {
+ flipColors(n)
+ }
+
+ return n
+}
+
+func (t \*RedBlackTree) delete(n *Node, key int) *Node {
+ if key < n.key {
+ if n.left == nil {
+ return n
+ }
+ if !isRed(n.left) && !isRed(n.left.left) {
+ n = moveRedLeft(n)
+ }
+ n.left = t.delete(n.left, key)
+ } else {
+ if isRed(n.left) {
+ n = rotateRight(n)
+ }
+ if key == n.key && n.right == nil {
+ return nil
+ }
+ if n.right != nil {
+ if !isRed(n.right) && !isRed(n.right.left) {
+ n = moveRedRight(n)
+ }
+ if key == n.key {
+ min := findMin(n.right)
+ n.key = min.key
+ n.value = min.value
+ n.right = deleteMin(n.right)
+ } else {
+ n.right = t.delete(n.right, key)
+ }
+ }
+ }
+ return balance(n)
+}
+
+func isRed(n \*Node) bool {
+ if n == nil {
+ return false
+ }
+ return n.color == red
+}
+
+func rotateLeft(n \*Node) *Node {
+ x := n.right
+ n.right = x.left
+ x.left = n
+ x.color = n.color
+ n.color = red
+ return x
+}
+
+func rotateRight(n \*Node) *Node {
+ x := n.left
+ n.left = x.right
+ x.right = n
+ x.color = n.color
+ n.color = red
+ return x
+}
+
+func flipColors(n \*Node) {
+ n.color = !n.color
+ n.left.color = !n.left.color
+ n.right.color = !n
+```
+
+Sure, here's a possible implementation of a function to check whether a binary tree is a binary search tree:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func isBST(root \*Node) bool {
+ return isBSTHelper(root, nil, nil)
+}
+
+func isBSTHelper(node \*Node, min \*int, max \*int) bool {
+ if node == nil {
+ return true
+ }
+ if (min != nil && node.Value <= *min) || (max != nil && node.Value >= *max) {
+ return false
+ }
+ return isBSTHelper(node.Left, min, &node.Value) && isBSTHelper(node.Right, &node.Value, max)
+}
+```
+The `isBST` function takes a `Node` pointer, which is the root of the binary tree, and returns a boolean indicating whether the tree is a binary search tree or not. It calls a helper function `isBSTHelper` with additional arguments `min` and `max`, which represent the minimum and maximum values that the current node's value can take.
+
+The `isBSTHelper` function recursively checks if the current node is a valid BST node, by ensuring that its value is within the range defined by `min` and `max`, and then calls itself on the left and right subtrees with updated `min` and `max` values.
+
+Note that this implementation assumes that the binary tree contains distinct values. If the binary tree can contain duplicates, you would need to modify the comparison operators to account for that.
+
+
+Certainly! Here's a possible implementation of a function to find the maximum value in a binary tree:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func maxNodeValue(root \*Node) int {
+ if root == nil {
+ return -1 // or any other default value that makes sense for your use case
+ }
+ max := root.Value
+ if leftMax := maxNodeValue(root.Left); leftMax > max {
+ max = leftMax
+ }
+ if rightMax := maxNodeValue(root.Right); rightMax > max {
+ max = rightMax
+ }
+ return max
+}
+```
+The `maxNodeValue` function takes a `Node` pointer, which is the root of the binary tree, and returns the maximum value in the tree as an integer. It recursively checks the maximum value of the current node, its left subtree and its right subtree, and returns the maximum of the three.
+
+Note that this implementation assumes that all the values in the binary tree are non-negative. If the binary tree can contain negative values, you would need to modify the default value returned when the root is `nil`.
+
+
+Certainly! Here's a possible implementation of a function to find the kth smallest element in a binary search tree:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func kthSmallest(root \*Node, k int) int {
+ if root == nil {
+ return -1 // or any other default value that makes sense for your use case
+ }
+ stack := []*Node{}
+ curr := root
+ count := 0
+ for curr != nil || len(stack) > 0 {
+ for curr != nil {
+ stack = append(stack, curr)
+ curr = curr.Left
+ }
+ curr = stack[len(stack)-1]
+ stack = stack[:len(stack)-1]
+ count++
+ if count == k {
+ return curr.Value
+ }
+ curr = curr.Right
+ }
+ return -1 // or any other default value that makes sense for your use case
+}
+```
+The `kthSmallest` function takes a `Node` pointer, which is the root of the binary search tree, and an integer `k`, and returns the value of the kth smallest element in the tree. It uses a stack-based iterative inorder traversal to visit the nodes in ascending order, and stops when it has visited `k` nodes.
+
+Note that this implementation assumes that the binary search tree contains at least `k` nodes. If the tree can contain fewer nodes than `k`, you would need to modify the default value returned when the kth smallest element is not found.
+
+
+Sure! Here's a possible implementation of a function to find the lowest common ancestor of two nodes in a binary tree:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func lowestCommonAncestor(root, p, q \*Node) *Node {
+ if root == nil {
+ return nil
+ }
+ if root == p || root == q {
+ return root
+ }
+ leftLCA := lowestCommonAncestor(root.Left, p, q)
+ rightLCA := lowestCommonAncestor(root.Right, p, q)
+ if leftLCA != nil && rightLCA != nil {
+ return root
+ }
+ if leftLCA != nil {
+ return leftLCA
+ }
+ return rightLCA
+}
+```
+The `lowestCommonAncestor` function takes a `Node` pointer, which is the root of the binary tree, and two `Node` pointers `p` and `q`, which are the nodes whose lowest common ancestor we want to find. It recursively checks if `p` and `q` are descendants of the current node's left subtree, right subtree or are equal to the current node. If `p` and `q` are in different subtrees, then the current node is their lowest common ancestor. If they are both in the left subtree, the function recursively checks the left subtree. If they are both in the right subtree, the function recursively checks the right subtree.
+
+Note that this implementation assumes that both `p` and `q` are present in the binary tree. If either `p` or `q` is not present, you would need to modify the code to handle that case.
+
+
+Certainly! Here's a possible implementation of a function to find the diameter of a binary tree:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func diameter(root \*Node) int {
+ if root == nil {
+ return 0
+ }
+ leftHeight := height(root.Left)
+ rightHeight := height(root.Right)
+ leftDiameter := diameter(root.Left)
+ rightDiameter := diameter(root.Right)
+ return max(leftHeight+rightHeight+1, max(leftDiameter, rightDiameter))
+}
+
+func height(node \*Node) int {
+ if node == nil {
+ return 0
+ }
+ return 1 + max(height(node.Left), height(node.Right))
+}
+
+func max(a, b int) int {
+ if a > b {
+ return a
+ }
+ return b
+}
+```
+The `diameter` function takes a `Node` pointer, which is the root of the binary tree, and returns the diameter of the tree as an integer. It recursively calculates the diameter of the tree by computing the height of the left subtree, the height of the right subtree, and the diameters of the left and right subtrees. The maximum of these values is the diameter of the tree. Note that the diameter of the tree is the maximum of:
+
+* the diameter of the left subtree
+* the diameter of the right subtree
+* the height of the left subtree + the height of the right subtree + 1
+
+The `height` function is a helper function that takes a `Node` pointer and returns the height of the subtree rooted at that node.
+
+Note that this implementation has a time complexity of O(n^2) in the worst case, where n is the number of nodes in the tree, because it re-computes the height of the left and right subtrees for each node in the tree. There are more efficient algorithms to compute the diameter of a binary tree that have a time complexity of O(n), but they are more complex.
+
+
+Sure! Here's a possible implementation of a function to check whether a binary tree is balanced:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func isBalanced(root \*Node) bool {
+ if root == nil {
+ return true
+ }
+ leftHeight := height(root.Left)
+ rightHeight := height(root.Right)
+ if abs(leftHeight-rightHeight) > 1 {
+ return false
+ }
+ return isBalanced(root.Left) && isBalanced(root.Right)
+}
+
+func height(node \*Node) int {
+ if node == nil {
+ return 0
+ }
+ return 1 + max(height(node.Left), height(node.Right))
+}
+
+func max(a, b int) int {
+ if a > b {
+ return a
+ }
+ return b
+}
+
+func abs(a int) int {
+ if a < 0 {
+ return -a
+ }
+ return a
+}
+```
+The `isBalanced` function takes a `Node` pointer, which is the root of the binary tree, and returns a boolean value that indicates whether the tree is balanced or not. It recursively checks whether the left and right subtrees of each node are balanced, and whether the difference between the heights of the left and right subtrees is no greater than one. The `height` function is a helper function that takes a `Node` pointer and returns the height of the subtree rooted at that node.
+
+Note that this implementation has a time complexity of O(n^2) in the worst case, where n is the number of nodes in the tree, because it re-computes the height of the left and right subtrees for each node in the tree. There are more efficient algorithms to check the balance of a binary tree that have a time complexity of O(n), but they are more complex.
+
+
+Sure! Here's a possible implementation of a function to flatten a binary tree into a linked list:
+
+
+```golang
+type Node struct {
+ Value int
+ Left *Node
+ Right *Node
+}
+
+func flatten(root \*Node) {
+ if root == nil {
+ return
+ }
+ flatten(root.Left)
+ flatten(root.Right)
+ if root.Left != nil {
+ tmp := root.Right
+ root.Right = root.Left
+ root.Left = nil
+ for root.Right != nil {
+ root = root.Right
+ }
+ root.Right = tmp
+ }
+}
+```
+The `flatten` function takes a `Node` pointer, which is the root of the binary tree, and modifies the tree in-place to flatten it into a linked list. It recursively flattens the left and right subtrees of each node, and then attaches the left subtree (if it exists) to the right of the current node, and makes the left child of the current node nil. The last node in the flattened subtree is then found, and its right child is set to the right subtree (if it exists). The process continues recursively until the entire tree is flattened into a linked list.
+
+Note that the time complexity of this implementation is O(n), where n is the number of nodes in the tree, since it visits each node in the tree once.
+
+
+## Chapter 12: Hashing Algorithms
+Here's a possible implementation of a hash table that supports the `insert`, `get`, and `delete` operations:
+
+
+```golang
+type Node struct {
+ Key string
+ Value interface{}
+ Next *Node
+}
+
+type HashTable struct {
+ size int
+ capacity int
+ buckets []*Node
+}
+
+func NewHashTable(capacity int) *HashTable {
+ return &HashTable{
+ size: 0,
+ capacity: capacity,
+ buckets: make([]*Node, capacity),
+ }
+}
+
+func (h \*HashTable) Insert(key string, value interface{}) {
+ index := h.hash(key)
+ node := h.buckets[index]
+ for node != nil {
+ if node.Key == key {
+ node.Value = value
+ return
+ }
+ node = node.Next
+ }
+ newNode := &Node{
+ Key: key,
+ Value: value,
+ Next: h.buckets[index],
+ }
+ h.buckets[index] = newNode
+ h.size++
+}
+
+func (h \*HashTable) Get(key string) interface{} {
+ index := h.hash(key)
+ node := h.buckets[index]
+ for node != nil {
+ if node.Key == key {
+ return node.Value
+ }
+ node = node.Next
+ }
+ return nil
+}
+
+func (h \*HashTable) Delete(key string) {
+ index := h.hash(key)
+ node := h.buckets[index]
+ var prev *Node
+ for node != nil {
+ if node.Key == key {
+ if prev == nil {
+ h.buckets[index] = node.Next
+ } else {
+ prev.Next = node.Next
+ }
+ h.size--
+ return
+ }
+ prev = node
+ node = node.Next
+ }
+}
+
+func (h \*HashTable) hash(key string) int {
+ hash := 0
+ for i := 0; i < len(key); i++ {
+ hash = (31*hash + int(key[i])) % h.capacity
+ }
+ return hash
+}
+```
+The `HashTable` struct has a `size` field to keep track of the number of elements in the hash table, a `capacity` field to specify the number of buckets in the hash table, and a `buckets` field which is an array of linked lists. The `Insert` method takes a `key` and a `value`, computes the hash of the `key`, and adds a new `Node` to the appropriate bucket of the hash table. If a `Node` with the same `key` already exists in the bucket, its `value` is updated instead. The `Get` method takes a `key`, computes the hash of the `key`, and returns the `value` associated with the `key` if it exists in the hash table, or `nil` otherwise. The `Delete` method takes a `key`, computes the hash of the `key`, and removes the `Node` with the specified `key` from the appropriate bucket of the hash table. If no `Node` with the `key` is found, the method does nothing.
+
+Note that this implementation uses separate chaining to handle collisions between hash values, i.e., when multiple keys map to the same bucket in the hash table. Each bucket is represented as a linked list of `Node`s, where each `Node` contains a `key`, a `value`, and a reference to the next `Node` in the list. The `hash` function uses the djb2 hash algorithm to compute the hash value of a string key.
+
+
+Sure! Here's a possible implementation of a function that finds the first non-repeated integer in an array of integers using a hash table:
+
+
+```golang
+func FirstNonRepeatedInteger(arr []int) int {
+ counts := make(map[int]int)
+ for _, x := range arr {
+ counts[x]++
+ }
+ for _, x := range arr {
+ if counts[x] == 1 {
+ return x
+ }
+ }
+ return -1 // if all integers are repeated
+}
+```
+The `FirstNonRepeatedInteger` function takes an array of integers as input and returns the first non-repeated integer in the array. It uses a hash table (implemented as a `map[int]int`) to count the number of occurrences of each integer in the array. The first loop iterates over the array and updates the counts in the hash table. The second loop iterates over the array again and returns the first integer with a count of 1, i.e., the first non-repeated integer. If all integers are repeated, the function returns -1.
+
+Note that this implementation has a time complexity of O(n) and a space complexity of O(n), where n is the length of the input array. The space complexity is due to the hash table used to store the counts of each integer.
+
+
+Sure! Here's a possible implementation of a function that finds the longest substring without repeating characters in a string using a hash table:
+
+
+```golang
+func LongestSubstringWithoutRepeatingChars(s string) string {
+ var result string
+ charMap := make(map[rune]int)
+ start := 0
+ for end, char := range s {
+ if prev, found := charMap[char]; found && prev >= start {
+ start = prev + 1
+ }
+ charMap[char] = end
+ curr := s[start : end+1]
+ if len(curr) > len(result) {
+ result = curr
+ }
+ }
+ return result
+}
+```
+The `LongestSubstringWithoutRepeatingChars` function takes a string as input and returns the longest substring without repeating characters in the string. It uses a hash table (implemented as a `map[rune]int`) to keep track of the most recent position of each character in the substring being examined. The function also maintains two pointers, `start` and `end`, which mark the beginning and end of the current substring being examined.
+
+The function iterates over the string, adding each character to the hash table and updating the `start` pointer if the character is already present in the substring being examined. If a new longest substring is found, the function updates the `result` variable accordingly. Finally, the function returns the `result` variable.
+
+Note that this implementation has a time complexity of O(n), where n is the length of the input string. The space complexity is also O(n), due to the hash table used to store the most recent position of each character.
+
+
+Sure! Here's a possible implementation of a hash table using linear probing as the collision resolution technique:
+
+
+```golang
+type HashTable struct {
+ capacity int
+ size int
+ keys []string
+ values []int
+}
+
+func NewHashTable(capacity int) *HashTable {
+ return &HashTable{
+ capacity: capacity,
+ size: 0,
+ keys: make([]string, capacity),
+ values: make([]int, capacity),
+ }
+}
+
+func (ht \*HashTable) hash(key string) int {
+ hash := 0
+ for _, char := range key {
+ hash = (hash*31 + int(char)) % ht.capacity
+ }
+ return hash
+}
+
+func (ht \*HashTable) Insert(key string, value int) {
+ if ht.size == ht.capacity {
+ panic("hash table full")
+ }
+ hash := ht.hash(key)
+ for ht.keys[hash] != "" && ht.keys[hash] != key {
+ hash = (hash + 1) % ht.capacity
+ }
+ ht.keys[hash] = key
+ ht.values[hash] = value
+ ht.size++
+}
+
+func (ht \*HashTable) Get(key string) (int, bool) {
+ hash := ht.hash(key)
+ for ht.keys[hash] != "" {
+ if ht.keys[hash] == key {
+ return ht.values[hash], true
+ }
+ hash = (hash + 1) % ht.capacity
+ }
+ return 0, false
+}
+
+func (ht \*HashTable) Delete(key string) bool {
+ hash := ht.hash(key)
+ for ht.keys[hash] != "" {
+ if ht.keys[hash] == key {
+ ht.keys[hash] = ""
+ ht.values[hash] = 0
+ ht.size--
+ return true
+ }
+ hash = (hash + 1) % ht.capacity
+ }
+ return false
+}
+```
+The `HashTable` struct represents a hash table using linear probing as the collision resolution technique. The `NewHashTable` function creates a new hash table with the specified capacity.
+
+The `hash` function takes a key and returns its hash code using the polynomial hash function with a prime base of 31.
+
+The `Insert` function inserts a key-value pair into the hash table using linear probing to resolve collisions. If the hash table is full, the function panics.
+
+The `Get` function retrieves the value associated with a given key from the hash table. If the key is not found in the hash table, the function returns false.
+
+The `Delete` function removes a key-value pair from the hash table. If the key is not found in the hash table, the function returns false.
+
+Note that this implementation has a worst-case time complexity of O(n), where n is the number of elements in the hash table. This worst case occurs when all keys hash to the same value and all of them are clustered in a single chain in the hash table. In practice, however, this worst case is rare, and linear probing can provide good performance for hash tables with low load factors.
+
+
+Sure, here's a possible implementation of a function that takes in two strings and determines whether they are anagrams of each other using a hash table:
+
+
+```golang
+func areAnagrams(s1, s2 string) bool {
+ if len(s1) != len(s2) {
+ return false
+ }
+
+ // create a map to count the occurrences of each character in s1
+ counts := make(map[rune]int)
+ for _, ch := range s1 {
+ counts[ch]++
+ }
+
+ // decrement the count for each character in s2, and check if all counts become zero
+ for _, ch := range s2 {
+ if counts[ch] == 0 {
+ return false
+ }
+ counts[ch]--
+ }
+
+ // if all counts are zero, then s1 and s2 are anagrams
+ return true
+}
+```
+The `areAnagrams` function takes two strings `s1` and `s2` as input and returns true if they are anagrams of each other, and false otherwise.
+
+First, the function checks if the lengths of the two strings are equal. If not, then they cannot be anagrams, and the function returns false.
+
+Next, the function creates a map called `counts` that will be used to count the occurrences of each character in `s1`. The `counts` map is initialized with zero counts for all characters in `s1`, using a loop that iterates over the runes in `s1`.
+
+After that, the function decrements the count for each character in `s2` and checks if any count becomes negative or zero. If the count of a character becomes zero, then that character is present the same number of times in both `s1` and `s2`. If the count becomes negative, then `s2` contains a character that is not present in `s1`, and the function returns false.
+
+Finally, the function checks if all counts in the `counts` map are zero. If they are, then `s1` and `s2` are anagrams, and the function returns true. Otherwise, the function returns false.
+
+
+Sure, here's a possible implementation of a function that takes in a list of words and groups them by their anagrams using a hash table:
+
+
+```golang
+func groupAnagrams(words []string) [][]string {
+ groups := make(map[string][]string)
+
+ for _, word := range words {
+ // sort the characters of the word to get its canonical form
+ sorted := sortString(word)
+
+ // add the word to the group for its canonical form
+ groups[sorted] = append(groups[sorted], word)
+ }
+
+ // convert the map of groups to a slice of slices
+ var result [][]string
+ for _, group := range groups {
+ result = append(result, group)
+ }
+
+ return result
+}
+
+func sortString(s string) string {
+ runes := []rune(s)
+ sort.Slice(runes, func(i, j int) bool { return runes[i] < runes[j] })
+ return string(runes)
+}
+```
+The `groupAnagrams` function takes a slice of strings called `words` as input and groups them by their anagrams, returning a slice of slices where each inner slice contains all the words that are anagrams of each other.
+
+The function first creates an empty map called `groups` that will be used to store the groups of anagrams. For each word in the input slice, the function sorts its characters to get its canonical form, and adds the word to the group for its canonical form in the `groups` map. The sorting is performed by the `sortString` function, which converts a string to a slice of runes, sorts the runes using the `sort.Slice` function, and converts the sorted slice back to a string.
+
+Finally, the function converts the `groups` map to a slice of slices called `result` by iterating over the values of the map and appending each value (i.e., a slice of strings) to `result`. The function then returns `result`, which contains all the groups of anagrams.
+
+
+Sure, here's a possible implementation of a function that takes in a list of integers and returns the k most frequent integers using a hash table:
+
+
+```golang
+func topKFrequent(nums []int, k int) []int {
+ count := make(map[int]int)
+
+ // count the frequency of each number
+ for _, num := range nums {
+ count[num]++
+ }
+
+ // build a max heap of size k
+ var heap []int
+ for num := range count {
+ heap = append(heap, num)
+ if len(heap) > k {
+ heap = removeMin(heap, count)
+ }
+ }
+
+ // return the k most frequent numbers
+ result := make([]int, k)
+ for i := 0; i < k; i++ {
+ result[i] = heap[i]
+ }
+ return result
+}
+
+func removeMin(heap []int, count map[int]int) []int {
+ // find the minimum element in the heap
+ minIndex := 0
+ for i := 1; i < len(heap); i++ {
+ if count[heap[i]] < count[heap[minIndex]] {
+ minIndex = i
+ }
+ }
+
+ // remove the minimum element from the heap
+ heap[minIndex] = heap[len(heap)-1]
+ heap = heap[:len(heap)-1]
+
+ // fix the heap property by sifting down the root
+ i := 0
+ for {
+ left := 2*i + 1
+ right := 2*i + 2
+ smallest := i
+ if left < len(heap) && count[heap[left]] < count[heap[smallest]] {
+ smallest = left
+ }
+ if right < len(heap) && count[heap[right]] < count[heap[smallest]] {
+ smallest = right
+ }
+ if smallest != i {
+ heap[i], heap[smallest] = heap[smallest], heap[i]
+ i = smallest
+ } else {
+ break
+ }
+ }
+
+ return heap
+}
+```
+The `topKFrequent` function takes a slice of integers called `nums` and an integer `k` as input, and returns the k most frequent integers in `nums` using a hash table and a max heap.
+
+The function first creates an empty map called `count` that will be used to count the frequency of each number in `nums`. For each number in `nums`, the function increments its count in the `count` map.
+
+The function then builds a max heap of size `k` using a slice called `heap`. For each number in the `count` map, the function adds the number to the `heap` slice and removes the minimum element from the `heap` slice if the size of the `heap` slice exceeds `k`. The `removeMin` function is used to remove the minimum element from the `heap` slice and fix the heap property by sifting down the root.
+
+Finally, the function returns a slice called `result` that contains the `k` most frequent numbers in `nums`. The function initializes `result` to a slice of size `k`, and then copies the first `k` elements of the `heap` slice to `result`.
+
+Note that the `topKFrequent` function assumes that `k` is less than or equal to the number of distinct integers in `nums`. If `k` is greater than the number of distinct integers in `nums`, the function will return a slice of size less than `k`.
+
+
+Sure, here's an implementation of a hash table that supports resizing when the load factor exceeds a certain threshold (in this case, 0.75):
+
+
+```golang
+type Node struct {
+ Key int
+ Value int
+ Next *Node
+}
+
+type HashTable struct {
+ data []*Node
+ size int
+ capacity int
+ loadFactor float64
+}
+
+func NewHashTable() *HashTable {
+ return &HashTable{
+ data: make([]*Node, 16),
+ size: 0,
+ capacity: 16,
+ loadFactor: 0.75,
+ }
+}
+
+func (h \*HashTable) hash(key int) int {
+ return key % h.capacity
+}
+
+func (h \*HashTable) resize() {
+ newCapacity := h.capacity * 2
+ newData := make([]*Node, newCapacity)
+
+ for i := 0; i < h.capacity; i++ {
+ curr := h.data[i]
+ for curr != nil {
+ next := curr.Next
+ idx := h.hash(curr.Key)
+ curr.Next = newData[idx]
+ newData[idx] = curr
+ curr = next
+ }
+ }
+
+ h.data = newData
+ h.capacity = newCapacity
+}
+
+func (h \*HashTable) Insert(key int, value int) {
+ if float64(h.size)/float64(h.capacity) >= h.loadFactor {
+ h.resize()
+ }
+
+ idx := h.hash(key)
+ node := &Node{Key: key, Value: value}
+ node.Next = h.data[idx]
+ h.data[idx] = node
+ h.size++
+}
+
+func (h \*HashTable) Get(key int) int {
+ idx := h.hash(key)
+ curr := h.data[idx]
+ for curr != nil {
+ if curr.Key == key {
+ return curr.Value
+ }
+ curr = curr.Next
+ }
+ return -1
+}
+
+func (h \*HashTable) Delete(key int) {
+ idx := h.hash(key)
+ curr := h.data[idx]
+ var prev *Node
+
+ for curr != nil {
+ if curr.Key == key {
+ if prev == nil {
+ h.data[idx] = curr.Next
+ } else {
+ prev.Next = curr.Next
+ }
+ h.size--
+ return
+ }
+ prev = curr
+ curr = curr.Next
+ }
+}
+```
+This implementation uses linear probing as the collision resolution technique, and it resizes the hash table when the load factor exceeds 0.75. The hash table is implemented using an array of linked lists, where each linked list contains the key-value pairs that hash to the same index. The `Insert`, `Get`, and `Delete` methods all use the hash function to determine the index of the array that corresponds to the given key. If there is a collision (i.e., two keys hash to the same index), linear probing is used to find the next available slot in the array. The `Insert` method checks the load factor before inserting a new key-value pair, and resizes the hash table if necessary.
+
+
+To solve this problem, we can make use of a hash table. The idea is to consider each string as a circular shift of itself, and then use the hash value of each circular shift as the key in the hash table. If two strings are rotations of each other, then they will have the same hash value for some circular shift.
+
+Here's the algorithm to solve the problem:
+
+1. Initialize an empty hash table.
+2. For each string in the list:
+a. Generate all circular shifts of the string.
+b. For each circular shift, compute its hash value.
+c. If the hash value is already in the hash table, add the string to the group of strings associated with that hash value.
+Otherwise, create a new group with the string as its only member, and add it to the hash table with the hash value as the key.
+3. Return the groups of strings that have more than one member.
+
+Here's the code in Golang:
+
+
+```golang
+func findStringRotations(strings []string) [][]string {
+ // Initialize hash table
+ table := make(map[string][]string)
+ 
+ // Iterate over strings
+ for _, s := range strings {
+ // Generate circular shifts of string
+ shifts := make([]string, len(s))
+ for i := range s {
+ shifts[i] = s[i:] + s[:i]
+ }
+ 
+ // Add shifts to hash table
+ for _, shift := range shifts {
+ hash := getHash(shift)
+ if _, ok := table[hash]; ok {
+ table[hash] = append(table[hash], s)
+ } else {
+ table[hash] = []string{s}
+ }
+ }
+ }
+ 
+ // Collect groups of strings that are rotations of each other
+ groups := make([][]string, 0)
+ for _, v := range table {
+ if len(v) > 1 {
+ groups = append(groups, v)
+ }
+ }
+ 
+ return groups
+}
+
+func getHash(s string) string {
+ // Compute hash value of string
+ hash := 0
+ for _, c := range s {
+ hash = (hash*31 + int(c)) % 1000000007
+ }
+ return strconv.Itoa(hash)
+}
+```
+This code first initializes an empty hash table. Then, for each string in the input list, it generates all circular shifts of the string and computes their hash values. It then adds the string to the group of strings associated with the hash value in the hash table. Finally, it collects all groups of strings that have more than one member and returns them.
+
+
+Here's a solution in Golang that takes in a list of words and returns the words that are palindromes using a hash table:
+
+
+```golang
+func findPalindrome(words []string) []string {
+ result := []string{}
+ m := make(map[string]bool)
+
+ for _, word := range words {
+ if m[word] == true {
+ continue
+ }
+ if isPalindrome(word) {
+ result = append(result, word)
+ m[word] = true
+ }
+ }
+ return result
+}
+
+func isPalindrome(word string) bool {
+ for i, j := 0, len(word)-1; i < j; i, j = i+1, j-1 {
+ if word[i] != word[j] {
+ return false
+ }
+ }
+ return true
+}
+```
+The `findPalindrome` function takes in a list of words and initializes an empty slice `result` and an empty hash table `m`. It then loops through each word in the list and checks if it is already in the hash table. If it is, it skips to the next word. If it is not, it checks if the word is a palindrome using the `isPalindrome` function. If it is a palindrome, it adds it to the `result` slice and sets the value of the word in the hash table to `true`. Finally, it returns the `result` slice containing all the palindrome words.
+
+The `isPalindrome` function takes in a word and loops through its characters from both ends, checking if they match. If they do not match, it returns `false`. If all characters match, it returns `true`, indicating that the word is a palindrome.
+
+## Chapter 13 Advanced Topics
+
+Examples
+1. Solution for estimating the value of pi using Monte Carlo method in Go:
+
+
+```golang
+package main
+
+import (
+ "fmt"
+ "math/rand"
+)
+
+func main() {
+ const n = 1000000
+ var count int
+ rand.Seed(42)
+
+ for i := 0; i < n; i++ {
+ x := rand.Float64()
+ y := rand.Float64()
+
+ if x*x+y*y <= 1 {
+ count++
+ }
+ }
+
+ pi := 4.0 * float64(count) / float64(n)
+ fmt.Printf("Estimated value of pi: %f\n", pi)
+}
+```
+2. Solution for generating a random password in Go:
+
+
+```golang
+package main
+
+import (
+ "fmt"
+ "math/rand"
+ "time"
+)
+
+const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&\*()\_+"
+
+func generatePassword(length int) string {
+ rand.Seed(time.Now().UnixNano())
+
+ password := make([]byte, length)
+ for i := range password {
+ password[i] = charset[rand.Intn(len(charset))]
+ }
+ return string(password)
+}
+
+func main() {
+ password := generatePassword(10)
+ fmt.Println(password)
+}
+```
+3. Solution for randomized quicksort in Go:
+
+
+```golang
+package main
+
+import (
+ "fmt"
+ "math/rand"
+)
+
+func quicksort(arr []int) []int {
+ if len(arr) < 2 {
+ return arr
+ }
+
+ pivotIndex := rand.Intn(len(arr))
+ pivot := arr[pivotIndex]
+
+ left, right := 0, len(arr)-1
+ arr[pivotIndex], arr[right] = arr[right], arr[pivotIndex]
+
+ for i := range arr {
+ if arr[i] < pivot {
+ arr[i], arr[left] = arr[left], arr[i]
+ left++
+ }
+ }
+
+ arr[left], arr[right] = arr[right], arr[left]
+
+ quicksort(arr[:left])
+ quicksort(arr[left+1:])
+
+ return arr
+}
+
+func main() {
+ arr := []int{5, 2, 9, 1, 5, 6, 8, 3, 7}
+ fmt.Println(quicksort(arr))
+}
+```
+4. Solution for shuffling a deck of cards using a random number generator in Go:
+
+
+```golang
+package main
+
+import (
+ "fmt"
+ "math/rand"
+ "time"
+)
+
+type Card struct {
+ suit string
+ rank string
+}
+
+func createDeck() []Card {
+ suits := []string{"Hearts", "Diamonds", "Clubs", "Spades"}
+ ranks := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
+
+ deck := []Card{}
+
+ for _, suit := range suits {
+ for _, rank := range ranks {
+ card := Card{suit, rank}
+ deck = append(deck, card)
+ }
+ }
+
+ return deck
+}
+
+func shuffleDeck(deck []Card) []Card {
+ rand.Seed(time.Now().UnixNano())
+
+ for i := range deck {
+ j := rand.Intn(i + 1)
+ deck[i], deck[j] = deck[j], deck[i]
+ }
+
+ return deck
+}
+
+func main() {
+ deck := createDeck()
+ shuffledDeck := shuffleDeck(deck)
+ fmt.Println(shuffledDeck)
+}
+```

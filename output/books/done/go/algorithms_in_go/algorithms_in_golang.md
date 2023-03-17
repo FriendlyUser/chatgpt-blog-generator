@@ -342,6 +342,7 @@ By following these best practices and leveraging the built-in and third-party to
 
 Here are some basic practice exercises in Go:
 
+## Exercises
 1. Write a program that prints the numbers from 1 to 100, but for multiples of three, print "Fizz" instead of the number, and for multiples of five, print "Buzz". For numbers that are multiples of both three and five, print "FizzBuzz".
 2. Write a program that takes a string as input and prints out the number of vowels in the string.
 3. Write a program that reads in a list of integers from the user and prints out the sum of the integers.
@@ -456,6 +457,7 @@ These are just a few examples of the many types of algorithms that exist. The sp
 
 Here are some practice exercises for basic Big-O notation:
 
+## Exercises
 1. Determine the Big-O notation for the following code:
 
 
@@ -698,7 +700,7 @@ A stable sorting algorithm is a sorting algorithm that preserves the relative or
 
 Overall, the choice of sorting algorithm depends on the specific requirements of your application. If you are dealing with small input sizes and simplicity of implementation is a priority, Bubble Sort, Selection Sort, or Insertion Sort may be sufficient. If you are dealing with larger datasets and speed is a priority, Quick Sort or Heap Sort may be better choices. If you need to sort large datasets and additional memory is not a concern, Merge Sort may be a good option.
 
-
+## Exercises
 Here are some practice exercises related to sorting algorithms:
 
 1. Implement a sorting algorithm of your choice in Golang, and test it with a variety of input sizes to compare its performance. How does its time complexity match up with the theoretical expectations?
@@ -900,6 +902,7 @@ Note that these implementations assume that the input array is sorted in ascendi
 
 Here are some practice exercises on searching algorithms in Golang:
 
+## Exercises
 1. Implement a function `linearSearchString` that performs linear search on an array of strings, and returns the index of the target string, or -1 if the target is not found. The function should have the signature:
 
 
@@ -944,7 +947,8 @@ However, it's important to note that recursion can have some drawbacks. Recursiv
 Overall, recursion is a powerful tool in programming, and its applications are numerous. By understanding the principles of recursion and its various applications, programmers can write more efficient and elegant code that solves complex problems.
 
 
-Sure! Here are the implementations of the factorial and Fibonacci sequence functions using recursion in Golang:
+## Implementations of recursion in Golang
+Here are the implementations of the factorial and Fibonacci sequence functions using recursion in Golang:
 
 
 ```golang
@@ -984,7 +988,7 @@ Recursion is often used in sorting and searching algorithms to divide the proble
 
 By using recursion in these algorithms, it's possible to write more elegant and concise code that solves complex problems. However, it's important to be aware of the potential drawbacks of recursion, such as stack overflow errors and poor performance for large data sets.
 
-
+## Backtracking
 Backtracking is an algorithmic technique that is used to solve problems by systematically searching for a solution among all possible options. It works by incrementally building a solution to the problem, and then "backtracking" when it determines that the solution cannot be completed.
 
 The basic idea behind backtracking is to explore all possible solutions by trying out each possible candidate solution, one at a time. If a candidate solution is found to be invalid (i.e. it does not satisfy the problem constraints), the algorithm "backs up" and tries a different candidate solution. This process continues until either a valid solution is found, or all possible solutions have been explored.
@@ -998,8 +1002,8 @@ Backtracking can be applied to a wide range of problems, including:
 By using backtracking, it's possible to solve complex problems that may not be solvable using other algorithmic techniques. However, backtracking algorithms can be computationally expensive, and may not be efficient for large data sets.
 
 
-Sure! Here are some practice exercises for backtracking:
-
+Here are some practice exercises for backtracking:
+## Exercises
 1. Write a function to solve the Sudoku puzzle using backtracking.
 ```go
 func main() {
@@ -1032,6 +1036,8 @@ These exercises will help you develop your backtracking skills and improve your 
 
 
 # Chapter 6: Algorithmic Techniques
+
+## Divide and conquer
 Divide and conquer is a powerful algorithmic technique that involves breaking down a complex problem into smaller sub-problems, solving each sub-problem recursively, and then combining the solutions of the sub-problems to form the final solution to the original problem. The basic steps involved in the divide and conquer technique are:
 
 1. Divide the problem into smaller sub-problems.
@@ -1046,7 +1052,7 @@ Divide and conquer algorithms are often used in problems that can be broken down
 
 Divide and conquer algorithms are often more efficient than other types of algorithms for large datasets, since they can exploit parallelism and reduce the amount of data that needs to be processed at any given time. However, they can be more complex to implement and may require more memory than other types of algorithms.
 
-
+## Dynamic Programming
 Dynamic programming is an algorithmic technique used to solve complex problems by breaking them down into smaller sub-problems and solving each sub-problem only once. The technique is particularly useful for problems that exhibit optimal substructure and overlapping sub-problems.
 
 The basic steps involved in dynamic programming are:
@@ -1065,7 +1071,7 @@ Dynamic programming is often used for optimization problems, such as finding the
 
 Dynamic programming is particularly useful when the problem has many overlapping sub-problems, as it allows for these sub-problems to be solved only once, rather than repeatedly solving the same sub-problem multiple times. This results in a significant improvement in efficiency and performance.
 
-
+## Greedy algorithms
 Greedy algorithms are a class of algorithms that make the locally optimal choice at each step with the hope of finding a global optimum. They work by selecting the best available option at each step, without considering the overall consequences of that choice.
 
 The basic steps involved in a greedy algorithm are:
@@ -1125,6 +1131,7 @@ Branch and Bound is a powerful technique that can often find optimal solutions t
 
 Here are some practice exercises for branch and bound:
 
+### Exercises
 1. Implement a branch and bound algorithm to solve the knapsack problem, where each item has a weight and a value, and the goal is to maximize the total value of items that can fit in a knapsack with a given weight capacity.
 2. Use a branch and bound algorithm to solve the traveling salesman problem for a given set of cities and distances between them, where the goal is to find the shortest possible route that visits each city exactly once and returns to the starting city.
 3. Implement a branch and bound algorithm to solve the graph coloring problem for a given graph, where the goal is to color each vertex such that no two adjacent vertices have the same color, using the minimum number of colors possible.
@@ -1206,12 +1213,13 @@ Both algorithms have their strengths and weaknesses, and the choice of algorithm
 
 Here are some practice exercises for Dijkstra's algorithm and Bellman-Ford algorithm:
 
+## Exercises
 1. Implement Dijkstra's algorithm and Bellman-Ford algorithm in Golang.
 2. Use Dijkstra's algorithm to find the shortest path from vertex 1 to all other vertices in the following graph:
 
 
-```golang
-4 1
+```
+ 4 1
  1-----2-----3
  | | |
  5 2 6
@@ -1219,13 +1227,14 @@ Here are some practice exercises for Dijkstra's algorithm and Bellman-Ford algor
  4-----5-----6
  2 3
 ```
+
 Assume that the edges are weighted as shown in the diagram.
 
 3. Use Bellman-Ford algorithm to find the shortest path from vertex A to all other vertices in the following graph:
 
 
 ```golang
-2
+ 2
  A----------B
  | \ |
  | \ |
@@ -1234,6 +1243,7 @@ Assume that the edges are weighted as shown in the diagram.
  C----------D
  3
 ```
+
 Assume that the edges are weighted as shown in the diagram.
 
 4. Compare the time complexity and performance of Dijkstra's algorithm and Bellman-Ford algorithm on a large graph with 1000 vertices and 5000 edges. Which algorithm is faster? Why?
@@ -1242,8 +1252,8 @@ Assume that the edges are weighted as shown in the diagram.
 7. Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex 6 in the following graph:
 
 
-```golang
-1 5
+```
+ 1 5
  1-----2-----3
  | | |
  5 2 6
@@ -1251,12 +1261,13 @@ Assume that the edges are weighted as shown in the diagram.
  4-----5-----6
  2 1
 ```
+
 Assume that the edges are weighted as shown in the diagram.
 
 8. Use Bellman-Ford algorithm to find the shortest path from vertex A to vertex D in the following graph:
 
 
-```golang
+```
  A----------B
  | \ |
  | \ |
@@ -1265,6 +1276,7 @@ Assume that the edges are weighted as shown in the diagram.
  C----------D
  3
 ```
+
 Assume that the edges are weighted as shown in the diagram.
 
 These exercises will help you understand and practice Dijkstra's algorithm and Bellman-Ford algorithm. Good luck!
@@ -1295,27 +1307,27 @@ and a weight constraint of 50, the algorithm would select item 1 and item 2, wit
 2. Dijkstra's algorithm: Given a weighted graph, we need to find the shortest path between two vertices. The algorithm starts at the source vertex and visits its neighbors, updating their distances and recording the shortest path. It then selects the unvisited vertex with the smallest distance and repeats the process until the destination vertex is reached. For example, if we have the following graph:
 
 
-```golang
-A --4-- B --2-- C
-| |
 ```
-1| 3|
-| |
-D --5-- E --1-- F
+    A --4-- B --2-- C
+    | |
+    ```
+    1| 3|
+    | |
+    D --5-- E --1-- F
 ```
+
 
 and we want to find the shortest path from A to F, the algorithm would visit the vertices in the following order: A, B, C, E, F, and the shortest path would be A -> B -> C -> E -> F, with a total distance of 7.
 
 3. Kruskal's algorithm: Given a weighted graph, we need to find the minimum spanning tree, which is a tree that connects all vertices with the minimum total weight. The algorithm starts with a forest of single-vertex trees and repeatedly selects the edge with the smallest weight that connects two different trees, until all vertices are connected. For example, if we have the following graph:
 
 
-```golang
-A --1-- B --3-- C
-| |
 ```
-4| 2|
-| |
-D --5-- E --6-- F
+    A --1-- B --3-- C
+    | |
+    4| 2|
+    | |
+    D --5-- E --6-- F
 ```
 
 the algorithm would select the edges in the following order: A-B, B-C, B-E, D-A, E-F, with a total weight of 17.
@@ -1377,7 +1389,9 @@ Divide and conquer is a powerful problem-solving technique that is used in many 
 Overall, the choice of problem-solving technique depends on the specific problem being solved and the requirements of the solution. Divide and conquer is a powerful and widely used technique that is particularly effective for problems that can be solved recursively.
 
 
-Sure, here are some practice exercises on divide and conquer:
+here are some practice exercises on divide and conquer:
+
+## Exercises
 
 1. Implement a divide and conquer algorithm to find the maximum element in an array.
 2. Implement a divide and conquer algorithm to count the number of inversions in an array. An inversion is a pair of elements in the array where the larger element appears before the smaller element.
@@ -1432,8 +1446,10 @@ The Rabin-Karp algorithm is preferred when the pattern is relatively small and t
 Overall, both algorithms have their own strengths and weaknesses, and the choice of which algorithm to use depends on the specific problem at hand.
 
 
-Sure, here are some practice exercises on string algorithms:
+Here are some practice exercises on string algorithms:
 
+
+## Exercises
 1. Write a function in Golang to implement the Knuth-Morris-Pratt algorithm for string searching.
 2. Write a function in Golang to implement the Boyer-Moore algorithm for string searching.
 3. Write a function in Golang to implement the Rabin-Karp algorithm for string matching.
@@ -1471,6 +1487,7 @@ function preorder(node):
  preorder(node.left)
  preorder(node.right)
 ```
+
 2. In-order traversal: In in-order traversal, we visit the left child of the current node first, then the current node, and then its right child. The algorithm can be defined recursively as follows:
 
 
@@ -1503,7 +1520,9 @@ Tree balancing algorithms are used to balance binary search trees, which ensures
 Both AVL tree and red-black tree are used in databases, operating systems, and other applications where fast searching and efficient insert and delete operations are required.
 
 
-Sure, here are some practice exercises related to tree data structures:
+Here are some practice exercises related to tree data structures:
+
+## Exercises
 
 1. Implement a binary search tree in Golang and perform pre-order, in-order, and post-order traversals.
 2. Implement an AVL tree in Golang and demonstrate its self-balancing properties by inserting and deleting nodes.
@@ -1588,6 +1607,8 @@ In the above example, we create a hash table using a map and add elements to it.
 
 
 Here are some practice exercises:
+
+## Exercises
 
 1. Implement a hash table that supports the following operations: insert(key, value), get(key), and delete(key).
 2. Write a function that takes in an array of integers and finds the first non-repeated integer using a hash table.
