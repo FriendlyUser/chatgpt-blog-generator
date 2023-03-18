@@ -1,0 +1,124 @@
+outputFormat: "astro-tech-blog"
+genImage: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["jsx"]
+  title: "Introduction to Angular"
+  description: "A Beginner’s Guide to Learning Angular with"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "tsx"
+outputFile: "getting_started_with_angular.md"
+references: []
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/go"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Angular. For the above title in a technical book use future prompts to write for a technical audience for a bookand give consise explainations for code. Try not to repeat the code in the chapters. Respond with 'confirm' to acknowledge that you understand the prompt."
+sections:
+  # - type: "raw"
+  #   src: "# Chapter 1: Getting Started with Angular"
+  # - Introduction to Angular
+  # - Setting up the development environment
+  # - Creating a new Angular application
+  # - Understanding the structure of an Angular application
+  # - Running the application
+
+  # - type: "raw"
+  #   src: "# Chapter 2: Angular Components"
+  # - Introduction to Angular components
+  # - Creating a component
+  # - Building the component template
+  # - Understanding component metadata
+  # - Using Angular directives in components
+  # - Nesting components
+
+  # - type: "raw"
+  #   src: "# Chapter 3: Data Binding and Pipes"
+  # - Introduction to data binding
+  # - Property binding
+  # - Event binding
+  # - Two-way binding
+  # - Understanding pipes
+  # - Creating a custom pipe
+
+  # - type: "raw"
+  #   src: "# Chapter 4: Services and Dependency Injection"
+  # - Introduction to services
+  # - Creating a service
+  # - Using a service in a component
+  # - Understanding dependency injection
+  # - Providers and Injectors
+
+  # - type: "raw"
+  #   src: "# Chapter 5: Routing and Navigation"
+  # - Introduction to Angular routing
+  # - Setting up routing in an Angular application
+  # - Defining routes
+  # - Navigating between routes
+  # - Passing parameters in routes
+  # - Lazy loading modules
+
+  - type: "raw"
+    src: "# Chapter 6: Forms and Validation"
+  # - Introduction to Angular forms
+  # - Template-driven forms
+  # - Reactive forms
+  - Form validation
+  - Custom form validators
+
+  - type: "raw"
+    src: "# Chapter 7: HTTP and Observables"
+  - Introduction to HTTP
+  - Making HTTP requests in Angular
+  - Handling HTTP responses
+  - Using RxJS Observables
+  - Chaining Observable operators
+
+  - type: "raw"
+    src: "# Chapter 8: Angular CLI and Deployment"
+  - Introduction to Angular CLI
+  - Creating components, services, and modules using the CLI
+  - Building and testing an Angular application using the CLI
+  - Deploying an Angular application
+
+  - type: "raw"
+    src: "# Chapter 9: Directives and Pipes"
+  - Introduction to directives
+  - Built-in directives in Angular
+  - Creating custom directives
+  - Introduction to pipes
+  - Creating custom pipes
+
+  - type: "raw"
+    src: "# Chapter 10: Animations"
+  - Introduction to animations in Angular
+  - Using Angular's built-in animation library
+  - Creating custom animations
+  - Using keyframes in animations
+
+  - type: "raw"
+    src: "# Chapter 11: Unit Testing"
+  - Introduction to unit testing in Angular
+  - Setting up the testing environment
+  - Writing unit tests for components, services, and directives
+  - Using Jasmine testing framework
+
+  - type: "raw"
+    src: "# Chapter 12: Integration Testing"
+  - Introduction to integration testing in Angular
+  - Setting up the testing environment
+  - Writing integration tests for components and services
+  - Using Protractor for end-to-end testing
+
+  - type: "raw"
+    src: "# Chapter 13: Project Implementation"
+  - A simple project to implement an online shopping cart system
+  - Building the project using Angular
+  - Integrating the project with a backend server
+  - Deploying the project to a cloud server
+
+  - type: "raw"
+    src: "# Conclusion"
+  - Summary of key concepts and skills learned in the book
+  - Next steps for further learning and development in Angular. 
