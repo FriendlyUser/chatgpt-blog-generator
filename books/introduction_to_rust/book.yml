@@ -1,0 +1,110 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+writePrompt: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["rust"]
+  title: "Introduction to rust"
+  description: "Introduction to rust"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "tsx"
+outputFile: "rust.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/react"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Rust
+For the above title in a technical book use future prompts to write for a technical audience for the book and give concise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt. Make sure all code is original and written in rust."
+sections:
+- type: "raw"
+  src: "# Chapter 1: Introduction to Rust"
+- What is Rust and why use it?
+- Rust's history
+- Rust's features
+- Rust's syntax
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 2: Getting Started with Rust"
+- Installing Rust
+- Setting up the Rust environment
+- Hello, World! in Rust
+- Rust's basic syntax
+- Rust's data types
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 3: Control Flow in Rust"
+- Rust's if/else statements
+- Rust's loops
+- Rust's match statements
+- Rust's error handling
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 4: Rust's Ownership Model"
+- What is Rust's ownership model?
+- Rust's borrowing rules
+- Rust's lifetimes
+- Rust's smart pointers
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 5: Rust's Concurrency Model"
+- What is Rust's concurrency model?
+- Rust's threads
+- Rust's message passing
+- Rust's synchronization primitives
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 6: Rust's Standard Library"
+- Rust's standard library
+- Rust's collections
+- Rust's I/O
+- Rust's networking
+- Rust's file handling
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 7: Rust's Advanced Features"
+- Rust's macros
+- Rust's unsafe code
+- Rust's FFI
+- Rust's procedural macros
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 8: Rust's Web Development"
+- Rust's web frameworks
+- Rust's web servers
+- Rust's web clients
+- Rust's web assembly
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 9: Rust's Systems Programming"
+- Rust's systems programming
+- Rust's low-level programming
+- Rust's system calls
+- Rust's memory management
+- Exercises
+- Solutions to exercises
+
+- type: "raw"
+  src: "# Chapter 10: Rust's Projects"
+- Simple projects in Rust
+- Intermediate projects in Rust
+- Advanced projects in Rust
+- Solutions to exercises
+- Sample project ideas per chapter

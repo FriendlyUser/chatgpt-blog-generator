@@ -18,7 +18,6 @@
 - backend development in dart
 - nosql with mongodb and nodejs
 - scala
-- rust
 - C++ and C
 - AutoHotKey for automation
 - gui development in python
@@ -26,13 +25,14 @@
 
 ------
 
-Write a book outline for an Introduction to Angular. 
+  Write a book outline for an Introduction to Angular. 
 
-Ensure 5 to 6 points per chapter and at least 13 chapters.
+  Ensure 4 to 7 points per chapter and at least 13 chapters. Ensure one point is for exercises and another is for solution to exercises.
 
-In the later chapters, write simple projects users implement.
+  In the later chapters, write simple projects users can reference.
 
-Ensure the content is original and does not infridge on copyright.
+  Ensure the content is original and does not infridge on copyright.
+
 
 ------
 
@@ -46,14 +46,14 @@ for each chapter rewrite with
 
 and each subsection is 
 
-- What is Kotlin and why use it?
+- "Overview of PowerShell?"
 Example yaml would be:
 
 ```yaml
 sections:
 - type: "raw"
   src: "# Chapter 1: Introduction to PowerShell"
-- Overview of PowerShell?
+- "Overview of PowerShell?"
 ```
 
 

@@ -1,0 +1,47 @@
+AutoHotkey is a free, open-source scripting language for Windows that allows users to easily create small to complex scripts for all kinds of tasks such as: form fillers, auto-clicking, macros, etc². It can also be used to automate anything in Windows by defining hotkeys and text macros¹.
+
+A possible book outline for AutoHotkey for automation that covers autohotkey scripts for windows could be:
+
+- Introduction
+  - What is AutoHotkey and why use it?
+  - How to install and run AutoHotkey
+  - Basic syntax and commands
+- Hotkeys and Hotstrings
+  - How to define hotkeys for the mouse and keyboard
+  - How to remap keys or buttons
+  - How to create autocorrect-like replacements
+- Targeting Specific Apps or Windows
+  - How to use Window Spy to get window information
+  - How to use WinTitle, WinText, WinClass and other criteria
+  - How to activate, close, resize or move windows
+- Replicating Mouse Movements and Clicks
+  - How to use MouseGetPos and MouseMove commands
+  - How to use Click command with different options
+  - How to record mouse actions with Pulover's Macro Creator
+- Replicating Keyboard Keypresses
+  - How to use Send command with different modifiers
+  - How to use ControlSend command for background windows
+  - How to record keyboard actions with Pulover's Macro Creator 
+- Working with Files and Folders 
+  - How to use File commands for creating, deleting, copying or moving files 
+  - How to use Loop command for iterating over files or folders 
+  - How to use FileSelectFile and FileSelectFolder dialogs 
+- Working with Text and Clipboard 
+  - How to use String commands for manipulating text 
+  - How to use Clipboard commands for copying and pasting text 
+  - How to use InputBox and MsgBox dialogs 
+- Working with Web Pages and Browsers 
+   *How* *to* *use* *COM* *objects* *for* *interacting* *with* *Internet Explorer*
+   *How* *to* *use* *Web Scraping techniques*
+   *How* *to* *use* *Selenium WebDriver library*
+- Advanced Topics 
+   *How* *to* *use* functions,* variables,* expressions,* operators,* arrays,* objects,* classes,* etc.
+   *How* **to** **use** **GUI** **commands** **for** **creating** **custom** **user** **interfaces**
+   **How** **to** **use** **DLLCall** **command** **for** calling external functions**
+   ***How*** ***to*** ***compile*** ***scripts*** ***into*** ***executable*** ***files***
+
+Source: Conversation with Bing, 3/18/2023(1) AutoHotkey. https://www.autohotkey.com/ Accessed 3/18/2023.
+(2) How to Use AutoHotkey to Automate Anything in Windows. https://www.maketecheasier.com/autohotkey-automate-windows/ Accessed 3/18/2023.
+(3) GitHub - AutoHotkey/AutoHotkey: AutoHotkey - macro-creation and .... https://github.com/AutoHotkey/AutoHotkey Accessed 3/18/2023.
+(4) 10 Essential AutoHotkey Scripts to Simplify Your Workflow on ... - TechPP. https://techpp.com/2021/04/19/essential-autohotkey-scripts/ Accessed 3/18/2023.
+(5) AutoHotkey: A perfect tool to Automate Tasks on Windows. https://techpp.com/2020/12/09/autohotkey-windows-automation-guide/ Accessed 3/18/2023.
