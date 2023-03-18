@@ -1,5 +1,5 @@
 ---
-tags: ['golang', 'algorithms']
+tags: ['csharp', 'algorithms']
 title: Introduction to Algorithms with Golang
 description: A Beginner’s Guide to Learning Algorithms with Golang
 pubDate: Fri, 14 December 2024
@@ -3041,12 +3041,505 @@ public static int BinarySearch(int[] arr, int low, int high, int target)
 
 TODO: 
 
-4. Kth Smallest Element using Divide and Conquer: 
+4. Write a C# program to find the kth smallest element in an unsorted array using Divide and Conquer approach.
+Here's a C# program to find the kth smallest element in an unsorted array using the Divide and Conquer approach:
 
 
 ```csharp
-public static int KthSmallest(int[] arr, int low,
+using System;
+
+class KthSmallest
+{
+ public static int FindKthSmallest(int[] arr, int left, int right, int k)
+ {
+ if (k > 0 && k <= right - left + 1)
+ {
+ int pos = Partition(arr, left, right);
+
+ if (pos - left == k - 1)
+ return arr[pos];
+
+ if (pos - left > k - 1)
+ return FindKthSmallest(arr, left, pos - 1, k);
+
+ return FindKthSmallest(arr, pos + 1, right, k - pos + left - 1);
+ }
+
+ return -1;
+ }
+
+ private static int Partition(int[] arr, int left, int right)
+ {
+ int pivot = arr[right];
+ int i = left;
+
+ for (int j = left; j <= right - 1; j++)
+ {
+ if (arr[j] < pivot)
+ {
+ Swap(ref arr[i], ref arr[j]);
+ i++;
+ }
+ }
+
+ Swap(ref arr[i], ref arr[right]);
+ return i;
+ }
+
+ private static void Swap(ref int a, ref int b)
+ {
+ int temp = a;
+ a = b;
+ b = temp;
+ }
+
+ static void Main(string[] args)
+ {
+ int[] arr = { 7, 10, 4, 3, 20, 15 };
+ int n = arr.Length;
+ int k = 4;
+
+ Console.WriteLine("Array: [{0}]", string.Join(", ", arr));
+ Console.WriteLine("kth smallest element: " + FindKthSmallest(arr, 0, n - 1, k));
+ }
+}
 ```
+In this program, the `FindKthSmallest` method takes four arguments: the unsorted array, the left index of the array, the right index of the array, and the value of `k`. The method first checks if `k` is within the range of the array, and then partitions the array based on the last element. If the position of the partitioned element is equal to `k-1`, then it returns the element at that position. If the position is greater than `k-1`, then the method recursively calls itself on the left subarray. If the position is less than `k-1`, then the method recursively calls itself on the right subarray, adjusting `k` and the left index accordingly.
+
+The `Partition` method takes three arguments: the unsorted array, the left index of the array, and the right index of the array. It uses the last element as the pivot and swaps elements in the array based on their values compared to the pivot.
+
+The `Swap` method takes two integer references as arguments and swaps their values.
+
+In the `Main` method, we initialize an array, its length, and the value of `k`. We then call `FindKthSmallest` and display the result.
+
+
+5. Implement the Karatsuba algorithm for fast multiplication of two large integers in C#.
+Sure, here's one way to implement the Karatsuba algorithm in C#:
+
+
+```csharp
+using System;
+
+public class Karatsuba
+{
+ public static long Multiply(long x, long y)
+ {
+ if (x < 10 || y < 10) // base case
+ return x * y;
+
+ // calculate number of digits of x and y
+ int m = Math.Max(x.ToString().Length, y.ToString().Length);
+ int m2 = m / 2;
+
+ // split x and y into high and low parts
+ long high1 = x / (long)Math.Pow(10, m2);
+ long low1 = x % (long)Math.Pow(10, m2);
+ long high2 = y / (long)Math.Pow(10, m2);
+ long low2 = y % (long)Math.Pow(10, m2);
+
+ // recursively compute the three multiplications
+ long z0 = Multiply(low1, low2);
+ long z1 = Multiply((low1 + high1), (low2 + high2));
+ long z2 = Multiply(high1, high2);
+
+ // use the Karatsuba formula to combine the three multiplications
+ return z2 * (long)Math.Pow(10, 2 * m2) + (z1 - z2 - z0) * (long)Math.Pow(10, m2) + z0;
+ }
+}
+```
+The `Multiply` method takes two `long` integers as input and recursively applies the Karatsuba algorithm to multiply them. The base case occurs when either of the input numbers has only one digit, in which case the method simply returns their product.
+
+For larger inputs, the method first calculates the number of digits of the input numbers (`m`) and then splits them into high and low parts. The high part contains the leftmost `m/2` digits of the original number, and the low part contains the rightmost `m/2` digits.
+
+The method then recursively computes three multiplications: `z0` for the low parts, `z2` for the high parts, and `z1` for the sum of the high and low parts. Finally, the method combines the three multiplications using the Karatsuba formula and returns the result.
+
+Note that this implementation assumes that the input numbers are non-negative. If negative numbers are allowed, the implementation needs to be modified to handle the sign bit appropriately.
+
+
+6. Write a C# program to find the closest pair of points in a plane using Divide and Conquer approach.
+Here is an implementation of the closest pair of points algorithm using the Divide and Conquer approach in C#:
+
+
+```csharp
+using System;
+
+class Program
+{
+ static void Main(string[] args)
+ {
+ // Example usage
+ Point[] points = new Point[] { new Point(1, 2), new Point(4, 5), new Point(7, 8), new Point(10, 11) };
+ Console.WriteLine(ClosestPair(points));
+ }
+
+ // Point class to represent points in the plane
+ public class Point
+ {
+ public int X { get; set; }
+ public int Y { get; set; }
+ 
+ public Point(int x, int y)
+ {
+ X = x;
+ Y = y;
+ }
+ 
+ public double DistanceTo(Point other)
+ {
+ int dx = X - other.X;
+ int dy = Y - other.Y;
+ return Math.Sqrt(dx * dx + dy * dy);
+ }
+ }
+
+ public static double ClosestPair(Point[] points)
+ {
+ if (points.Length < 2)
+ {
+ throw new ArgumentException("At least 2 points are required");
+ }
+
+ // Sort points by x-coordinate
+ Array.Sort(points, (p1, p2) => p1.X.CompareTo(p2.X));
+
+ // Recursive function to find closest pair of points
+ double FindClosestPair(int left, int right)
+ {
+ if (left == right)
+ {
+ return double.PositiveInfinity;
+ }
+ else if (left + 1 == right)
+ {
+ return points[left].DistanceTo(points[right]);
+ }
+ else
+ {
+ int mid = (left + right) / 2;
+ double d1 = FindClosestPair(left, mid);
+ double d2 = FindClosestPair(mid + 1, right);
+ double d = Math.Min(d1, d2);
+ 
+ // Find closest pair of points that cross the midpoint
+ Point[] strip = new Point[right - left + 1];
+ int j = 0;
+ for (int i = left; i <= right; i++)
+ {
+ if (Math.Abs(points[i].X - points[mid].X) < d)
+ {
+ strip[j++] = points[i];
+ }
+ }
+ Array.Resize(ref strip, j);
+ Array.Sort(strip, (p1, p2) => p1.Y.CompareTo(p2.Y));
+ for (int i = 0; i < strip.Length; i++)
+ {
+ for (int k = i + 1; k < strip.Length && strip[k].Y - strip[i].Y < d; k++)
+ {
+ double dist = strip[i].DistanceTo(strip[k]);
+ d = Math.Min(d, dist);
+ }
+ }
+ return d;
+ }
+ }
+
+ // Call recursive function
+ return FindClosestPair(0, points.Length - 1);
+ }
+}
+```
+The algorithm takes an array of `Point` objects representing the points in the plane. It first sorts the points by their x-coordinate. It then recursively divides the set of points into two halves and finds the closest pair of points in each half. It then finds the closest pair of points that cross the midpoint, by creating a strip of points with x-coordinate within d of the midpoint, where d is the minimum distance found so far. The strip is sorted by y-coordinate and a nested loop is used to check all pairs of points in the strip that are within distance d of each other. The algorithm returns the smallest distance found.
+
+The time complexity of this algorithm is O(n log n), where n is the number of points
+
+
+7. Implement the Quick Sort algorithm using Divide and Conquer approach in C#.
+Sure, here's an implementation of Quick Sort using the Divide and Conquer approach in C#:
+
+
+```csharp
+using System;
+
+class QuickSort
+{
+ static void Main()
+ {
+ int[] arr = { 5, 2, 7, 3, 1, 8, 6, 4 };
+ Console.WriteLine("Unsorted array:");
+ PrintArray(arr);
+
+ QuickSortAlgorithm(arr, 0, arr.Length - 1);
+
+ Console.WriteLine("\nSorted array:");
+ PrintArray(arr);
+ }
+
+ static void QuickSortAlgorithm(int[] arr, int left, int right)
+ {
+ if (left < right)
+ {
+ int pivotIndex = Partition(arr, left, right);
+ QuickSortAlgorithm(arr, left, pivotIndex - 1);
+ QuickSortAlgorithm(arr, pivotIndex + 1, right);
+ }
+ }
+
+ static int Partition(int[] arr, int left, int right)
+ {
+ int pivot = arr[right];
+ int i = left - 1;
+
+ for (int j = left; j < right; j++)
+ {
+ if (arr[j] < pivot)
+ {
+ i++;
+ int temp = arr[i];
+ arr[i] = arr[j];
+ arr[j] = temp;
+ }
+ }
+
+ int temp1 = arr[i + 1];
+ arr[i + 1] = arr[right];
+ arr[right] = temp1;
+
+ return i + 1;
+ }
+
+ static void PrintArray(int[] arr)
+ {
+ for (int i = 0; i < arr.Length; i++)
+ {
+ Console.Write(arr[i] + " ");
+ }
+ }
+}
+```
+In this implementation, the `QuickSortAlgorithm` method uses the divide and conquer approach to recursively divide the input array into two sub-arrays and sort them separately. The `Partition` method is used to partition the array by choosing a pivot element and placing all elements smaller than the pivot to the left of it and all elements larger than the pivot to the right of it.
+
+Note that this implementation uses the rightmost element of the array as the pivot. In practice, there are more advanced methods for choosing the pivot element to optimize the performance of the algorithm.
+
+
+8. Write a C# program to find the inversion count of an array using Divide and Conquer approach.
+Here's an implementation of the inversion count algorithm using Divide and Conquer approach in C#:
+
+
+```csharp
+using System;
+
+public class InversionCount
+{
+ public static int Count(int[] arr)
+ {
+ int[] temp = new int[arr.Length];
+ return MergeSort(arr, temp, 0, arr.Length - 1);
+ }
+
+ private static int MergeSort(int[] arr, int[] temp, int left, int right)
+ {
+ int mid, invCount = 0;
+ if (right > left)
+ {
+ mid = (right + left) / 2;
+ invCount = MergeSort(arr, temp, left, mid);
+ invCount += MergeSort(arr, temp, mid + 1, right);
+ invCount += Merge(arr, temp, left, mid + 1, right);
+ }
+ return invCount;
+ }
+
+ private static int Merge(int[] arr, int[] temp, int left, int mid, int right)
+ {
+ int i, j, k;
+ int invCount = 0;
+
+ i = left;
+ j = mid;
+ k = left;
+ while ((i <= mid - 1) && (j <= right))
+ {
+ if (arr[i] <= arr[j])
+ {
+ temp[k++] = arr[i++];
+ }
+ else
+ {
+ temp[k++] = arr[j++];
+ invCount += (mid - i);
+ }
+ }
+ while (i <= mid - 1)
+ temp[k++] = arr[i++];
+ while (j <= right)
+ temp[k++] = arr[j++];
+ for (i = left; i <= right; i++)
+ arr[i] = temp[i];
+ return invCount;
+ }
+
+ public static void Main(string[] args)
+ {
+ int[] arr = { 2, 4, 1, 3, 5 };
+ Console.WriteLine("Inversion Count: " + Count(arr));
+ }
+}
+```
+Explanation:
+
+The MergeSort function sorts the array and returns the number of inversions present in the array. It first checks if the right index is greater than the left index, which means there is at least one element in the array. It then finds the middle index and recursively calls MergeSort on the left and right sub-arrays. Finally, it calls the Merge function to merge the two sub-arrays and count the number of inversions.
+
+The Merge function merges two sub-arrays and counts the number of inversions between them. It uses three indices i, j, and k to keep track of the positions in the left, right, and temporary arrays, respectively. It compares the elements at the i-th and j-th indices and copies the smaller one to the k-th position in the temporary array. If the element at the i-th index is greater than the element at the j-th index, it means that there are (mid-i) inversions, where mid is the middle index of the array. This is because the elements from the i-th to the mid-1th index are all greater than the element at the j-th index.
+
+In the Main function, we create an array of integers and call the Count function to find the inversion count of the array. The result is printed to the console.
+
+
+9. Implement the Strassen's algorithm for matrix multiplication in C# using Divide and Conquer approach.
+Sure, here's an implementation of Strassen's algorithm for matrix multiplication in C# using Divide and Conquer approach:
+
+
+```csharp
+using System;
+
+class Program
+{
+ static int[,] Multiply(int[,] A, int[,] B)
+ {
+ int n = A.GetLength(0);
+ int[,] C = new int[n, n];
+ 
+ // Base case
+ if (n == 1)
+ {
+ C[0, 0] = A[0, 0] * B[0, 0];
+ return C;
+ }
+ 
+ // Divide matrices into submatrices
+ int[,] A11 = new int[n/2, n/2];
+ int[,] A12 = new int[n/2, n/2];
+ int[,] A21 = new int[n/2, n/2];
+ int[,] A22 = new int[n/2, n/2];
+ int[,] B11 = new int[n/2, n/2];
+ int[,] B12 = new int[n/2, n/2];
+ int[,] B21 = new int[n/2, n/2];
+ int[,] B22 = new int[n/2, n/2];
+ 
+ for (int i = 0; i < n/2; i++)
+ {
+ for (int j = 0; j < n/2; j++)
+ {
+ A11[i, j] = A[i, j];
+ A12[i, j] = A[i, j + n/2];
+ A21[i, j] = A[i + n/2, j];
+ A22[i, j] = A[i + n/2, j + n/2];
+ 
+ B11[i, j] = B[i, j];
+ B12[i, j] = B[i, j + n/2];
+ B21[i, j] = B[i + n/2, j];
+ B22[i, j] = B[i + n/2, j + n/2];
+ }
+ }
+ 
+ // Recursively multiply submatrices
+ int[,] P1 = Multiply(A11, Subtract(B12, B22));
+ int[,] P2 = Multiply(Add(A11, A12), B22);
+ int[,] P3 = Multiply(Add(A21, A22), B11);
+ int[,] P4 = Multiply(A22, Subtract(B21, B11));
+ int[,] P5 = Multiply(Add(A11, A22), Add(B11, B22));
+ int[,] P6 = Multiply(Subtract(A12, A22), Add(B21, B22));
+ int[,] P7 = Multiply(Subtract(A11, A21), Add(B11, B12));
+ 
+ // Combine submatrices into resulting matrix
+ int[,] C11 = Subtract(Add(Add(P5, P4), P6), P2);
+ int[,] C12 = Add(P1, P2);
+ int[,] C21 = Add(P3, P4);
+ int[,] C22 = Subtract(Subtract(Add(P5, P1), P3), P7);
+ 
+ for (int i = 0; i < n/2; i++)
+ {
+ for (int j = 0; j < n/2; j++)
+ {
+ C[i, j] = C11[i, j];
+ C[i, j + n/2] = C12[i, j];
+ C[i + n/2, j] = C21[i, j];
+ C[i + n/2, j + n/2] = C22[i
+```
+
+10. Write a C# program to find the maximum product of two integers in an array using Divide and Conquer approach.
+Here's an implementation of the Divide and Conquer approach to find the maximum product of two integers in an array in C#:
+
+
+```csharp
+using System;
+
+public class MaxProduct
+{
+ public static int FindMaxProduct(int[] arr)
+ {
+ int n = arr.Length;
+ if (n < 2)
+ {
+ return 0;
+ }
+ return FindMaxProductHelper(arr, 0, n - 1);
+ }
+
+ private static int FindMaxProductHelper(int[] arr, int low, int high)
+ {
+ if (low == high)
+ {
+ return arr[low];
+ }
+ int mid = (low + high) / 2;
+ int leftMax = FindMaxProductHelper(arr, low, mid);
+ int rightMax = FindMaxProductHelper(arr, mid + 1, high);
+ int leftMin = FindLeftMin(arr, low, mid);
+ int rightMin = FindRightMin(arr, mid + 1, high);
+ int max1 = leftMax * rightMax;
+ int max2 = leftMin * rightMin;
+ return Math.Max(max1, max2);
+ }
+
+ private static int FindLeftMin(int[] arr, int low, int high)
+ {
+ int min = arr[low];
+ for (int i = low + 1; i <= high; i++)
+ {
+ if (arr[i] < min)
+ {
+ min = arr[i];
+ }
+ }
+ return min;
+ }
+
+ private static int FindRightMin(int[] arr, int low, int high)
+ {
+ int min = arr[low];
+ for (int i = low + 1; i <= high; i++)
+ {
+ if (arr[i] < min)
+ {
+ min = arr[i];
+ }
+ }
+ return min;
+ }
+}
+```
+The `FindMaxProduct` function takes an array `arr` as input and returns the maximum product of two integers in the array.
+
+The `FindMaxProductHelper` function is a recursive function that takes the array `arr`, the lower and upper bounds of the subarray being processed as input and returns the maximum product of two integers in the subarray.
+
+The `FindLeftMin` function takes the array `arr`, the lower and upper bounds of the subarray being processed as input and returns the minimum value in the subarray.
+
+The `FindRightMin` function takes the array `arr`, the lower and upper bounds of the subarray being processed as input and returns the minimum value in the subarray.
+
+The `FindMaxProductHelper` function first checks if the subarray has only one element, in which case it returns that element. Otherwise, it recursively computes the maximum product of two integers in the left and right halves of the subarray. It also computes the minimum value in the left and right halves of the subarray. It then returns the maximum of the products of the maximum values in the left and right halves and the products of the minimum values in the left and right halves.
+
+Note that this implementation assumes that the array has at least two elements. If the array has fewer than two elements, the function returns 0.
 
 # Chapter 10: String Algorithms
 Introduction to String Algorithms and Their Applications
@@ -3193,6 +3686,7 @@ Here are some practice exercises for string algorithms:
 These practice exercises will help you to improve your understanding and implementation skills in string algorithms.
 
 
+## Solutions
 Here are solutions to the practice exercises for string algorithms:
 
 1. Knuth-Morris-Pratt algorithm implementation:
@@ -3329,6 +3823,639 @@ public static List<int> RabinKarp(string text, string pattern)
  int patternHash = ComputeHash(pattern);
  int textHash = ComputeHash(text
 ```
+
+Write a function that implements the Rabin-Karp algorithm to find all occurrences of a pattern in a text.
+Sure, here's an implementation of the Rabin-Karp algorithm in Python:
+
+
+```csharp
+def rabin_karp(text, pattern):
+ n = len(text)
+ m = len(pattern)
+ h = pow(10, m-1) % 101 # a prime number
+
+ # calculate the hash values for the pattern and the first m characters of the text
+ p = 0
+ t = 0
+ for i in range(m):
+ p = (10 * p + ord(pattern[i])) % 101
+ t = (10 * t + ord(text[i])) % 101
+
+ # compare hash values and check for matches
+ matches = []
+ for i in range(n - m + 1):
+ if p == t:
+ match = True
+ for j in range(m):
+ if pattern[j] != text[i+j]:
+ match = False
+ break
+ if match:
+ matches.append(i)
+ if i < n - m:
+ t = (10 * (t - ord(text[i]) * h) + ord(text[i+m])) % 101
+
+ return matches
+```
+This function takes in two strings, `text` and `pattern`, and returns a list of the starting indices of all occurrences of `pattern` in `text`. The function first calculates the hash values of `pattern` and the first `m` characters of `text`, where `m` is the length of `pattern`. Then, it compares these hash values to check for matches. If there is a match, the function checks whether `pattern` is actually a substring of `text` starting at the current index. Finally, the function moves on to the next `m` characters of `text` and updates the hash value accordingly.
+
+
+Write a function that builds the suffix tree of a string and returns it as a data structure.
+Building a suffix tree is a complex algorithm that involves a lot of steps. Here's an implementation in C#:
+
+
+```csharp
+using System.Collections.Generic;
+
+class SuffixTree
+{
+ private readonly List<Node> nodes = new List<Node>();
+ private readonly string text;
+
+ public SuffixTree(string text)
+ {
+ this.text = text;
+ BuildSuffixTree();
+ }
+
+ private void BuildSuffixTree()
+ {
+ // Create the root node
+ var rootNode = new Node(0, -1, null);
+ nodes.Add(rootNode);
+ var activeNode = rootNode;
+ int activeEdge = -1;
+ int activeLength = 0;
+
+ for (int i = 0; i < text.Length; i++)
+ {
+ Node lastCreatedNode = null;
+ char c = text[i];
+ while (activeLength >= 0)
+ {
+ if (activeLength == 0)
+ {
+ activeEdge = i;
+ }
+ Node child = activeNode.GetChild(text[activeEdge]);
+ if (child == null)
+ {
+ // If the active node doesn't have a child that starts with the current character,
+ // create a new leaf node and add it as a child
+ var leaf = new Node(i, text.Length - 1, activeNode);
+ activeNode.AddChild(text[activeEdge], leaf);
+ lastCreatedNode = leaf;
+ }
+ else
+ {
+ int edgeLength = child.End - child.Start + 1;
+ if (activeLength >= edgeLength)
+ {
+ // If the active length is greater than or equal to the edge length, move the active
+ // point to the end of the edge and continue matching
+ activeEdge += edgeLength;
+ activeLength -= edgeLength;
+ activeNode = child;
+ continue;
+ }
+ if (text[child.Start + activeLength] == c)
+ {
+ // If the current character matches the next character on the edge, increase the active
+ // length and stop processing this character
+ activeLength++;
+ lastCreatedNode?.SetSuffixLink(activeNode);
+ break;
+ }
+ // If the current character doesn't match the next character on the edge, split the edge
+ // at the active point and add a new leaf node
+ var newInternalNode = new Node(child.Start, child.Start + activeLength - 1, activeNode);
+ activeNode.ReplaceChild(text[activeEdge], newInternalNode);
+ var newLeaf = new Node(i, text.Length - 1, newInternalNode);
+ newInternalNode.AddChild(c, newLeaf);
+ child.Start += activeLength;
+ newInternalNode.AddChild(text[child.Start], child);
+ lastCreatedNode?.SetSuffixLink(newInternalNode);
+ lastCreatedNode = newInternalNode;
+ }
+ // Follow the suffix link to the next node
+ if (activeNode == rootNode)
+ {
+ activeLength--;
+ activeEdge = i - activeLength + 1;
+ }
+ else
+ {
+ activeNode = activeNode.GetSuffixLink() ?? rootNode;
+ }
+ }
+ }
+ }
+
+ public List<int> Search(string pattern)
+ {
+ // Search for a pattern in the tree by traversing down the tree, matching each character of the pattern
+ // to an edge label, until we reach a leaf node or run out of characters
+ var result = new List<int>();
+ Node currentNode = nodes[0];
+ int i = 0;
+ while (i < pattern.Length && currentNode != null)
+ {
+ Node child = currentNode.GetChild(pattern[i]);
+ if (child == null)
+ {
+ return result;
+ }
+ int j =
+```
+
+Write a function that uses the suffix tree to find all occurrences of a pattern in a text.
+Here is an example C# function that uses the suffix tree to find all occurrences of a pattern in a text:
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class SuffixTreeNode
+{
+ public Dictionary<char, SuffixTreeNode> Children { get; set; }
+ public int StartIndex { get; set; }
+ public int EndIndex { get; set; }
+
+ public SuffixTreeNode(int startIndex, int endIndex)
+ {
+ Children = new Dictionary<char, SuffixTreeNode>();
+ StartIndex = startIndex;
+ EndIndex = endIndex;
+ }
+
+ public bool IsLeaf()
+ {
+ return Children.Count == 0;
+ }
+}
+
+public class SuffixTree
+{
+ private readonly string _text;
+ private readonly SuffixTreeNode _root;
+
+ public SuffixTree(string text)
+ {
+ _text = text;
+ _root = BuildSuffixTree(text);
+ }
+
+ private static SuffixTreeNode BuildSuffixTree(string text)
+ {
+ var root = new SuffixTreeNode(-1, -1);
+ for (int i = 0; i < text.Length; i++)
+ {
+ var node = root;
+ for (int j = i; j < text.Length; j++)
+ {
+ var c = text[j];
+ if (!node.Children.ContainsKey(c))
+ {
+ var leaf = new SuffixTreeNode(j, text.Length - 1);
+ node.Children[c] = leaf;
+ break;
+ }
+ else
+ {
+ var child = node.Children[c];
+ var k = child.StartIndex;
+ while (k <= child.EndIndex && text[k] == text[j])
+ {
+ k++;
+ j++;
+ }
+ if (k <= child.EndIndex)
+ {
+ var split = new SuffixTreeNode(child.StartIndex, k - 1);
+ var newChild = new SuffixTreeNode(k, child.EndIndex);
+ node.Children[c] = split;
+ split.Children[text[k]] = newChild;
+ child.StartIndex = k;
+ split.Children[text[child.StartIndex]] = child;
+ }
+ node = child;
+ j--;
+ }
+ }
+ }
+ return root;
+ }
+
+ public List<int> FindOccurrences(string pattern)
+ {
+ var node = _root;
+ var i = 0;
+ while (i < pattern.Length && node.Children.ContainsKey(pattern[i]))
+ {
+ node = node.Children[pattern[i]];
+ var k = node.StartIndex;
+ while (k <= node.EndIndex && i < pattern.Length && _text[k] == pattern[i])
+ {
+ k++;
+ i++;
+ }
+ if (k <= node.EndIndex)
+ {
+ return new List<int>();
+ }
+ }
+ if (i == pattern.Length && node.IsLeaf())
+ {
+ return new List<int> { node.StartIndex };
+ }
+ return FindOccurrences(node, pattern);
+ }
+
+ private static List<int> FindOccurrences(SuffixTreeNode node, string pattern)
+ {
+ var result = new List<int>();
+ if (node.IsLeaf())
+ {
+ result.Add(node.StartIndex);
+ }
+ foreach (var child in node.Children.Values)
+ {
+ var k = child.StartIndex;
+ for (int i = 0; i < pattern.Length && k <= child.EndIndex; i++)
+ {
+ if (pattern[i] != _text[k])
+ {
+ break;
+ }
+ k++;
+ }
+ if (k > child.EndIndex)
+ {
+ result.AddRange(FindOccurrences(child, pattern));
+ }
+ }
+ return result;
+ }
+}
+```
+Here is an example usage:
+
+
+```csharp
+var suffixTree = new SuffixTree("banana");
+var occurrences
+```
+
+Write a function that finds the longest common prefix of a set of strings using the suffix tree.
+To find the longest common prefix of a set of strings using the suffix tree, we can first build the suffix tree of the strings and then traverse the tree to find the deepest node that has at least one leaf from each string. The path from the root to this deepest node represents the longest common prefix.
+
+Here's an implementation of the function in C#:
+
+
+```csharp
+public static string LongestCommonPrefix(string[] strings)
+{
+ // Build the suffix tree of the strings
+ SuffixTree suffixTree = new SuffixTree(string.Join("$", strings) + "$");
+
+ // Traverse the tree to find the deepest node with at least one leaf from each string
+ SuffixTreeNode node = suffixTree.Root;
+ while (node.Children.Count > 0)
+ {
+ if (node.Children.Values.All(child => child.LeafIndexes.Count > 0))
+ {
+ // Found deepest node with at least one leaf from each string
+ break;
+ }
+ node = node.Children.Values.First(child => child.LeafIndexes.Count > 0);
+ }
+
+ // Build the longest common prefix from the path from the root to the deepest node
+ StringBuilder prefix = new StringBuilder();
+ while (node != suffixTree.Root)
+ {
+ prefix.Insert(0, node.Label);
+ node = node.Parent;
+ }
+
+ return prefix.ToString();
+}
+```
+Note that this implementation assumes that the strings do not contain the special character `$`, which is used to mark the end of each string in the suffix tree. If the strings can contain this character, it should be replaced with a different character that is not present in the strings before building the suffix tree.
+
+
+Write a function that finds the longest common substring of two strings using the suffix tree.
+Here's an implementation of a function in C# that finds the longest common substring of two strings using a suffix tree:
+
+
+```csharp
+public static string LongestCommonSubstring(string str1, string str2)
+{
+ // Create a new suffix tree from the two strings concatenated together with a unique delimiter
+ string concat = str1 + "$" + str2 + "#";
+ SuffixTree tree = new SuffixTree(concat);
+
+ // Traverse the tree to find the deepest internal node that has at least one leaf node from each of the two strings
+ SuffixTreeNode node = tree.Root;
+ int depth = 0;
+ int maxLength = 0;
+ int maxEndIndex = 0;
+
+ foreach (SuffixTreeNode child in node.Children.Values)
+ {
+ int childDepth = child.Depth;
+
+ if (child.IsLeaf() && child.EndIndex < str1.Length + 1)
+ {
+ continue;
+ }
+
+ if (child.IsLeaf() && child.EndIndex > str1.Length)
+ {
+ if (childDepth > depth)
+ {
+ depth = childDepth;
+ maxLength = tree.GetPathLength(child);
+ maxEndIndex = child.EndIndex - 1;
+ }
+ }
+
+ if (!child.IsLeaf())
+ {
+ int childMaxLength = tree.GetPathLength(child);
+
+ if (childMaxLength > maxLength)
+ {
+ depth = childDepth;
+ maxLength = childMaxLength;
+ maxEndIndex = child.GetEndIndex(str1.Length + 1) - 1;
+ }
+ }
+ }
+
+ // Return the longest common substring
+ return concat.Substring(maxEndIndex - maxLength + 1, maxLength);
+}
+```
+This function first concatenates the two input strings with a unique delimiter to create a new string. It then creates a suffix tree from this concatenated string using a helper class `SuffixTree`.
+
+The function then traverses the tree to find the deepest internal node that has at least one leaf node from each of the two input strings. This is done by checking the depth of each internal node and keeping track of the longest path from the root to a leaf node in the tree. The end index of the longest common substring is also tracked during the traversal.
+
+Finally, the function returns the longest common substring by extracting the substring from the concatenated string using the end index and length of the longest common substring found during the traversal.
+
+Note that the `SuffixTree` class used in this implementation is not shown, but it can be easily found in various libraries or implemented manually.
+
+
+Write a function that finds the longest palindrome in a string using Manacher's algorithm.
+Manacher's algorithm is an efficient algorithm for finding the longest palindrome in a string in linear time. Here's a C# implementation of the algorithm:
+
+
+```csharp
+public static string FindLongestPalindrome(string s)
+{
+ if (s == null || s.Length == 0) return "";
+
+ // Transform input string by inserting a special character between each character and at the beginning and end of the string
+ string t = "^#" + string.Join("#", s.ToCharArray()) + "#$";
+ int n = t.Length;
+
+ // Create an array to store the length of the palindrome centered at each position in the transformed string
+ int[] p = new int[n];
+
+ // Initialize the center and right boundary of the current palindrome
+ int center = 0, right = 0;
+
+ for (int i = 1; i < n - 1; i++)
+ {
+ // Mirror index
+ int mirror = 2 * center - i;
+
+ // Check if i is within the current palindrome
+ if (right > i)
+ p[i] = Math.Min(right - i, p[mirror]);
+
+ // Attempt to expand palindrome centered at i
+ while (t[i + (p[i] + 1)] == t[i - (p[i] + 1)])
+ p[i]++;
+
+ // Update center and right boundary if current palindrome extends beyond current right boundary
+ if (i + p[i] > right)
+ {
+ center = i;
+ right = i + p[i];
+ }
+ }
+
+ // Find the index of the longest palindrome
+ int maxLen = 0, maxCenter = 0;
+ for (int i = 1; i < n - 1; i++)
+ {
+ if (p[i] > maxLen)
+ {
+ maxLen = p[i];
+ maxCenter = i;
+ }
+ }
+
+ // Extract the longest palindrome from the transformed string
+ int start = (maxCenter - maxLen) / 2;
+ return s.Substring(start, maxLen);
+}
+```
+Here's how the function works:
+
+1. The input string is transformed by inserting a special character between each character and at the beginning and end of the string. This is done to handle both odd and even-length palindromes, and to ensure that the transformed string has an odd length.
+2. An array `p` is created to store the length of the palindrome centered at each position in the transformed string. The first and last elements of `p` are set to 0, since the first and last characters of the transformed string are not part of any palindrome.
+3. The center and right boundary of the current palindrome are initialized to 0.
+4. For each position `i` in the transformed string, the length of the palindrome centered at `i` is calculated using the palindrome length at a mirrored index and by expanding around `i`. If the current palindrome extends beyond the current right boundary, the center and right boundary are updated.
+5. Finally, the index of the longest palindrome is found in `p`, and the longest palindrome is extracted from the original string.
+
+Note that Manacher's algorithm can be extended to find all palindromic substrings in a string by modifying step 5 to find all palindromes with a given length.
+
+
+Write a function that implements the Z algorithm to find all occurrences of a pattern in a text.
+Here's an implementation of the Z algorithm in C# to find all occurrences of a pattern in a text:
+
+
+```csharp
+public static List<int> ZAlgorithm(string text, string pattern)
+{
+ List<int> indices = new List<int>();
+ string concat = pattern + '$' + text;
+ int n = concat.Length;
+
+ int[] z = new int[n];
+ int l = 0, r = 0;
+
+ for (int i = 1; i < n; i++)
+ {
+ if (i > r)
+ {
+ l = r = i;
+ while (r < n && concat[r - l] == concat[r])
+ {
+ r++;
+ }
+ z[i] = r - l;
+ r--;
+ }
+ else
+ {
+ int k = i - l;
+ if (z[k] < r - i + 1)
+ {
+ z[i] = z[k];
+ }
+ else
+ {
+ l = i;
+ while (r < n && concat[r - l] == concat[r])
+ {
+ r++;
+ }
+ z[i] = r - l;
+ r--;
+ }
+ }
+ if (z[i] == pattern.Length)
+ {
+ indices.Add(i - pattern.Length - 1);
+ }
+ }
+
+ return indices;
+}
+```
+The function takes two parameters, `text` and `pattern`, and returns a list of integers representing the indices where the pattern occurs in the text. It concatenates the pattern and text with a special character (in this case '$'), and computes the Z-values of the resulting string. The Z-values represent the length of the longest substring starting at each position that is also a prefix of the string. When a Z-value equals the length of the pattern, it means that the pattern occurs starting at that position in the text. The function adds the corresponding index to the list of indices and returns it.
+
+
+Write a function that implements the Aho-Corasick algorithm to find all occurrences of a set of patterns in a text.
+Here's a C# implementation of the Aho-Corasick algorithm:
+
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class AhoCorasick
+{
+ private readonly Node _root;
+ private readonly List<string> _patterns;
+
+ private class Node
+ {
+ public readonly Dictionary<char, Node> Children = new Dictionary<char, Node>();
+ public Node SuffixLink;
+ public Node OutputLink;
+ public int[] MatchedPatternIndexes;
+ }
+
+ public AhoCorasick(List<string> patterns)
+ {
+ _patterns = patterns;
+ _root = new Node();
+
+ // Build trie with failure links
+ foreach (var pattern in patterns)
+ {
+ var node = _root;
+ foreach (var c in pattern)
+ {
+ if (!node.Children.TryGetValue(c, out var child))
+ {
+ child = new Node();
+ node.Children[c] = child;
+ }
+ node = child;
+ }
+ if (node.MatchedPatternIndexes == null)
+ {
+ node.MatchedPatternIndexes = new int[] { _patterns.IndexOf(pattern) };
+ }
+ else
+ {
+ node.MatchedPatternIndexes = node.MatchedPatternIndexes.Append(_patterns.IndexOf(pattern)).ToArray();
+ }
+ }
+
+ // Build suffix links and output links
+ var queue = new Queue<Node>();
+ foreach (var kvp in _root.Children)
+ {
+ kvp.Value.SuffixLink = _root;
+ queue.Enqueue(kvp.Value);
+ }
+ while (queue.Count > 0)
+ {
+ var node = queue.Dequeue();
+ if (node.MatchedPatternIndexes != null)
+ {
+ node.OutputLink = node;
+ }
+ else
+ {
+ node.OutputLink = node.SuffixLink.OutputLink;
+ }
+ foreach (var kvp in node.Children)
+ {
+ var c = kvp.Key;
+ var child = kvp.Value;
+ queue.Enqueue(child);
+ var suffix = node.SuffixLink;
+ while (suffix != _root && !suffix.Children.ContainsKey(c))
+ {
+ suffix = suffix.SuffixLink;
+ }
+ if (suffix.Children.TryGetValue(c, out var next))
+ {
+ child.SuffixLink = next;
+ }
+ else
+ {
+ child.SuffixLink = _root;
+ }
+ }
+ }
+ }
+
+ public List<(string, int)> FindMatches(string text)
+ {
+ var matches = new List<(string, int)>();
+ var node = _root;
+ for (int i = 0; i < text.Length; i++)
+ {
+ var c = text[i];
+ while (node != _root && !node.Children.ContainsKey(c))
+ {
+ node = node.SuffixLink;
+ }
+ if (node.Children.TryGetValue(c, out var next))
+ {
+ node = next;
+ }
+ else
+ {
+ continue;
+ }
+ var outputNode = node;
+ while (outputNode != _root)
+ {
+ if (outputNode.MatchedPatternIndexes != null)
+ {
+ foreach (var patternIndex in outputNode.MatchedPatternIndexes)
+ {
+ matches.Add((_patterns[patternIndex], i - _patterns[patternIndex].Length + 1));
+ }
+ }
+ outputNode = outputNode.OutputLink;
+ }
+ }
+ return matches;
+ }
+}
+```
+To use the `AhoCorasick` class, you can create an instance with a list of patterns and call the `FindMatches` method with a text to search for all occurrences of the patterns in the text. The method returns a list of tuples, where each tuple contains the matched pattern and its starting index in the text. 
 
 # Chapter 11: Tree Algorithms
 A tree is a widely used data structure in computer science that is used to represent hierarchical relationships between objects. A tree consists of nodes and edges, where each node can have zero or more children nodes, and there is a single node at the top of the tree called the root. The nodes that have no children are called leaves. The edges of the tree connect the nodes to each other, and there is a unique path between any two nodes in the tree.
@@ -3585,7 +4712,113 @@ int KthSmallest(Node root, int k) {
 ```
 
 
-TODO: 
+7. Implement a function to find the maximum sum path in a binary tree.
+To find the maximum sum path in a binary tree, we can use a recursive approach. At each node, we can compute the maximum sum path that includes this node, as well as the maximum sum path that does not include this node. Then we return the maximum of these two paths.
+
+Here's the C# code for the function:
+
+
+```csharp
+public class Node {
+ public int val;
+ public Node left;
+ public Node right;
+ public Node(int val=0, Node left=null, Node right=null) {
+ this.val = val;
+ this.left = left;
+ this.right = right;
+ }
+}
+
+public int MaxSumPath(Node root) {
+ int maxSum = int.MinValue;
+ MaxSumPathHelper(root, ref maxSum);
+ return maxSum;
+}
+
+private int MaxSumPathHelper(Node node, ref int maxSum) {
+ if (node == null) {
+ return 0;
+ }
+ 
+ int leftMaxSum = Math.Max(0, MaxSumPathHelper(node.left, ref maxSum));
+ int rightMaxSum = Math.Max(0, MaxSumPathHelper(node.right, ref maxSum));
+ 
+ int nodeMaxSum = node.val + leftMaxSum + rightMaxSum;
+ maxSum = Math.Max(maxSum, nodeMaxSum);
+ 
+ return node.val + Math.Max(leftMaxSum, rightMaxSum);
+}
+```
+The `MaxSumPath` function takes the root of a binary tree as input and returns the maximum sum path. It first initializes the maximum sum to be `int.MinValue`, and then calls a helper function `MaxSumPathHelper` on the root node.
+
+The `MaxSumPathHelper` function recursively computes the maximum sum path that includes the current node. It first checks if the left and right subtrees contribute positive values to the maximum sum path, and if not, sets their contribution to 0. It then computes the maximum sum path that includes the current node, and updates the maximum sum if necessary. Finally, it returns the maximum sum path that includes the current node (either the current node alone, or the current node plus the maximum sum path from one of its subtrees).
+
+
+8. Implement a function to convert a binary search tree to a sorted doubly linked list.
+Here's an implementation of a function in C# to convert a binary search tree to a sorted doubly linked list:
+
+
+```csharp
+public class Node 
+{
+ public int val;
+ public Node left;
+ public Node right;
+
+ public Node(int val = 0, Node left = null, Node right = null) 
+ {
+ this.val = val;
+ this.left = left;
+ this.right = right;
+ }
+}
+
+public class Solution 
+{
+ public Node TreeToDoublyList(Node root) 
+ {
+ if (root == null) return null;
+ 
+ Node head = null;
+ Node tail = null;
+ 
+ Stack<Node> stack = new Stack<Node>();
+ Node curr = root;
+ 
+ while (curr != null || stack.Count > 0) 
+ {
+ while (curr != null) 
+ {
+ stack.Push(curr);
+ curr = curr.left;
+ }
+ 
+ curr = stack.Pop();
+ 
+ if (head == null) 
+ {
+ head = curr;
+ } 
+ else 
+ {
+ tail.right = curr;
+ curr.left = tail;
+ }
+ 
+ tail = curr;
+ curr = curr.right;
+ }
+ 
+ head.left = tail;
+ tail.right = head;
+ 
+ return head;
+ }
+}
+```
+This implementation uses a stack and an iterative approach to traverse the binary search tree in-order. As each node is visited, it is added to the doubly linked list. Once the traversal is complete, the head and tail of the doubly linked list are connected to form a circular list. The time complexity of this algorithm is O(n) where n is the number of nodes in the binary search tree.
+
 
 # Chapter 12: Hashing Algorithms
 Hashing is a technique used to store and retrieve data in a quick and efficient manner. A hash function is used to convert the input key into an index or a key in the hash table. The key-value pairs are then stored in the hash table at the index generated by the hash function.
@@ -3915,6 +5148,500 @@ class HashTable {
  }
  }
 ```
+
+4. Write a function that determines if two strings are anagrams using a hash table.
+Here's a possible implementation in C#:
+
+
+```csharp
+public static bool AreAnagrams(string s1, string s2)
+{
+ // Convert both strings to char arrays
+ char[] arr1 = s1.ToCharArray();
+ char[] arr2 = s2.ToCharArray();
+
+ // If the arrays have different lengths, the strings cannot be anagrams
+ if (arr1.Length != arr2.Length)
+ {
+ return false;
+ }
+
+ // Use a dictionary to count the occurrences of each character in the first array
+ Dictionary<char, int> charCounts = new Dictionary<char, int>();
+ foreach (char c in arr1)
+ {
+ if (charCounts.ContainsKey(c))
+ {
+ charCounts[c]++;
+ }
+ else
+ {
+ charCounts.Add(c, 1);
+ }
+ }
+
+ // Check if the second array has the same character counts
+ foreach (char c in arr2)
+ {
+ if (charCounts.ContainsKey(c))
+ {
+ charCounts[c]--;
+ if (charCounts[c] < 0)
+ {
+ // If a character occurs more times in the second array than in the first, the strings cannot be anagrams
+ return false;
+ }
+ }
+ else
+ {
+ // If a character in the second array is not in the dictionary, the strings cannot be anagrams
+ return false;
+ }
+ }
+
+ // If we have made it this far, the strings are anagrams
+ return true;
+}
+```
+This implementation uses a dictionary to count the occurrences of each character in the first string, and then checks if the second string has the same character counts. If the second string has more occurrences of any character than the first string, the strings cannot be anagrams. If the second string has any characters that are not in the first string, the strings cannot be anagrams. Otherwise, the strings are anagrams.
+
+
+5. Write a function that finds the first non-repeating character in a string using a hash table.
+Here's a C# function that finds the first non-repeating character in a string using a hash table:
+
+
+```csharp
+public static char FindFirstNonRepeatingChar(string str)
+{
+ // Create a dictionary to store character frequencies
+ Dictionary<char, int> freq = new Dictionary<char, int>();
+
+ // Calculate character frequencies
+ foreach (char c in str)
+ {
+ if (freq.ContainsKey(c))
+ {
+ freq[c]++;
+ }
+ else
+ {
+ freq[c] = 1;
+ }
+ }
+
+ // Find the first non-repeating character
+ foreach (char c in str)
+ {
+ if (freq[c] == 1)
+ {
+ return c;
+ }
+ }
+
+ // If there are no non-repeating characters, return null
+ return '\0';
+}
+```
+The function takes a string as input and returns the first non-repeating character in the string. It uses a dictionary to store the frequency of each character in the string, and then iterates through the string to find the first character with a frequency of 1. If there are no non-repeating characters, it returns the null character (`'\0'`).
+
+
+6. Implement a hash table that supports resizing.
+Here is an implementation of a hash table in C# that supports resizing:
+
+
+```csharp
+public class HashTable<TKey, TValue>
+{
+ private const int DefaultCapacity = 16;
+ private const float LoadFactor = 0.75f;
+
+ private Entry<TKey, TValue>[] _table;
+ private int _count;
+ private int _capacity;
+ private int _threshold;
+
+ public HashTable() : this(DefaultCapacity) { }
+
+ public HashTable(int capacity)
+ {
+ if (capacity < 0)
+ {
+ throw new ArgumentOutOfRangeException(nameof(capacity), "Capacity must be a non-negative integer.");
+ }
+
+ _capacity = capacity;
+ _threshold = (int)(_capacity * LoadFactor);
+ _table = new Entry<TKey, TValue>[_capacity];
+ _count = 0;
+ }
+
+ public int Count => _count;
+
+ public TValue this[TKey key]
+ {
+ get
+ {
+ if (TryGetValue(key, out TValue value))
+ {
+ return value;
+ }
+
+ throw new KeyNotFoundException($"The key '{key}' was not found in the hash table.");
+ }
+ set => AddOrUpdate(key, value);
+ }
+
+ public void Add(TKey key, TValue value) => AddOrUpdate(key, value, add: true);
+
+ public void Remove(TKey key)
+ {
+ if (_count == 0)
+ {
+ throw new InvalidOperationException("The hash table is empty.");
+ }
+
+ int index = GetIndex(key);
+ Entry<TKey, TValue> previous = null;
+ Entry<TKey, TValue> current = _table[index];
+
+ while (current != null)
+ {
+ if (current.Key.Equals(key))
+ {
+ if (previous == null)
+ {
+ _table[index] = current.Next;
+ }
+ else
+ {
+ previous.Next = current.Next;
+ }
+
+ _count--;
+ return;
+ }
+
+ previous = current;
+ current = current.Next;
+ }
+
+ throw new KeyNotFoundException($"The key '{key}' was not found in the hash table.");
+ }
+
+ public bool ContainsKey(TKey key) => TryGetValue(key, out TValue _);
+
+ public bool TryGetValue(TKey key, out TValue value)
+ {
+ if (_count == 0)
+ {
+ value = default;
+ return false;
+ }
+
+ int index = GetIndex(key);
+ Entry<TKey, TValue> current = _table[index];
+
+ while (current != null)
+ {
+ if (current.Key.Equals(key))
+ {
+ value = current.Value;
+ return true;
+ }
+
+ current = current.Next;
+ }
+
+ value = default;
+ return false;
+ }
+
+ private void AddOrUpdate(TKey key, TValue value, bool add = false)
+ {
+ if (_count >= _threshold)
+ {
+ Resize();
+ }
+
+ int index = GetIndex(key);
+ Entry<TKey, TValue> current = _table[index];
+
+ while (current != null)
+ {
+ if (current.Key.Equals(key))
+ {
+ if (add)
+ {
+ throw new ArgumentException($"The key '{key}' already exists in the hash table.");
+ }
+
+ current.Value = value;
+ return;
+ }
+
+ current = current.Next;
+ }
+
+ _table[index] = new Entry<TKey, TValue>(key, value, _table[index]);
+ _count++;
+ }
+
+ private int GetIndex(TKey key)
+ {
+ int hashCode = key.GetHashCode();
+ return Math.Abs(hashCode % _capacity);
+ }
+
+ private void Resize()
+ {
+ int newCapacity = _capacity * 2;
+ Entry<TKey, TValue>[] newTable = new Entry<TKey, TValue>[newCapacity];
+ _threshold = (int)(newCapacity
+```
+
+7. Write a function that finds the intersection of two arrays using a hash table.
+Here's a C# implementation of a function that finds the intersection of two arrays using a hash table:
+
+
+```csharp
+public static int[] FindIntersection(int[] arr1, int[] arr2)
+{
+ // Create a hash set for the first array
+ HashSet<int> set1 = new HashSet<int>(arr1);
+
+ // Create a hash set for the intersection
+ HashSet<int> intersection = new HashSet<int>();
+
+ // Check if each element in the second array is in the first array
+ foreach (int num in arr2)
+ {
+ if (set1.Contains(num))
+ {
+ intersection.Add(num);
+ }
+ }
+
+ // Convert the intersection hash set to an array and return it
+ return intersection.ToArray();
+}
+```
+The function takes in two integer arrays `arr1` and `arr2`, and returns an integer array containing the intersection of the two arrays.
+
+To find the intersection, we first create a hash set `set1` for the elements in the first array `arr1`. Then, we loop through each element in the second array `arr2`, and check if it exists in `set1`. If it does, we add it to the `intersection` hash set.
+
+Finally, we convert the `intersection` hash set to an array using the `ToArray()` method, and return it.
+
+
+8. Write a function that finds the longest substring with at most k distinct characters using a hash table.
+Here's an implementation of a function in C# that finds the longest substring with at most k distinct characters using a hash table:
+
+
+```csharp
+public static string LongestSubstringWithKDistinctCharacters(string s, int k) {
+ if (string.IsNullOrEmpty(s) || k == 0) {
+ return "";
+ }
+ Dictionary<char, int> dict = new Dictionary<char, int>();
+ int start = 0, end = 0, maxStart = 0, maxLength = 0;
+ while (end < s.Length) {
+ char c = s[end];
+ if (dict.ContainsKey(c)) {
+ dict[c]++;
+ } else {
+ dict[c] = 1;
+ }
+ while (dict.Count > k) {
+ char cStart = s[start];
+ dict[cStart]--;
+ if (dict[cStart] == 0) {
+ dict.Remove(cStart);
+ }
+ start++;
+ }
+ int currentLength = end - start + 1;
+ if (currentLength > maxLength) {
+ maxLength = currentLength;
+ maxStart = start;
+ }
+ end++;
+ }
+ return s.Substring(maxStart, maxLength);
+}
+```
+The function takes two parameters: a string `s` and an integer `k`. It returns the longest substring of `s` that has at most `k` distinct characters. If there is no such substring, it returns an empty string.
+
+The function uses a sliding window approach to find the longest substring. It maintains a dictionary that stores the count of each character in the current window. The `start` and `end` variables represent the indices of the current window. The `maxStart` and `maxLength` variables keep track of the starting index and length of the longest substring found so far.
+
+At each step, the function expands the window by moving the `end` index to the right and updating the dictionary. If the number of distinct characters in the window is greater than `k`, the function moves the `start` index to the right until the number of distinct characters is at most `k`.
+
+Finally, the function returns the longest substring found.
+
+Note that the time complexity of the function is O(n), where n is the length of the input string. The space complexity is O(k), where k is the number of distinct characters in the input string.
+
+
+9. Implement a hash table that uses cuckoo hashing to handle collisions.
+Cuckoo hashing is a technique used to handle collisions in hash tables. In this technique, each key is stored in one of two hash tables. If a collision occurs, the key is first checked in its primary hash table. If it is not found there, it is checked in the alternate hash table. If the key is not found in either table, a new location is chosen by evicting the existing key at that location and re-inserting it in the alternate table.
+
+Here's an implementation of a hash table using cuckoo hashing in C#:
+
+
+```csharp
+public class CuckooHashTable<TKey, TValue>
+{
+ private const int DEFAULT_CAPACITY = 16;
+ private const int MAXIMUM_CAPACITY = 1 << 30;
+ private const int MAXIMUM_RETRIES = 100;
+ private const double LOAD_FACTOR = 0.75;
+ private static readonly Random _random = new Random();
+
+ private int _capacity;
+ private int _size;
+ private int _threshold;
+ private int _retries;
+ private TKey[] _keys1;
+ private TValue[] _values1;
+ private TKey[] _keys2;
+ private TValue[] _values2;
+
+ public CuckooHashTable() : this(DEFAULT_CAPACITY) { }
+
+ public CuckooHashTable(int capacity)
+ {
+ if (capacity < 0)
+ throw new ArgumentException("Invalid capacity");
+
+ _capacity = Math.Min(capacity, MAXIMUM_CAPACITY);
+ _threshold = (int)(_capacity * LOAD_FACTOR);
+ _keys1 = new TKey[_capacity];
+ _values1 = new TValue[_capacity];
+ _keys2 = new TKey[_capacity];
+ _values2 = new TValue[_capacity];
+ }
+
+ public int Count => _size;
+
+ public TValue this[TKey key]
+ {
+ get
+ {
+ if (TryGetValue(key, out TValue value))
+ return value;
+ throw new KeyNotFoundException();
+ }
+ set
+ {
+ Add(key, value, true);
+ }
+ }
+
+ public bool ContainsKey(TKey key)
+ {
+ return TryGetValue(key, out TValue value);
+ }
+
+ public bool TryGetValue(TKey key, out TValue value)
+ {
+ int hash1 = GetHash1(key);
+ int hash2 = GetHash2(key);
+
+ if (Equals(_keys1[hash1], key))
+ {
+ value = _values1[hash1];
+ return true;
+ }
+
+ if (Equals(_keys2[hash2], key))
+ {
+ value = _values2[hash2];
+ return true;
+ }
+
+ value = default(TValue);
+ return false;
+ }
+
+ public bool Add(TKey key, TValue value)
+ {
+ return Add(key, value, false);
+ }
+
+ private bool Add(TKey key, TValue value, bool overwrite)
+ {
+ int hash1 = GetHash1(key);
+ int hash2 = GetHash2(key);
+
+ if (Equals(_keys1[hash1], key))
+ {
+ if (overwrite)
+ _values1[hash1] = value;
+ return false;
+ }
+
+ if (Equals(_keys2[hash2], key))
+ {
+ if (overwrite)
+ _values2[hash2] = value;
+ return false;
+ }
+
+ if (_size >= _threshold)
+ Resize();
+
+ if (AddHelper(key, value, hash1, hash2))
+ return true;
+
+ if (_retries >= MAXIMUM_RETRIES)
+ throw new InvalidOperationException("Cuckoo hashing failed");
+
+ _retries++;
+ return Add(key, value, overwrite);
+ }
+
+ private bool AddHelper(TKey key, TValue value, int hash1, int hash2)
+ {
+ TKey tmp
+```
+
+10. Write a function that finds the most common word in a paragraph using a hash table.
+Here's an example implementation of a function in C# that finds the most common word in a paragraph using a hash table:
+
+
+```csharp
+using System.Collections.Generic;
+using System.Linq;
+
+public static string FindMostCommonWord(string paragraph)
+{
+ // Split the paragraph into words
+ string[] words = paragraph.Split(new[] {' ', ',', '.', '?', '!', ':', ';', '-', '\n'}, 
+ StringSplitOptions.RemoveEmptyEntries);
+
+ // Create a dictionary to count the occurrence of each word
+ Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+ foreach (string word in words)
+ {
+ string key = word.ToLower();
+
+ if (wordCount.ContainsKey(key))
+ {
+ wordCount[key]++;
+ }
+ else
+ {
+ wordCount[key] = 1;
+ }
+ }
+
+ // Find the word with the highest count
+ string mostCommonWord = wordCount.OrderByDescending(x => x.Value).First().Key;
+
+ return mostCommonWord;
+}
+```
+This function first splits the input paragraph into an array of words using common punctuation and whitespace characters as delimiters. It then uses a `Dictionary<string, int>` to count the occurrence of each word in the paragraph, ignoring case by converting each word to lowercase.
+
+Finally, it returns the word with the highest count by sorting the dictionary in descending order by value and selecting the first key, which will be the most common word. Note that in case of a tie, this function will return the first word encountered with the highest count.
 
 # Chapter 13: Advanced Topics
 Parallel algorithms are algorithms that can be executed simultaneously on multiple processors, cores, or machines. These algorithms are designed to take advantage of parallelism to improve performance and scalability in various applications.
