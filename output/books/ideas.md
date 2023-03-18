@@ -22,6 +22,7 @@
 - C++ and C
 - AutoHotKey for automation
 - gui development in python
+- frontend css with tailwindcss (add one dhiwise components set)
 
 ------
 

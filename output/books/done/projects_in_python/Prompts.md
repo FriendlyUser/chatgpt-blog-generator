@@ -19,7 +19,7 @@ rewrite the outline so that the book outline is in yaml and under the sections k
 for each chapter rewrite with
 
 - src: "raw"
-  type: "# Introduction to Python"
+  type: "# Chapter 1: Introduction to Python"
 
 and each subsection is 
 
