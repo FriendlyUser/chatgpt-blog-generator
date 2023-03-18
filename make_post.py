@@ -128,7 +128,6 @@ def generate_section(cfg: dict)-> None:
     for section in sections:
         # check if str or dict
         if isinstance(section, str):
-            print(f"Generating section: {section}")
             resp = try_chatgpt_response(section)
             clean_message = use_programming_language(cfg, resp['message'])
             if cfg.get("writePrompt", False):
@@ -244,7 +243,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/angular/angular.yml')
+    parser.add_argument('--file', type=str, default='books/csharp/csharp_excerises.yml')
     parser.add_argument('--conversation_id', type=str, default=None)
     parser.add_argument('--write_prompt', type=str, default=None)
     args = parser.parse_args()

@@ -20,6 +20,8 @@
 - scala
 - rust
 - C++ and C
+- AutoHotKey for automation
+- gui development in python
 
 ------
 
