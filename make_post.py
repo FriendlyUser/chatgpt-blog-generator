@@ -242,8 +242,8 @@ def generate_body(cfg: dict)-> None:
         pass
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--file', type=str, default='books/csharp/csharp_excerises.yml')
+    parser = argparse.ArgumentParser() 
+    parser.add_argument('--file', type=str, default='books/introduction_to_rust/book.yml')
     parser.add_argument('--conversation_id', type=str, default=None)
     parser.add_argument('--write_prompt', type=str, default=None)
     args = parser.parse_args()

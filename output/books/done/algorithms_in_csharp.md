@@ -1,7 +1,7 @@
 ---
 tags: ['csharp', 'algorithms']
-title: Introduction to Algorithms with Golang
-description: A Beginner’s Guide to Learning Algorithms with Golang
+title: Introduction to Algorithms with CSharp
+description: A Beginner’s Guide to Learning Algorithms with CSharp
 pubDate: Fri, 14 December 2024
 layout: "@/templates/BasePost.astro"
 imgSrc: /imgs/2023/387158145.png
@@ -333,6 +333,7 @@ By mastering these concepts, you'll be able to write more robust and reliable C#
 
 Here are some practice exercises for basic C#:
 
+## Exercises
 1. Write a C# program that prints the numbers from 1 to 100. For multiples of three, print "Fizz" instead of the number. For multiples of five, print "Buzz". For numbers that are multiples of both three and five, print "FizzBuzz".
 2. Write a C# program that prompts the user to enter a string and then prints the string in reverse order.
 3. Write a C# program that prompts the user to enter a number and then checks if the number is prime. A prime number is a number that is only divisible by 1 and itself.
@@ -342,6 +343,7 @@ Here are some practice exercises for basic C#:
 These exercises cover a range of basic C# concepts, including loops, conditionals, user input, string manipulation, and random number generation. By working through these exercises, you'll gain experience with the syntax and structure of C# code, as well as building problem-solving skills that will be useful in any programming language.
 
 
+## Solutions
 Sure, here are the solutions to the practice exercises in basic C#:
 
 1. FizzBuzz
@@ -572,6 +574,7 @@ Answers:
 4. O(nm) - This code has nested loops that iterate over the input sizes n and m, resulting in a time complexity of n \* m.
 5. O(n) - This code has two loops that both iterate over the input size n, resulting in a time complexity of 2n, which simplifies to O(n).
 
+## Solutions
 Sure, here are the solutions to the practice exercises:
 
 1. Determine the time complexity of the following code:
@@ -973,6 +976,8 @@ private static void Merge(int[] arr, int left, int mid, int right)
 
 Sure, here are some practice exercises related to sorting algorithms in C#:
 
+## Exercises
+
 1. Implement a C# program to sort an array of integers using bubble sort algorithm.
 2. Write a C# program to sort an array of strings using selection sort algorithm.
 3. Implement insertion sort algorithm in C# to sort an array of floating-point numbers.
@@ -983,8 +988,9 @@ Sure, here are some practice exercises related to sorting algorithms in C#:
 
 Note: You can generate random arrays to test your sorting algorithm implementations.
 
+## Solutions
 
-Sure, here are some solutions to the practice exercises related to sorting algorithms in C#:
+Here are some solutions to the practice exercises related to sorting algorithms in C#:
 
 1. Bubble sort implementation:
 
@@ -1421,6 +1427,7 @@ Note that the `InterpolationSearch()` implementation uses casting to ensure that
 
 Sure, here are some practice exercises on searching algorithms in Csharp:
 
+## Excerises 
 1. Write a Csharp function to implement linear search on an array of integers. The function should take two arguments - the array of integers and the integer to be searched. It should return the index of the integer in the array if found, else it should return -1.
 2. Write a Csharp function to implement binary search on a sorted array of integers. The function should take two arguments - the sorted array of integers and the integer to be searched. It should return the index of the integer in the array if found, else it should return -1.
 3. Write a Csharp function to implement interpolation search on a sorted array of integers. The function should take two arguments - the sorted array of integers and the integer to be searched. It should return the index of the integer in the array if found, else it should return -1.
@@ -1429,11 +1436,12 @@ Sure, here are some practice exercises on searching algorithms in Csharp:
 
 Sure, here are some possible solutions to the practice exercises:
 
+## Solutions to Excerises
 1. Linear search implementation in Csharp:
 
 
 ```csharp
-Csharp`public static int LinearSearch(int[] arr, int x)
+public static int LinearSearch(int[] arr, int x)
 {
  int n = arr.Length;
  for (int i = 0; i < n; i++)
@@ -1450,7 +1458,7 @@ Csharp`public static int LinearSearch(int[] arr, int x)
 
 
 ```csharp
-Csharp`public static int BinarySearch(int[] arr, int x)
+public static int BinarySearch(int[] arr, int x)
 {
  int left = 0;
  int right = arr.Length - 1;
@@ -1477,7 +1485,7 @@ Csharp`public static int BinarySearch(int[] arr, int x)
 
 
 ```csharp
-Csharp`public static int InterpolationSearch(int[] arr, int x)
+public static int InterpolationSearch(int[] arr, int x)
 {
  int n = arr.Length;
  int left = 0;
@@ -1505,7 +1513,7 @@ Csharp`public static int InterpolationSearch(int[] arr, int x)
 
 
 ```csharp
-Csharp`public static int ExponentialSearch(int[] arr, int x)
+public static int ExponentialSearch(int[] arr, int x)
 {
  int n = arr.Length;
  if (arr[0] == x)
@@ -1545,7 +1553,7 @@ private static int BinarySearch(int[] arr, int x, int left, int right)
 
 
 ```csharp
-Csharp`using System;
+using System;
 using System.Diagnostics;
 
 class Program
@@ -1736,6 +1744,7 @@ The efficiency of a backtracking algorithm depends on the problem being solved a
 
 Here are some practice exercises for backtracking:
 
+## Exercises
 1. Implement a backtracking algorithm to solve the classic N-Queens problem. Given an N x N chessboard, place N queens on the board so that no two queens can attack each other.
 2. Write a backtracking algorithm to find all possible permutations of a given set of numbers.
 3. Implement a backtracking algorithm to find all possible combinations of a given set of numbers that add up to a target sum.
@@ -1748,6 +1757,639 @@ Here are some practice exercises for backtracking:
 10. Write a backtracking algorithm to find all possible ways to partition a set into two subsets with equal sum.
 
 Note: These problems may have multiple solutions and some may be computationally expensive.
+
+## Solutions
+
+1. Backtracking algorithm for N-Queens problem:
+
+```csharp
+public void SolveNQueens(int n)
+{
+    int[] positions = new int[n]; // stores the column position of each queen
+    
+    PlaceQueen(positions, 0, n);
+}
+
+private void PlaceQueen(int[] positions, int row, int n)
+{
+    if (row == n) // all queens have been placed successfully
+    {
+        PrintSolution(positions);
+        return;
+    }
+
+    for (int col = 0; col < n; col++)
+    {
+        bool canPlace = true;
+
+        for (int prevRow = 0; prevRow < row; prevRow++)
+        {
+            int prevCol = positions[prevRow];
+
+            if (prevCol == col || // same column
+                prevRow + prevCol == row + col || // same diagonal
+                prevRow - prevCol == row - col) // same anti-diagonal
+            {
+                canPlace = false;
+                break;
+            }
+        }
+
+        if (canPlace)
+        {
+            positions[row] = col; // place the queen
+            PlaceQueen(positions, row + 1, n); // move to the next row
+        }
+    }
+}
+
+private void PrintSolution(int[] positions)
+{
+    for (int i = 0; i < positions.Length; i++)
+    {
+        for (int j = 0; j < positions.Length; j++)
+        {
+            if (positions[i] == j)
+            {
+                Console.Write("Q ");
+            }
+            else
+            {
+                Console.Write(". ");
+            }
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+```
+
+2. Backtracking algorithm to find all possible permutations of a given set of numbers:
+
+```csharp
+public void FindPermutations(int[] nums)
+{
+    List<int> tempList = new List<int>();
+    List<List<int>> result = new List<List<int>>();
+
+    Permute(nums, tempList, result);
+
+    foreach (List<int> permutation in result)
+    {
+        Console.WriteLine(string.Join(" ", permutation));
+    }
+}
+
+private void Permute(int[] nums, List<int> tempList, List<List<int>> result)
+{
+    if (tempList.Count == nums.Length)
+    {
+        result.Add(new List<int>(tempList));
+    }
+    else
+    {
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (tempList.Contains(nums[i]))
+            {
+                continue; // skip duplicates
+            }
+
+            tempList.Add(nums[i]);
+            Permute(nums, tempList, result);
+            tempList.RemoveAt(tempList.Count - 1);
+        }
+    }
+}
+```
+
+3. Backtracking algorithm to find all possible combinations of a given set of numbers that add up to a target sum:
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class BacktrackingCombinations
+{
+    static void Main()
+    {
+        int[] numbers = { 2, 4, 6, 8 };
+        int targetSum = 10;
+
+        List<int[]> combinations = new List<int[]>();
+
+        FindCombinations(numbers, targetSum, 0, new List<int>(), combinations);
+
+        Console.WriteLine($"Combinations of {string.Join(", ", numbers)} that add up to {targetSum}:");
+        foreach (int[] combination in combinations)
+        {
+            Console.WriteLine($"[{string.Join(", ", combination)}]");
+        }
+    }
+
+    static void FindCombinations(int[] numbers, int targetSum, int index, List<int> currentCombination, List<int[]> combinations)
+    {
+        if (targetSum == 0)
+        {
+            combinations.Add(currentCombination.ToArray());
+            return;
+        }
+
+        for (int i = index; i < numbers.Length; i++)
+        {
+            if (numbers[i] > targetSum) continue;
+
+            currentCombination.Add(numbers[i]);
+            FindCombinations(numbers, targetSum - numbers[i], i, currentCombination, combinations);
+            currentCombination.RemoveAt(currentCombination.Count - 1);
+        }
+    }
+}
+```
+
+Explanation:
+
+We start by defining the set of numbers and the target sum.
+We create an empty list to hold all the valid combinations we find.
+We call the FindCombinations function with the set of numbers, the target sum, the starting index, an empty list to hold the current combination, and the list of all combinations.
+In the FindCombinations function, we check if the target sum is zero. If it is, we add the current combination to the list of all combinations and return.
+If the target sum is not zero, we loop through the remaining numbers starting from the given index. If the current number is greater than the target sum, we skip it because it can't be part of the solution.
+If the current number is less than or equal to the target sum, we add it to the current combination and recursively call the FindCombinations function with the reduced target sum and the index of the current number.
+Once we've found all the combinations starting from the current number, we remove it from the current combination and continue with the next number.
+Finally, we print out all the valid combinations we found.
+
+4. Write a backtracking algorithm to solve the Sudoku puzzle. Given a 9 x 9 grid, fill in the empty cells with numbers from 1 to 9 so that each row, column, and 3 x 3 subgrid contains all the numbers from 1 to 9.
+
+
+```csharp
+using System;
+
+class SudokuSolver
+{
+    private const int BoardSize = 9;
+    private const int SubgridSize = 3;
+
+    private int[,] board;
+
+    public SudokuSolver(int[,] board)
+    {
+        this.board = board;
+    }
+
+    public bool Solve()
+    {
+        for (int row = 0; row < BoardSize; row++)
+        {
+            for (int col = 0; col < BoardSize; col++)
+            {
+                if (board[row, col] == 0)
+                {
+                    for (int num = 1; num <= BoardSize; num++)
+                    {
+                        if (IsValidMove(row, col, num))
+                        {
+                            board[row, col] = num;
+
+                            if (Solve())
+                            {
+                                return true;
+                            }
+
+                            board[row, col] = 0;
+                        }
+                    }
+
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private bool IsValidMove(int row, int col, int num)
+    {
+        for (int i = 0; i < BoardSize; i++)
+        {
+            if (board[row, i] == num || board[i, col] == num)
+            {
+                return false;
+            }
+        }
+
+        int subgridStartRow = row - row % SubgridSize;
+        int subgridStartCol = col - col % SubgridSize;
+
+        for (int i = subgridStartRow; i < subgridStartRow + SubgridSize; i++)
+        {
+            for (int j = subgridStartCol; j < subgridStartCol + SubgridSize; j++)
+            {
+                if (board[i, j] == num)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public void PrintBoard()
+    {
+        for (int row = 0; row < BoardSize; row++)
+        {
+            if (row % SubgridSize == 0 && row != 0)
+            {
+                Console.WriteLine("------+-------+------");
+            }
+
+            for (int col = 0; col < BoardSize; col++)
+            {
+                if (col % SubgridSize == 0 && col != 0)
+                {
+                    Console.Write("| ");
+                }
+
+                Console.Write(board[row, col] + " ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+```
+
+To use this class, create a 9x9 array representing the Sudoku board, where 0 represents an empty cell:
+
+```csharp
+int[,] board = new int[,] {
+    { 5, 3, 0, 0, 7, 0, 0, 0, 0 },
+    { 6, 0, 0, 1, 9, 5, 0, 0, 0 },
+    { 0, 9, 8, 0, 0, 0, 0, 6, 0 },
+    { 8, 0, 0, 0, 6, 0, 0, 0, 3 },
+    { 4, 0, 0, 8, 0, 3, 0, 0, 1 },
+    { 7, 0, 0, 0, 2, 0, 0, 0, 6 },
+    { 0, 6, 0, 0, 0, 0, 2, 8, 0 },
+    { 0, 0, 0, 4, 1, 9, 0, 0, 5 },
+    { 0, 0, 0, 0, 8, 0, 0, 7, 9 }
+};
+```
+
+5. Implement a backtracking algorithm to find all possible paths in a maze from a given starting point to a given end point.
+In this problem, we are given a maze represented as a 2D array of 1's and 0's, where 1 represents a blocked cell and 0 represents an open cell. We are also given the starting point and the end point, and we need to find all possible paths from the starting point to the end point.
+
+Here's the C# code for the backtracking algorithm:
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Maze
+{
+    int[,] maze;
+    int nRows, nCols;
+    bool[,] visited;
+    int startX, startY, endX, endY;
+    List<List<int>> allPaths;
+
+    public Maze(int[,] maze, int startX, int startY, int endX, int endY)
+    {
+        this.maze = maze;
+        nRows = maze.GetLength(0);
+        nCols = maze.GetLength(1);
+        this.startX = startX;
+        this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        visited = new bool[nRows, nCols];
+        allPaths = new List<List<int>>();
+    }
+
+    public void FindPaths()
+    {
+        List<int> path = new List<int>();
+        FindPaths(startX, startY, path);
+    }
+
+    private void FindPaths(int x, int y, List<int> path)
+    {
+        if (x < 0 || x >= nRows || y < 0 || y >= nCols || visited[x, y] || maze[x, y] == 1)
+            return;
+
+        if (x == endX && y == endY)
+        {
+            path.Add(x * nCols + y);
+            allPaths.Add(path);
+            return;
+        }
+
+        visited[x, y] = true;
+        path.Add(x * nCols + y);
+
+        FindPaths(x - 1, y, new List<int>(path));
+        FindPaths(x + 1, y, new List<int>(path));
+        FindPaths(x, y - 1, new List<int>(path));
+        FindPaths(x, y + 1, new List<int>(path));
+
+        visited[x, y] = false;
+    }
+
+    public List<List<int>> GetAllPaths()
+    {
+        return allPaths;
+    }
+}
+
+```
+
+The main idea of the algorithm is to recursively explore all possible paths from the starting point to the end point, using backtracking to undo the changes made to the path when a dead end is reached. The algorithm maintains a list of all the valid paths it finds along the way.
+
+To use this algorithm, create an instance of the Maze class with the input maze, starting point, and end point, and then call the FindPaths() method. The algorithm will explore all possible paths and store them in the allPaths list. You can then access this list using the GetAllPaths() method.
+
+6. Write a backtracking algorithm to find the longest increasing subsequence of a given sequence of numbers.
+
+
+In this problem, we are given a sequence of numbers, and we need to find the longest increasing subsequence of the sequence. An increasing subsequence is a sequence of numbers where each number is greater than the previous number.
+
+Here's the C# code for the backtracking algorithm:
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] sequence = new int[] { 5, 2, 8, 6, 3, 6, 9, 7 };
+        int[] currentSubsequence = new int[sequence.Length];
+        int maxLength = 0;
+
+        FindLongestIncreasingSubsequence(sequence, currentSubsequence, 0, maxLength, out maxLength);
+
+        Console.WriteLine($"Longest increasing subsequence: {maxLength}");
+    }
+
+    static void FindLongestIncreasingSubsequence(int[] sequence, int[] currentSubsequence, int currentIndex, int currentLength, out int maxLength)
+    {
+        maxLength = currentLength;
+
+        for (int i = currentIndex; i < sequence.Length; i++)
+        {
+            if (currentLength == 0 || sequence[i] > currentSubsequence[currentLength - 1])
+            {
+                currentSubsequence[currentLength] = sequence[i];
+                FindLongestIncreasingSubsequence(sequence, currentSubsequence, i + 1, currentLength + 1, out maxLength);
+            }
+        }
+    }
+}
+```
+
+The FindLongestIncreasingSubsequence method takes the sequence of numbers to search, an array to hold the current subsequence, the index of the current element in the sequence, the current length of the subsequence, and an output parameter for the maximum length found so far.
+
+The method starts by setting the maximum length to the current length. It then loops over the remaining elements in the sequence starting from the current index. If the current length is zero or the current element is greater than the last element in the current subsequence, it adds the current element to the current subsequence and calls itself recursively with the updated parameters. The recursive call increments the current length and checks if the current length is greater than the current maximum length, updating the maximum length if necessary.
+
+The algorithm uses backtracking by updating the current subsequence at each step and then undoing the change before returning from the recursive call. This allows it to explore all possible subsequences of the input sequence.
+
+In the main method, we create a sample sequence and call the FindLongestIncreasingSubsequence method with an empty subsequence and a starting index of 0. We pass a variable for the maximum length as an out parameter and print the result. The output should be "Longest increasing subsequence: 4" for the sample sequence [5, 2, 8, 6, 3, 6, 9, 7].
+
+7. Implement a backtracking algorithm to solve the Traveling Salesman Problem. Given a set of cities and the distances between them, find the shortest possible route that visits each city exactly once and returns to the starting city:
+
+The Traveling Salesman Problem (TSP) is a well-known optimization problem in computer science. Given a set of cities and the distances between them, the problem is to find the shortest possible route that visits each city exactly once and returns to the starting city.
+
+One approach to solving this problem is to use backtracking. The basic idea is to generate all possible permutations of the cities, and then calculate the total distance for each permutation. The permutation with the minimum distance is the solution to the problem.
+
+However, generating all possible permutations of the cities is an expensive operation, since the number of permutations is factorial in the number of cities. Therefore, we can use some heuristics to reduce the search space.
+
+Here's the implementation of a backtracking algorithm to solve the TSP:
+
+
+```csharp
+public class TspSolver
+{
+    private readonly int[][] _distances;
+    private readonly int _numCities;
+    private readonly int[] _path;
+    private readonly bool[] _visited;
+    private readonly int[] _bestPath;
+    private int _bestDist;
+
+    public TspSolver(int[][] distances)
+    {
+        _distances = distances;
+        _numCities = distances.Length;
+        _path = new int[_numCities];
+        _visited = new bool[_numCities];
+        _bestPath = new int[_numCities];
+        _bestDist = int.MaxValue;
+    }
+
+    public int Solve()
+    {
+        _path[0] = 0;
+        _visited[0] = true;
+        SolveRecursive(1, 0, 0);
+        return _bestDist;
+    }
+
+    private void SolveRecursive(int depth, int currCity, int currDist)
+    {
+        if (depth == _numCities)
+        {
+            currDist += _distances[currCity][0];
+            if (currDist < _bestDist)
+            {
+                _bestDist = currDist;
+                Array.Copy(_path, _bestPath, _numCities);
+            }
+            return;
+        }
+
+        for (int nextCity = 1; nextCity < _numCities; nextCity++)
+        {
+            if (!_visited[nextCity])
+            {
+                int nextDist = currDist + _distances[currCity][nextCity];
+                if (nextDist < _bestDist)
+                {
+                    _path[depth] = nextCity;
+                    _visited[nextCity] = true;
+                    SolveRecursive(depth + 1, nextCity, nextDist);
+                    _visited[nextCity] = false;
+                }
+            }
+        }
+    }
+}
+```
+
+The constructor of this class takes an int[][] representing the distances between the cities, where distances[i][j] is the distance between city i and city j. The Solve method returns the minimum distance of the TSP.
+
+The algorithm starts by setting the first city as the starting city and marking it as visited. Then, it calls the SolveRecursive method to explore all possible paths starting from the first city.
+
+The SolveRecursive method takes three arguments: the current depth of the search tree, the current city, and the current distance. It checks if the depth is equal to the number of cities, meaning that all cities have been visited. If so, it calculates the distance of the path and updates the best path if it's better than the current best path.
+
+Otherwise, it generates all possible next cities that haven't been visited yet, and recursively calls itself with the next city as visited, adds its distance to the current distance, and increments the depth of the search tree. Then it recursively calls SolveRecursive with these updated parameters.
+
+After the recursive call returns, it unmarks the next city as visited, subtracts its distance from the current distance, and decrements the depth of the search tree. This is necessary to backtrack to the previous state of the search tree and explore other paths.
+
+Finally, it returns the best path found so far.
+
+8. Write a backtracking algorithm to find all possible solutions to the 0/1 Knapsack Problem. Given a set of items with weights and values, and a maximum weight capacity, determine the subset of items that maximizes the total value while staying within the weight capacity.
+
+The 0/1 Knapsack Problem is a classic optimization problem in which we need to select a subset of items with maximum total value while staying within a given weight capacity. In the 0/1 variant, we can either take an item or leave it.
+
+To solve this problem using backtracking, we can recursively explore all possible combinations of items, keeping track of the current weight and value. We start with an empty subset and add items to it one by one, checking if we exceed the weight capacity at each step. If we do, we backtrack and try a different combination.
+
+Here is an example implementation in C#:
+
+```csharp
+public static void KnapsackRecursive(int[] values, int[] weights, int capacity, int[] currentItems, int currentWeight, int currentValue, List<int[]> solutions)
+{
+    // Base case: we've reached the end of the list of items
+    if (currentItems.Length == values.Length)
+    {
+        solutions.Add(currentItems);
+        return;
+    }
+
+    // Try adding the next item
+    if (currentWeight + weights[currentItems.Length] <= capacity)
+    {
+        int[] nextItems = (int[])currentItems.Clone();
+        nextItems[currentItems.Length] = 1;
+        KnapsackRecursive(values, weights, capacity, nextItems, currentWeight + weights[currentItems.Length], currentValue + values[currentItems.Length], solutions);
+    }
+
+    // Try skipping the next item
+    int[] skipItems = (int[])currentItems.Clone();
+    skipItems[currentItems.Length] = 0;
+    KnapsackRecursive(values, weights, capacity, skipItems, currentWeight, currentValue, solutions);
+}
+
+public static List<int[]> Knapsack(int[] values, int[] weights, int capacity)
+{
+    List<int[]> solutions = new List<int[]>();
+    KnapsackRecursive(values, weights, capacity, new int[0], 0, 0, solutions);
+    return solutions;
+}
+```
+
+
+The KnapsackRecursive method takes six arguments: the list of values, the list of weights, the capacity, the current subset of items, the current total weight, and the current total value. It checks if we've reached the end of the list of items, and if so, adds the current subset to the list of solutions.
+
+Otherwise, it tries adding the next item to the subset if it doesn't exceed the weight capacity, and recursively calls itself with the new subset, updated weight and value. It also tries skipping the next item and recursively calls itself with the skipped item, the same weight, and the same value.
+
+The Knapsack method simply initializes an empty list of solutions and calls the KnapsackRecursive method with an empty subset, weight and value. It returns the list of solutions.
+
+9. Implement a backtracking algorithm to solve the Rat in a Maze problem. Given a maze with obstacles, find a path from the starting point to the end point.
+
+Here's an implementation of a backtracking algorithm to solve the Rat in a Maze problem:
+
+```csharp
+using System;
+
+class RatInAMaze
+{
+    private int[,] maze;
+    private bool[,] visited;
+    private int[] pathX;
+    private int[] pathY;
+    private int pathIndex;
+
+    public RatInAMaze(int[,] maze)
+    {
+        this.maze = maze;
+        this.visited = new bool[maze.GetLength(0), maze.GetLength(1)];
+        this.pathX = new int[maze.GetLength(0) * maze.GetLength(1)];
+        this.pathY = new int[maze.GetLength(0) * maze.GetLength(1)];
+        this.pathIndex = 0;
+    }
+
+    public bool Solve(int startX, int startY, int endX, int endY)
+    {
+        // If start or end position is outside of the maze boundaries or on an obstacle, return false
+        if (startX < 0 || startX >= maze.GetLength(0) || startY < 0 || startY >= maze.GetLength(1) || maze[startX, startY] == 1)
+            return false;
+
+        if (endX < 0 || endX >= maze.GetLength(0) || endY < 0 || endY >= maze.GetLength(1) || maze[endX, endY] == 1)
+            return false;
+
+        // Mark the starting position as visited and add it to the path
+        visited[startX, startY] = true;
+        pathX[pathIndex] = startX;
+        pathY[pathIndex] = startY;
+        pathIndex++;
+
+        // If the starting position is the end position, return true
+        if (startX == endX && startY == endY)
+            return true;
+
+        // Recursively try all possible moves from the current position
+        if (Solve(startX + 1, startY, endX, endY) || Solve(startX, startY + 1, endX, endY) || Solve(startX - 1, startY, endX, endY) || Solve(startX, startY - 1, endX, endY))
+            return true;
+
+        // If none of the possible moves leads to the end position, backtrack
+        pathIndex--;
+        visited[startX, startY] = false;
+
+        return false;
+    }
+
+    public void PrintPath()
+    {
+        for (int i = 0; i < pathIndex; i++)
+        {
+            Console.Write("({0},{1}) ", pathX[i], pathY[i]);
+        }
+        Console.WriteLine();
+    }
+}
+```
+To use this class, create a 2D array representing the maze, where 0 represents an empty cell and 1 represents an obstacle. Then create an instance of the RatInAMaze class and call the Solve method with the starting and ending positions. If the method returns true, the path from the starting position to the ending position is stored in the pathX and pathY arrays, and can be printed using the PrintPath method.
+
+10. Write a backtracking algorithm to find all possible ways to partition a set into two subsets with equal sum.
+
+To find all possible ways to partition a set into two subsets with equal sum, we can use a recursive backtracking algorithm. The basic idea is to iterate over each element of the set and consider two possibilities for that element: either include it in the first subset or include it in the second subset. We then recursively process the remaining elements of the set for each of these possibilities until we find a solution or determine that a solution is not possible.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+public class PartitionSolver {
+    public List<List<int>> Solve(int[] set) {
+        int total = 0;
+        foreach (int x in set) {
+            total += x;
+        }
+        if (total % 2 != 0) {
+            throw new ArgumentException("Set cannot be partitioned into two subsets with equal sum");
+        }
+        int targetSum = total / 2;
+        List<List<int>> solutions = new List<List<int>>();
+        List<int> current = new List<int>();
+        SolveRecursive(set, targetSum, 0, current, solutions);
+        return solutions;
+    }
+
+    private void SolveRecursive(int[] set, int targetSum, int index, List<int> current, List<List<int>> solutions) {
+        if (targetSum == 0) {
+            solutions.Add(new List<int>(current));
+        } else if (index < set.Length) {
+            if (set[index] <= targetSum) {
+                // Include element in first subset
+                current.Add(set[index]);
+                SolveRecursive(set, targetSum - set[index], index + 1, current, solutions);
+                current.RemoveAt(current.Count - 1);
+            }
+            // Include element in second subset
+            SolveRecursive(set, targetSum, index + 1, current, solutions);
+        }
+    }
+}
+```
+
+To use this class, create an instance of PartitionSolver and call the Solve method with the set of integers you want to partition. The method returns a list of all possible partitions, where each partition is represented as a list of integers. If the set cannot be partitioned into two subsets with equal sum, the method throws an ArgumentException.
 
 # Chapter 6: Algorithmic Techniques
 Divide and Conquer is a problem-solving approach that involves breaking down a complex problem into smaller, more manageable subproblems. This is done by dividing the problem into two or more smaller subproblems of the same type or structure, solving each subproblem independently, and then combining the solutions of the subproblems to obtain the solution to the original problem.
@@ -1868,6 +2510,7 @@ This approach is commonly used in optimization problems, such as the Knapsack pr
 
 Sure, here are some practice exercises for Algorithmic Techniques:
 
+## Exercises
 1. Divide and Conquer:
 * Implement a C# program to sort an array of integers using the merge sort algorithm.
 * Write a C# program to find the maximum subarray sum in a given array of integers using the divide and conquer approach.
@@ -1880,17 +2523,12 @@ Sure, here are some practice exercises for Algorithmic Techniques:
 * Implement a C# program to solve the Coin Change problem using the greedy algorithm.
 * Write a C# program to solve the Fractional Knapsack problem using the greedy algorithm.
 * Solve the Activity Selection problem using the greedy algorithm in C#.
-4. Backtracking:
-* Implement a C# program to solve the N-Queens problem using backtracking.
-* Write a C# program to generate all permutations of a given set of integers using backtracking.
-* Solve the Sudoku puzzle using backtracking in C#.
-5. Branch and Bound:
-* Implement a C# program to solve the Traveling Salesman problem using the Branch and Bound algorithm.
+4. Branch and Bound:
 * Write a C# program to solve the Knapsack problem using the Branch and Bound algorithm.
-* Solve the 0/1 Integer Knapsack problem using Branch and Bound in C#.
 
 Here are some sample solutions to the practice exercises for Algorithmic Techniques:
 
+## Solutions
 1. Divide and Conquer:
 * Merge Sort implementation in C#:
 
@@ -2009,8 +2647,198 @@ static int Knapsack(int[] values, int[] weights, int capacity)
 
 
 ```csharp
-static int EditDistance(string s1, string s
+public static int EditDistance(string s1, string s2)
+{
+    int m = s1.Length;
+    int n = s2.Length;
+
+    // Create a matrix to store the edit distances
+    int[,] dp = new int[m + 1, n + 1];
+
+    // Initialize the first row and column
+    for (int i = 0; i <= m; i++)
+    {
+        dp[i, 0] = i;
+    }
+    for (int j = 0; j <= n; j++)
+    {
+        dp[0, j] = j;
+    }
+
+    // Fill in the rest of the matrix
+    for (int i = 1; i <= m; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            int substitutionCost = s1[i - 1] == s2[j - 1] ? 0 : 1;
+            dp[i, j] = Math.Min(dp[i - 1, j - 1] + substitutionCost, Math.Min(dp[i - 1, j] + 1, dp[i, j - 1] + 1));
+        }
+    }
+
+    // The edit distance is the value in the bottom-right corner of the matrix
+    return dp[m, n];
+}
+
 ```
+
+Here's how to use the function:
+```csharp
+string s1 = "kitten";
+string s2 = "sitting";
+int distance = EditDistance(s1, s2);
+Console.WriteLine("Edit distance between '{0}' and '{1}' is {2}", s1, s2, distance);
+```
+
+This will output: "Edit distance between 'kitten' and 'sitting' is 3"
+
+4. Branch and Bound:
+* Write a C# program to solve the Knapsack problem using the Branch and Bound algorithm.
+
+```csharp
+using System;
+
+public class Item
+{
+    public int weight { get; set; }
+    public int value { get; set; }
+
+    public Item(int weight, int value)
+    {
+        this.weight = weight;
+        this.value = value;
+    }
+}
+
+public class Knapsack
+{
+    private int capacity;
+    private Item[] items;
+
+    public Knapsack(int capacity, Item[] items)
+    {
+        this.capacity = capacity;
+        this.items = items;
+    }
+
+    public int GetMaxValue()
+    {
+        Array.Sort(items, (a, b) => b.value / b.weight - a.value / a.weight);
+
+        int maxPossibleValue = 0;
+        foreach (Item item in items)
+        {
+            if (capacity >= item.weight)
+            {
+                maxPossibleValue += item.value;
+                capacity -= item.weight;
+            }
+            else
+            {
+                maxPossibleValue += capacity * item.value / item.weight;
+                break;
+            }
+        }
+
+        Node root = new Node();
+        root.level = -1;
+        root.value = 0;
+        root.weight = 0;
+
+        return GetMaxValueRecursive(root, maxPossibleValue);
+    }
+
+    private int GetMaxValueRecursive(Node node, int maxPossibleValue)
+    {
+        if (node.weight > capacity)
+        {
+            return 0;
+        }
+
+        if (node.level == items.Length - 1)
+        {
+            return node.value;
+        }
+
+        int maxValue = node.value;
+
+        Node left = new Node();
+        left.level = node.level + 1;
+        left.weight = node.weight + items[left.level].weight;
+        left.value = node.value + items[left.level].value;
+
+        if (left.weight <= capacity && GetBound(left, maxPossibleValue) > maxValue)
+        {
+            maxValue = GetMaxValueRecursive(left, maxPossibleValue);
+        }
+
+        Node right = new Node();
+        right.level = node.level + 1;
+        right.weight = node.weight;
+        right.value = node.value;
+
+        if (GetBound(right, maxPossibleValue) > maxValue)
+        {
+            maxValue = GetMaxValueRecursive(right, maxPossibleValue);
+        }
+
+        return maxValue;
+    }
+
+    private int GetBound(Node node, int maxPossibleValue)
+    {
+        if (node.weight > capacity)
+        {
+            return 0;
+        }
+
+        int bound = node.value;
+
+        int j = node.level + 1;
+        int totalWeight = node.weight;
+        while (j < items.Length && totalWeight + items[j].weight <= capacity)
+        {
+            bound += items[j].value;
+            totalWeight += items[j].weight;
+            j++;
+        }
+
+        if (j < items.Length)
+        {
+            bound += (capacity - totalWeight) * items[j].value / items[j].weight;
+        }
+
+        return bound;
+    }
+
+    private class Node
+    {
+        public int level { get; set; }
+        public int weight { get; set; }
+        public int value { get; set; }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int capacity = 50;
+        Item[] items = new Item[]
+        {
+            new Item(10, 60),
+            new Item(20, 100),
+            new Item(30, 120)
+        };
+
+        Knapsack knapsack = new Knapsack(capacity, items);
+        int maxValue = knapsack.GetMaxValue();
+
+        Console.WriteLine("Maximum value: " + maxValue);
+    }
+}
+```
+
+This C# program solves the Knapsack problem using the Branch and Bound algorithm. It starts by sorting the items in descending order of value/weight ratio and calculates the maximum possible value that can be obtained by considering all the items in the sorted order until the capacity is exhausted. Then, it creates a root node with level -1 and value and weight 0. The program calls the recursive function GetMaxValueRecursive, which takes a node and the maximum possible value as input and returns the maximum value that can be obtained by considering the items starting from the next level. In each call, the function creates two child nodes: one that includes the item at the current level and one that doesn't. It then calculates the upper bound of each child node using the GetBound function, which estimates the maximum possible value that can be obtained from the remaining items. If the upper bound of a child node is greater than the current maximum value, the function calls itself recursively with that child node. The program returns the maximum value obtained from the recursive calls.
 
 # Chapter 7: Graph Algorithms
 Graphs are a fundamental data structure used in computer science, mathematics, and many other fields. They are used to represent relationships between objects or entities, and can be used to model a wide range of real-world phenomena, such as social networks, transportation networks, and electrical circuits.

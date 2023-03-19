@@ -1,88 +1,88 @@
 sections:
 - type: "raw"
   src: "# Chapter 1: Introduction to SQL"
-- "Overview of Databases?":
-- "Types of Databases?":
-- "Understanding Relational Databases?":
-- "What is SQL??":
-- "Importance of SQL?":
+- "Overview of Databases"
+- "Types of Databases"
+- "Understanding Relational Databases"
+- "What is SQL?"
+- "Importance of SQL"
 - type: "raw"
   src: "# Chapter 2: Understanding SQL"
-- "SQL Syntax?":
-- "SQL Commands?":
-- "SQL Data Types?":
-- "SQL Operators?":
-- "SQL Functions?":
+- "SQL Syntax"
+- "SQL Commands"
+- "SQL Data Types"
+- "SQL Operators"
+- "SQL Functions"
 - type: "raw"
   src: "# Chapter 3: Creating a Database"
-- "Creating a Database using SQL?":
-- "Creating Tables?":
-- "Setting up Relationships between Tables?": 
-- "Inserting Data into Tables?":
-- "Retrieving Data from Tables?":
+- "Creating a Database using SQL"
+- "Creating Tables"
+- "Setting up Relationships between Tables" 
+- "Inserting Data into Tables"
+- "Retrieving Data from Tables"
 - type: "raw"
   src: "# Chapter 4: Retrieving Data from Tables"
-- "Selecting Data from Tables?":
-- "Filtering Data with WHERE Clause?":
-- "Sorting Data with ORDER BY Clause?":
-- "Grouping Data with GROUP BY Clause?":
-- "Joins and Inner Joins?":
+- "Selecting Data from Tables"
+- "Filtering Data with WHERE Clause"
+- "Sorting Data with ORDER BY Clause"
+- "Grouping Data with GROUP BY Clause"
+- "Joins and Inner Joins"
 - type: "raw"
   src: "# Chapter 5: Updating Data in Tables"
-- "Updating Data using SQL?":
-- "Modifying Data with UPDATE Statement?":
-- "Deleting Data with DELETE Statement?":
-- "Adding New Records with INSERT Statement?":
-- "Creating and Modifying Views?":
+- "Updating Data using SQL"
+- "Modifying Data with UPDATE Statement"
+- "Deleting Data with DELETE Statement"
+- "Adding New Records with INSERT Statement"
+- "Creating and Modifying Views"
 - type: "raw"
   src: "# Chapter 6: Constraints and Indexes"
-- "Understanding Constraints?":
-- "Types of Constraints?":
-- "Creating Indexes?":
-- "Index Performance?":
+- "Understanding Constraints"
+- "Types of Constraints"
+- "Creating Indexes"
+- "Index Performance"
 - type: "raw"
   src: "# Chapter 7: Stored Procedures and Functions"
-- "Creating Stored Procedures?":
-- "Executing Stored Procedures?":
-- "Functions in SQL?":
-- "User-Defined Functions?":
+- "Creating Stored Procedures"
+- "Executing Stored Procedures"
+- "Functions in SQL"
+- "User-Defined Functions"
 - type: "raw"
   src: "# Chapter 8: Advanced SQL Queries"
-- "Subqueries?":
-- "Nested Queries?":
-- "Correlated Queries?":
-- "Aggregate Functions?":
-- "Window Functions?":
+- "Subqueries"
+- "Nested Queries"
+- "Correlated Queries"
+- "Aggregate Functions"
+- "Window Functions"
 - type: "raw"
   src: "# Chapter 9: Database Administration"
-- "Database Security?":
-- "Backup and Recovery?":
-- "Performance Tuning?":
-- "Database Maintenance?":
-- "SQL Server Management Studio?":
+- "Database Security"
+- "Backup and Recovery"
+- "Performance Tuning"
+- "Database Maintenance"
+- "SQL Server Management Studio"
 - type: "raw"
   src: "# Chapter 10: Advanced Topics in SQL"
-- "Transactions?":
-- "Cursors?":
-- "Triggers?":
-- "Error Handling?":
-- "Dynamic SQL?":
+- "Transactions"
+- "Cursors"
+- "Triggers"
+- "Error Handling"
+- "Dynamic SQL"
 - type: "raw"
   src: "# Chapter 11: SQL in Applications"
-- "Introduction to Data Science?":
-- "SQL in Business Intelligence?":
-- "SQL in Web Development?":
-- "SQL in Mobile Development?":
-- "SQL in Data Analytics?":
+- "Introduction to Data Science"
+- "SQL in Business Intelligence"
+- "SQL in Web Development"
+- "SQL in Mobile Development"
+- "SQL in Data Analytics"
 - type: "raw"
   src: "# Chapter 12: Case Studies"
-- "Case Study 1: Employee Management System?":
-- "Case Study 2: Sales and Inventory Management System?":
-- "Case Study 3: Customer Relationship Management System?":
+- "Case Study 1: Employee Management System"
+- "Case Study 2: Sales and Inventory Management System"
+- "Case Study 3: Customer Relationship Management System"
 - type: "raw"
   src: "# Chapter 13: Conclusion"
-- "Recap of the book?":
-- "Future of SQL?":
-- "Further resources?":
-- "Exercises?":
-- "Solutions to Exercises?":
+- "Recap of the book"
+- "Future of SQL"
+- "Further resources"
+- "Exercises"
+- "Solutions to Exercises"

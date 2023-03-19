@@ -61,3 +61,7 @@ sections:
 BOOK PROMPT
 
 Title: Introduction to Angular. For the above title in a technical book use future prompts to write for a technical audience for a book and give concise explanations for code. Ensure the content is original and does not infringe on copyright. Try not to repeat the code in the book. Respond with 'confirm' to acknowledge that you understand the prompt.
+
+------
+
+pandoc -f markdown -t html --standalone --toc --toc-depth=3 --css=output/tex/styles.css output/books/powershell/powershell.md -o output_file.html
