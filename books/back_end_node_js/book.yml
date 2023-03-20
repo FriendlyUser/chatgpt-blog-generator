@@ -5,7 +5,7 @@ writePrompt: true
 imageArgs:
   prompt: "stars in the sky, 4K HD wallpaper"
 frontMatter:
-  tags: ["rust"]
+  tags: ["javascript", "nodejs", "express"]
   title: "Introduction to Backend Development with Node.js and Express"
   description: "Introduction to Backend Development"
   pubDate: Fri, 14 December 2024
