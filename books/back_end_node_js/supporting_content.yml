@@ -1,0 +1,36 @@
+
+outputFormat: "astro-tech-blog"
+genImage: true
+writePrompt: true
+imageArgs:
+  prompt: "stars in the sky, 4K HD wallpaper"
+frontMatter:
+  tags: ["rust"]
+  title: "Introduction to Backend Development with Node.js and Express"
+  description: "Introduction to Backend Development"
+  pubDate: Fri, 14 December 2024
+  layout: '"@/templates/BasePost.astro"'
+programmingLanguage: "tsx"
+outputFile: "node_back_end.md"
+postOutput:
+  folder: "../astro-tech-blog/src/pages/posts/tech/javascript"
+  imgFolder: "../astro-tech-blog/public/imgs/2023"
+seedPrompt: "Title: Introduction to Backend Development with Node.js and Express
+For the above title in a technical book use future prompts to write for a technical audience for the book and give concise explainations for code. Try not to repeat the code in the post. Respond with 'confirm' to acknowledge that you understand the prompt. Make sure all code is original and written in javascript."
+sections:
+- type: "raw"
+  src: "# Chapter 6: Deploying your application"
+- Sample docker image for express
+- How to use dotenv in express
+- type: "raw"
+  src: "# Chapter 7: Best Practices and Advanced Topics"
+- Example express server with async await and try catch usage
+- Example of using WebSockets with Express
+- Example of server side rendering with express with code
+- What is Typescript
+- How to use Typescript with Express
+- type: "raw"
+  src: "# Chapter 8: Securing Your Express Application"
+- Implement a express server with rate limiting
+- Implement global logging with winston in express
+- Example express server that uses HTTPS and secure cookies

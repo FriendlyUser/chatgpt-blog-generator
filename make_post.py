@@ -213,6 +213,9 @@ def generate_body(cfg: dict)-> None:
         seed_prompt = cfg['seedPrompt']
         resp = chatgpt.send_message(seed_prompt)
         time.sleep(3)
+
+    if cfg.get("conversation_id") is not None:
+        time.sleep(3)
     for output in generate_section(cfg):
         # if output is string print it
         try:
