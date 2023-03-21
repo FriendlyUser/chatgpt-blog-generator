@@ -16,54 +16,54 @@ postOutput:
   imgFolder: "../astro-tech-blog/public/imgs/2023"
 seedPrompt: "Title: Introduction to Angular. For the above title in a technical book use future prompts to write for a technical audience for a bookand give consise explainations for code. Try not to repeat the code in the chapters. Respond with 'confirm' to acknowledge that you understand the prompt."
 sections:
-  # - type: "raw"
-  #   src: "# Chapter 1: Getting Started with Angular"
-  # - Introduction to Angular
-  # - Setting up the development environment
-  # - Creating a new Angular application
-  # - Understanding the structure of an Angular application
-  # - Running the application
+  - type: "raw"
+    src: "# Chapter 1: Getting Started with Angular"
+  - Introduction to Angular
+  - Setting up the development environment
+  - Creating a new Angular application
+  - Understanding the structure of an Angular application
+  - Running the application
 
-  # - type: "raw"
-  #   src: "# Chapter 2: Angular Components"
-  # - Introduction to Angular components
-  # - Creating a component
-  # - Building the component template
-  # - Understanding component metadata
-  # - Using Angular directives in components
-  # - Nesting components
+  - type: "raw"
+    src: "# Chapter 2: Angular Components"
+  - Introduction to Angular components
+  - Creating a component
+  - Building the component template
+  - Understanding component metadata
+  - Using Angular directives in components
+  - Nesting components
 
-  # - type: "raw"
-  #   src: "# Chapter 3: Data Binding and Pipes"
-  # - Introduction to data binding
-  # - Property binding
-  # - Event binding
-  # - Two-way binding
-  # - Understanding pipes
-  # - Creating a custom pipe
+  - type: "raw"
+    src: "# Chapter 3: Data Binding and Pipes"
+  - Introduction to data binding
+  - Property binding
+  - Event binding
+  - Two-way binding
+  - Understanding pipes
+  - Creating a custom pipe
 
-  # - type: "raw"
-  #   src: "# Chapter 4: Services and Dependency Injection"
-  # - Introduction to services
-  # - Creating a service
-  # - Using a service in a component
-  # - Understanding dependency injection
-  # - Providers and Injectors
+  - type: "raw"
+    src: "# Chapter 4: Services and Dependency Injection"
+  - Introduction to services
+  - Creating a service
+  - Using a service in a component
+  - Understanding dependency injection
+  - Providers and Injectors
 
-  # - type: "raw"
-  #   src: "# Chapter 5: Routing and Navigation"
-  # - Introduction to Angular routing
-  # - Setting up routing in an Angular application
-  # - Defining routes
-  # - Navigating between routes
-  # - Passing parameters in routes
-  # - Lazy loading modules
+  - type: "raw"
+    src: "# Chapter 5: Routing and Navigation"
+  - Introduction to Angular routing
+  - Setting up routing in an Angular application
+  - Defining routes
+  - Navigating between routes
+  - Passing parameters in routes
+  - Lazy loading modules
 
   - type: "raw"
     src: "# Chapter 6: Forms and Validation"
-  # - Introduction to Angular forms
-  # - Template-driven forms
-  # - Reactive forms
+  - Introduction to Angular forms
+  - Template-driven forms
+  - Reactive forms
   - Form validation
   - Custom form validators
 
