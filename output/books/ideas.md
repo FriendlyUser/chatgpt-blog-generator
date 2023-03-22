@@ -1,10 +1,8 @@
 
 - sql
 - asp.net core
-- flutter
 - dart
 - stats with R
-- backend development with express in nodejs
 - backend development with spring boot in java
 - backend development with django in python
 - backend development with flask in python
