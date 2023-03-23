@@ -116,7 +116,7 @@ def try_chatgpt_response(text: str):
             return resp
         except Exception as e:
             attempts += 1
-            time.sleep(5)
+            time.sleep(10)
             if attempts == 3:
                 raise e
     raise Exception("Failed to get response from ChatGPT")
@@ -128,6 +128,7 @@ def generate_section(cfg: dict)-> None:
     for section in sections:
         # check if str or dict
         if isinstance(section, str):
+            print(f"Generating section: {section}")
             resp = try_chatgpt_response(section)
             clean_message = use_programming_language(cfg, resp['message'])
             if cfg.get("writePrompt", False):
@@ -212,21 +213,21 @@ def generate_body(cfg: dict)-> None:
     if 'seedPrompt' in cfg:
         seed_prompt = cfg['seedPrompt']
         resp = chatgpt.send_message(seed_prompt)
-        time.sleep(3)
+        time.sleep(10)
 
     if cfg.get("conversation_id") is not None:
-        time.sleep(3)
+        time.sleep(10)
     for output in generate_section(cfg):
         # if output is string print it
         try:
             with open(output_file, 'a', encoding="utf-8", errors="replace") as f:
                 f.write(output)
                 f.write('\n')
-            time.sleep(6)
+            time.sleep(8)
         except Exception as e:
             print("FAILED TO OUTPUT SECTION")
             print(e)
-            time.sleep(3)
+            time.sleep(10)
             pass
         # output references
     try:
@@ -246,7 +247,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser() 
-    parser.add_argument('--file', type=str, default='books/introduction_to_scala/book.yml')
+    parser.add_argument('--file', type=str, default='books/intro_to_wordpress_with_php/book.yml')
     parser.add_argument('--conversation_id', type=str, default=None)
     parser.add_argument('--write_prompt', type=str, default=None)
     args = parser.parse_args()

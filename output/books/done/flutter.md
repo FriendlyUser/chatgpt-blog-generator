@@ -1,7 +1,7 @@
 ---
 tags: ['bash']
-title: Introduction to Python by building Projects
-description: Introduction to Python by building projects
+title: Introduction to Dart and Flutter
+description: "Building Beautiful and Fast Mobile Apps with Dart and Flutter: A Comprehensive Guide for Beginners"
 pubDate: Fri, 14 December 2024
 layout: "@/templates/BasePost.astro"
 imgSrc: /imgs/2023/4279596222.png
