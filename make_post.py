@@ -12,16 +12,14 @@ import shutil
 from PIL import Image
 from stability_sdk import client
 import stability_sdk.interfaces.gooseai.generation.generation_pb2 as generation
-# Our Host URL should not be prepended with "https" nor should it have a trailing slash.
-os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
-os.environ["STABILITY_KEY"] = os.getenv("STABILITY_KEY")
-# chatgpt api
 
 # print(CHATGPT_SESSION_TOKEN)
 # `__Secure-next-auth.session-token` cookie from https://chat.openai.com/chat
 chatgpt = None  # auth with session token
 
 def generate_image(cfg:dict)-> None:
+    os.environ['STABILITY_HOST'] = 'grpc.stability.ai:443'
+    os.environ["STABILITY_KEY"] = os.getenv("STABILITY_KEY")
     prompt = cfg['imageArgs']['prompt']
     stability_api = client.StabilityInference(
         key=os.environ['STABILITY_KEY'], # API Key reference.
