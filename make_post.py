@@ -245,7 +245,7 @@ def generate_body(cfg: dict)-> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser() 
-    parser.add_argument('--file', type=str, default='books/intro_to_wordpress_with_php/book.yml')
+    parser.add_argument('--file', type=str, default='books/posts/resumes_with_pandoc.yml')
     parser.add_argument('--conversation_id', type=str, default=None)
     parser.add_argument('--write_prompt', type=str, default=None)
     args = parser.parse_args()
